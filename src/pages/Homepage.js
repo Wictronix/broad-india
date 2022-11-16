@@ -9,23 +9,25 @@ import CoreValues from "../components/CoreValues";
 import TrustedClient from "../components/TrustedClient";
 import RecentNews from "../components/RecentNews";
 import Footer from "../components/Footer";
+import IntroText from "../components/IntroText";
 
 export default function Homepage() {
-    React.useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-    return (
-        <div style={{ backgroundColor: "#eee" }}>
-            <NavbarComp />
-            <HomePageCarousel />
-            <Figures />
-            <Sustainable />
-            <SpecialistsProduct />
-            <RecentInstallations />
-            <CoreValues />
-            <TrustedClient />
-            <RecentNews />
-            <Footer />
-        </div>
-    );
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  return (
+    <div style={{ backgroundColor: "#eee" }}>
+      <NavbarComp />
+      <HomePageCarousel />
+      <Figures />
+      <IntroText />
+      <Sustainable />
+      <SpecialistsProduct />
+      <RecentInstallations />
+      <CoreValues />
+      <TrustedClient />
+      <RecentNews />
+      <Footer />
+    </div>
+  );
 }

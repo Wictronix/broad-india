@@ -8,43 +8,48 @@ import AbsorptionChiller from "./pages/Products/AbsorptionChiller";
 import Installations from "./pages/Services/Installations";
 import PEChillers from "./pages/Products/PEChillers";
 import Article from "./pages/Article";
+import Seminar from "./pages/Services/Seminar";
 
 export default function App() {
-    const router = createBrowserRouter([
-        {
-            path: "/",
-            element: <Homepage />,
-        },
-        {
-            path: "/about",
-            element: <About />,
-        },
-        {
-            path: "/contactUs",
-            element: <ContactUs />,
-        },
-        {
-            path: "/absorptionChiller",
-            element: <AbsorptionChiller />,
-        },
-        {
-            path: "/installations",
-            element: <Installations />,
-        },
-        {
-            path: "/peChillers",
-            element: <PEChillers />,
-        },
-        {
-            path: "/article",
-            element: <Article />,
-        },
-    ]);
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Homepage />,
+    },
+    {
+      path: "/about",
+      element: <About />,
+    },
+    {
+      path: "/contactUs",
+      element: <ContactUs />,
+    },
+    {
+      path: "/absorptionChiller",
+      element: <AbsorptionChiller />,
+    },
+    {
+      path: "/installations",
+      element: <Installations />,
+    },
+    {
+      path: "/peChillers",
+      element: <PEChillers />,
+    },
+    {
+      path: "/article",
+      element: <Article />,
+    },
+    {
+      path: "/seminar",
+      element: <Seminar />,
+    },
+  ]);
 
-    React.useEffect(() => {
-        AOS.init();
-        window.addEventListener("load", AOS.refresh);
-        window.scrollTo(0, 0);
-    }, []);
-    return <RouterProvider router={router} />;
+  React.useEffect(() => {
+    AOS.init();
+    window.addEventListener("load", AOS.refresh);
+    window.scrollTo(0, 0);
+  }, []);
+  return <RouterProvider router={router} />;
 }

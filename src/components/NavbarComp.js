@@ -1,14 +1,15 @@
 import React from "react";
-import { Button, Dropdown } from "react-bootstrap";
+import { Button, Dropdown, Offcanvas } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import logo from "../assets/images/broad-logo.png";
 
 export default function NavbarComp() {
-  const [isMobile, setIsMobile] = React.useState(false);
+  const [isMobile, setIsMobile] = React.useState(true);
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   React.useEffect(() => {
-    if (window.innerHeight > window.innerWidth) setIsMobile(true);
+    setIsMobile(window.innerWidth < 768);
   }, []);
 
   return (
@@ -21,15 +22,15 @@ export default function NavbarComp() {
       }}
     >
       <div
-        className="shadow"
+        className="shadow "
         style={{
-          height: isMobile ? "8rem" : "4rem",
+          height: "4rem",
           backgroundColor: "rgba(255, 255, 255, 0.5)",
           backdropFilter: "blur(32px)",
-          margin: isMobile ? "0.5rem 1rem" : "1rem 10rem",
+          margin: isMobile ? "0.5rem 1rem" : "1rem 10rem 1rem 9rem",
           borderRadius: "1rem",
           padding: "1rem 2rem",
-          display: isMobile ? "block" : "flex",
+          display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
         }}
@@ -54,26 +55,224 @@ export default function NavbarComp() {
           />
           <div style={{ marginTop: "0.2rem" }}>BROAD India</div>
         </Link>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            color: "#333",
-          }}
-          data-aos="fade-left"
-        >
-          <Link
-            to="/"
+        {isMobile ? (
+          <div onClick={() => setIsMenuOpen(true)}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="black"
+              className="w-6 h-6"
+              style={{ color: "black", height: "2rem" }}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </div>
+        ) : (
+          <div
             style={{
-              marginRight: "1rem",
-              textDecoration: "none",
+              display: "flex",
+              alignItems: "center",
               color: "#333",
             }}
+            // data-aos="fade-left"
           >
-            Home
-          </Link>
-          <Dropdown>
-            <Dropdown.Toggle
+            <Link
+              to="/"
+              style={{
+                marginRight: "1rem",
+                textDecoration: "none",
+                color: "#333",
+              }}
+            >
+              Home
+            </Link>
+            <Dropdown>
+              <Dropdown.Toggle
+                style={{
+                  backgroundColor: "transparent",
+                  color: "#333",
+                  border: "none",
+                }}
+              >
+                Products
+              </Dropdown.Toggle>
+              <Dropdown.Menu
+                className="shadow"
+                style={{
+                  margin: "1rem",
+                  backgroundColor: "rgba(255, 255, 255, 0.8)",
+                  border: "none",
+                }}
+              >
+                <Dropdown.Item>
+                  <Link
+                    to="/absorptionChiller"
+                    style={{
+                      textDecoration: "none",
+                      color: "black",
+                    }}
+                  >
+                    Absorption Chiller
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link
+                    to="/peChillers"
+                    style={{
+                      textDecoration: "none",
+                      color: "black",
+                    }}
+                  >
+                    Power efficient Chiller
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link
+                    to="/peChillers"
+                    style={{
+                      textDecoration: "none",
+                      color: "black",
+                    }}
+                  >
+                    Air Quality{" "}
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link
+                    to="/peChillers"
+                    style={{
+                      textDecoration: "none",
+                      color: "black",
+                    }}
+                  >
+                    AirPro mask
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link
+                    to="/peChillers"
+                    style={{
+                      textDecoration: "none",
+                      color: "black",
+                    }}
+                  >
+                    Broad NPI Facility
+                  </Link>
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+            <Dropdown>
+              <Dropdown.Toggle
+                style={{
+                  backgroundColor: "transparent",
+                  color: "#333",
+                  border: "none",
+                }}
+              >
+                Services
+              </Dropdown.Toggle>
+              <Dropdown.Menu
+                className="shadow"
+                style={{
+                  margin: "1rem",
+                  backgroundColor: "rgba(255, 255, 255, 0.8)",
+                  border: "none",
+                }}
+              >
+                <Dropdown.Item>
+                  <Link
+                    to="/installations"
+                    style={{
+                      textDecoration: "none",
+                      color: "black",
+                    }}
+                  >
+                    Installations
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link
+                    to="/seminar"
+                    style={{
+                      textDecoration: "none",
+                      color: "black",
+                    }}
+                  >
+                    Service Chiller Webinar
+                  </Link>
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+            <Link
+              style={{
+                marginLeft: "0.8rem",
+                marginRight: "1rem",
+                textDecoration: "none",
+                color: "#333",
+              }}
+              to="/about"
+            >
+              About
+            </Link>
+            <div
+              style={{
+                marginLeft: "0.8rem",
+                marginRight: "1.2rem",
+                textDecoration: "none",
+                color: "green",
+                cursor: "pointer",
+              }}
+              onClick={() => {
+                window.location.href = "http://en.broad.com/";
+              }}
+            >
+              Broad Group
+            </div>
+            <br />
+            <div style={{ display: isMobile ? "none" : "block" }}>
+              <Button onClick={() => (window.location = "/contactUs")}>
+                Contact Us
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
+      <Offcanvas
+        show={isMenuOpen}
+        onHide={() => setIsMenuOpen(false)}
+        placement="end"
+      >
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Menu</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              color: "#333",
+              flexDirection: "column",
+            }}
+            // data-aos="fade-left"
+          >
+            <Link
+              to="/"
+              style={{
+                marginRight: "1rem",
+                textDecoration: "none",
+                color: "#333",
+                marginBottom: "1rem",
+              }}
+            >
+              <h3>Home</h3>
+            </Link>
+            <h5
               style={{
                 backgroundColor: "transparent",
                 color: "#333",
@@ -81,74 +280,59 @@ export default function NavbarComp() {
               }}
             >
               Products
-            </Dropdown.Toggle>
-            <Dropdown.Menu
-              className="shadow"
+            </h5>
+            <Link
+              to="/absorptionChiller"
               style={{
-                margin: "1rem",
-                backgroundColor: "rgba(255, 255, 255, 0.8)",
-                border: "none",
+                textDecoration: "none",
+                color: "black",
+                marginBottom: "0.5rem",
               }}
             >
-              <Dropdown.Item>
-                <Link
-                  to="/absorptionChiller"
-                  style={{
-                    textDecoration: "none",
-                    color: "black",
-                  }}
-                >
-                  Absorption Chiller
-                </Link>
-              </Dropdown.Item>
-              <Dropdown.Item>
-                <Link
-                  to="/peChillers"
-                  style={{
-                    textDecoration: "none",
-                    color: "black",
-                  }}
-                >
-                  Power efficient Chiller
-                </Link>
-              </Dropdown.Item>
-              <Dropdown.Item>
-                <Link
-                  to="/peChillers"
-                  style={{
-                    textDecoration: "none",
-                    color: "black",
-                  }}
-                >
-                  Air Quality{" "}
-                </Link>
-              </Dropdown.Item>
-              <Dropdown.Item>
-                <Link
-                  to="/peChillers"
-                  style={{
-                    textDecoration: "none",
-                    color: "black",
-                  }}
-                >
-                  AirPro mask
-                </Link>
-              </Dropdown.Item>
-              <Dropdown.Item>
-                <Link
-                  to="/peChillers"
-                  style={{
-                    textDecoration: "none",
-                    color: "black",
-                  }}
-                >
-                  Broad NPI Facility
-                </Link>
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-          <Dropdown>
-            <Dropdown.Toggle
+              Absorption Chiller
+            </Link>
+            <Link
+              to="/peChillers"
+              style={{
+                textDecoration: "none",
+                color: "black",
+                marginBottom: "0.5rem",
+              }}
+            >
+              Power efficient Chiller
+            </Link>
+            <Link
+              to="/peChillers"
+              style={{
+                textDecoration: "none",
+                color: "black",
+                marginBottom: "0.5rem",
+              }}
+            >
+              Air Quality{" "}
+            </Link>
+            <Link
+              to="/peChillers"
+              style={{
+                textDecoration: "none",
+                color: "black",
+                marginBottom: "0.5rem",
+              }}
+            >
+              AirPro mask
+            </Link>
+            <Link
+              to="/peChillers"
+              style={{
+                textDecoration: "none",
+                color: "black",
+                marginBottom: "0.5rem",
+              }}
+            >
+              Broad NPI Facility
+            </Link>
+            <br />
+            <h3
               style={{
                 backgroundColor: "transparent",
                 color: "#333",
@@ -156,72 +340,67 @@ export default function NavbarComp() {
               }}
             >
               Services
-            </Dropdown.Toggle>
-            <Dropdown.Menu
-              className="shadow"
+            </h3>
+            <Link
+              to="/installations"
               style={{
-                margin: "1rem",
-                backgroundColor: "rgba(255, 255, 255, 0.8)",
-                border: "none",
+                textDecoration: "none",
+                color: "black",
+                marginBottom: "0.5rem",
               }}
             >
-              <Dropdown.Item>
-                <Link
-                  to="/installations"
-                  style={{
-                    textDecoration: "none",
-                    color: "black",
-                  }}
-                >
-                  Installations
-                </Link>
-              </Dropdown.Item>
-              <Dropdown.Item>
-                <Link
-                  to="/installations"
-                  style={{
-                    textDecoration: "none",
-                    color: "black",
-                  }}
-                >
-                  Service Chiller Webinar
-                </Link>
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-          <Link
-            style={{
-              marginLeft: "0.8rem",
-              marginRight: "1rem",
-              textDecoration: "none",
-              color: "#333",
-            }}
-            to="/about"
-          >
-            About
-          </Link>
-          <div
-            style={{
-              marginLeft: "0.8rem",
-              marginRight: "1.2rem",
-              textDecoration: "none",
-              color: "green",
-              cursor: "pointer",
-            }}
-            onClick={() => {
-              window.location.href = "http://en.broad.com/";
-            }}
-          >
-            Broad Group
-          </div>
-          <br />
-          <div style={{ display: isMobile ? "none" : "block" }}>
+              Installations
+            </Link>
+            <Link
+              to="/seminar"
+              style={{
+                textDecoration: "none",
+                color: "black",
+                marginBottom: "0.5rem",
+              }}
+            >
+              Service Chiller Webinar
+            </Link>
+            <br />
+            <Link
+              style={{
+                marginLeft: "0.8rem",
+                marginRight: "1rem",
+                marginBottom: "1rem",
+                textDecoration: "none",
+                color: "#333",
+              }}
+              to="/about"
+            >
+              <h3>About</h3>
+            </Link>
+            <div
+              style={{
+                marginLeft: "0.8rem",
+                marginRight: "1.2rem",
+                marginBottom: "1rem",
+                textDecoration: "none",
+                color: "green",
+                cursor: "pointer",
+              }}
+              onClick={() => {
+                window.location.href = "http://en.broad.com/";
+              }}
+            >
+              <h3>Broad Group</h3>
+            </div>
             <Button onClick={() => (window.location = "/contactUs")}>
               Contact Us
             </Button>
+            <br />
+            <div style={{ display: isMobile ? "none" : "block" }}>
+              <Button onClick={() => (window.location = "/contactUs")}>
+                Contact Us
+              </Button>
+            </div>
           </div>
-        </div>
-      </div>
+        </Offcanvas.Body>
+      </Offcanvas>
     </div>
   );
 }

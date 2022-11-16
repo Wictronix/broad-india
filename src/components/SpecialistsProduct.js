@@ -8,18 +8,17 @@ export default function SpecialistsProduct() {
         <div className="display-5 mb-5 text-center">
           Specialists in Absorption Chillers
         </div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus,
-          provident blanditiis accusantium soluta odit quis qui perspiciatis
-          voluptates repellendus. Nobis beatae alias praesentium delectus quia
-          quam libero accusamus, aut nemo, quos iusto error nisi possimus
-          aliquam expedita asperiores adipisci quas distinctio qui magni esse
-          facere vel veritatis explicabo? Alias , voluptatem.
+        <p className="text-center">
+          A cost-effective cooling and heating solution that can better utilize
+          existing thermal energy sources
         </p>
         <div className="mt-5">
           <div>
             <div className="row">
-              <div className="col-md-3" style={{ paddingRight: "1rem" }}>
+              <div
+                className="col-md-3"
+                style={{ paddingRight: "1rem", marginBottom: "1rem" }}
+              >
                 <div
                   className="shadow"
                   data-aos="fade-up"
@@ -78,7 +77,10 @@ export default function SpecialistsProduct() {
                   </div>
                 </div>
               </div>
-              <div className="col-md-3" style={{ paddingRight: "1rem" }}>
+              <div
+                className="col-md-3"
+                style={{ paddingRight: "1rem", marginBottom: "1rem" }}
+              >
                 <div
                   className="shadow"
                   data-aos="fade-up"
@@ -137,7 +139,10 @@ export default function SpecialistsProduct() {
                   </div>
                 </div>
               </div>
-              <div className="col-md-3" style={{ paddingRight: "1rem" }}>
+              <div
+                className="col-md-3"
+                style={{ paddingRight: "1rem", marginBottom: "1rem" }}
+              >
                 <div
                   className="shadow"
                   data-aos="fade-up"
@@ -196,7 +201,10 @@ export default function SpecialistsProduct() {
                   </div>
                 </div>
               </div>
-              <div className="col-md-3" style={{ paddingRight: "1rem" }}>
+              <div
+                className="col-md-3"
+                style={{ paddingRight: "1rem", marginBottom: "1rem" }}
+              >
                 <div
                   className="shadow"
                   data-aos="fade-up"
