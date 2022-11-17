@@ -106,7 +106,7 @@ export default function NavbarComp() {
                 className="shadow"
                 style={{
                   margin: "1rem",
-                  backgroundColor: "rgba(255, 255, 255, 0.8)",
+                  backgroundColor: "rgba(255, 255, 255, 0.9)",
                   border: "none",
                 }}
               >
@@ -132,7 +132,7 @@ export default function NavbarComp() {
                     Power efficient Chiller
                   </Link>
                 </Dropdown.Item>
-                <Dropdown.Item>
+                {/* <Dropdown.Item>
                   <Link
                     to="/peChillers"
                     style={{
@@ -164,51 +164,21 @@ export default function NavbarComp() {
                   >
                     Broad NPI Facility
                   </Link>
-                </Dropdown.Item>
+                </Dropdown.Item> */}
               </Dropdown.Menu>
             </Dropdown>
-            <Dropdown>
-              <Dropdown.Toggle
-                style={{
-                  backgroundColor: "transparent",
-                  color: "#333",
-                  border: "none",
-                }}
-              >
-                Services
-              </Dropdown.Toggle>
-              <Dropdown.Menu
-                className="shadow"
-                style={{
-                  margin: "1rem",
-                  backgroundColor: "rgba(255, 255, 255, 0.8)",
-                  border: "none",
-                }}
-              >
-                <Dropdown.Item>
-                  <Link
-                    to="/installations"
-                    style={{
-                      textDecoration: "none",
-                      color: "black",
-                    }}
-                  >
-                    Installations
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  <Link
-                    to="/seminar"
-                    style={{
-                      textDecoration: "none",
-                      color: "black",
-                    }}
-                  >
-                    Service Chiller Webinar
-                  </Link>
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
+
+            <Link
+              style={{
+                marginLeft: "0.8rem",
+                marginRight: "1rem",
+                textDecoration: "none",
+                color: "#333",
+              }}
+              to="/installations"
+            >
+              Installations
+            </Link>
             <Link
               style={{
                 marginLeft: "0.8rem",
@@ -225,7 +195,6 @@ export default function NavbarComp() {
                 marginLeft: "0.8rem",
                 marginRight: "1.2rem",
                 textDecoration: "none",
-                color: "green",
                 cursor: "pointer",
               }}
               onClick={() => {
@@ -301,7 +270,7 @@ export default function NavbarComp() {
             >
               Power efficient Chiller
             </Link>
-            <Link
+            {/* <Link
               to="/peChillers"
               style={{
                 textDecoration: "none",
@@ -330,37 +299,20 @@ export default function NavbarComp() {
               }}
             >
               Broad NPI Facility
-            </Link>
+            </Link> */}
             <br />
-            <h3
-              style={{
-                backgroundColor: "transparent",
-                color: "#333",
-                border: "none",
-              }}
-            >
-              Services
+            <h3>
+              <Link
+                to="/installations"
+                style={{
+                  textDecoration: "none",
+                  color: "black",
+                  marginBottom: "0.5rem",
+                }}
+              >
+                Installations
+              </Link>
             </h3>
-            <Link
-              to="/installations"
-              style={{
-                textDecoration: "none",
-                color: "black",
-                marginBottom: "0.5rem",
-              }}
-            >
-              Installations
-            </Link>
-            <Link
-              to="/seminar"
-              style={{
-                textDecoration: "none",
-                color: "black",
-                marginBottom: "0.5rem",
-              }}
-            >
-              Service Chiller Webinar
-            </Link>
             <br />
             <Link
               style={{

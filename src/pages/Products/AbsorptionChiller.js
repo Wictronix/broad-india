@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Tab, Row, Col, Nav, Card } from "react-bootstrap";
+import ContactForm from "../../components/ContactForm";
 import Footer from "../../components/Footer";
 import NavbarComp from "../../components/NavbarComp";
 
@@ -52,9 +53,7 @@ export default function AbsorptionChiller() {
       <div style={{ paddingBlock: "2rem", backgroundColor: "#ccc" }}>
         <Container>
           <p style={{ fontSize: "1.2rem" }}>
-            <strong>Absorption Chillers</strong> are Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Dicta qui quae perspiciatis dolore
-            omnis voluptatum atque assumenda ratione nisi velit.
+            Better <strong>Absorption Chillers</strong> for a better world.
           </p>
         </Container>
       </div>
@@ -70,10 +69,15 @@ export default function AbsorptionChiller() {
                   <Nav.Link eventKey="singleStage">Single State</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="third">Multi Energy</Nav.Link>
+                  <Nav.Link eventKey="multiEnergy">Multi Energy</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="fourth">Package Chillers</Nav.Link>
+                  <Nav.Link eventKey="packageChillers">
+                    Package Chillers
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="solarDriven">Solar Driven</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Col>
@@ -392,10 +396,261 @@ export default function AbsorptionChiller() {
                     </Col>
                   </Row>
                 </Tab.Pane>
+
+                <Tab.Pane eventKey="multiEnergy">
+                  <h2 className="mb-4">Multi Energy</h2>
+                  <Row className="mb-4">
+                    <Col md={10}>
+                      <Card>
+                        <Card.Header>
+                          BZE Model, Exhaust and Direct Fired
+                        </Card.Header>
+                        <Card.Body className="d-flex">
+                          <img
+                            src="https://broadusa.com/broad/wp-content/uploads/2020/03/bze-300x201-1-200x134.jpg"
+                            alt="bzemodel"
+                            style={{
+                              objectFit: "contain",
+                            }}
+                          />
+                          <Card.Text
+                            style={{
+                              fontSize: "1rem",
+                              marginInline: "2rem",
+                              color: "#666",
+                            }}
+                          >
+                            <div
+                              style={{
+                                fontWeight: "600",
+                                fontSize: "1.2rem",
+                                color: "#444",
+                                marginLeft: "0.6rem",
+                                marginBottom: "0.8rem",
+                              }}
+                            >
+                              Features
+                            </div>
+                            <ul>
+                              <li>Capacity: 30-300 ton</li>
+                              Gas Pressure: 2.3-7.3 Psi (Standard)
+                              <li>
+                                Dual Fuel Burner (Gas and Oil, Low NOx, &lt;
+                                10ppm)
+                              </li>
+                              <li>Exhaust Pressure Drop : 3 - 8 Inch W.C.</li>
+                              <li>Exhaust Temperature: 560-990 F</li>
+                              <li>Cooling / Heating / Domestic Hot Water</li>
+                            </ul>
+                          </Card.Text>
+                        </Card.Body>
+                      </Card>
+                    </Col>
+                  </Row>
+                  <Row className="mb-4">
+                    <Col md={10}>
+                      <Card>
+                        <Card.Header>
+                          BHE Model, Hot (Jacket) Water and Exhaust
+                        </Card.Header>
+                        <Card.Body className="d-flex">
+                          <img
+                            src="https://broadusa.com/broad/wp-content/uploads/2020/03/bhe-300x203-1-200x135.png"
+                            alt="bdemodel"
+                            style={{
+                              objectFit: "contain",
+                            }}
+                          />
+                          <Card.Text
+                            style={{
+                              fontSize: "1rem",
+                              marginInline: "2rem",
+                              color: "#666",
+                            }}
+                          >
+                            <div
+                              style={{
+                                fontWeight: "600",
+                                fontSize: "1.2rem",
+                                color: "#444",
+                                marginLeft: "0.6rem",
+                                marginBottom: "0.8rem",
+                              }}
+                            >
+                              Features
+                            </div>
+                            <ul>
+                              <li>Capacity: 30-3300 ton</li>
+                              <li>
+                                Hot Water Temperature: 160-220 F (Standard)
+                              </li>
+                              <li>Exhaust Pressure Drop: 3 - 8 Inch W.C.</li>
+                              <li>Exhaust Temperature: 580-1200 F</li>
+                            </ul>
+                          </Card.Text>
+                        </Card.Body>
+                      </Card>
+                    </Col>
+                  </Row>
+                  <Row className="mb-4">
+                    <Col md={10}>
+                      <Card>
+                        <Card.Header>
+                          BZHE Model, Hot (Jacket) Water and Exhaust + Direct
+                          Gas Fire
+                        </Card.Header>
+                        <Card.Body className="d-flex">
+                          <img
+                            src="https://broadusa.com/broad/wp-content/uploads/2020/03/bzhe1_s-300x204-1-200x136.jpg"
+                            alt="bzhemodel"
+                            style={{
+                              objectFit: "contain",
+                            }}
+                          />
+                          <Card.Text
+                            style={{
+                              fontSize: "1rem",
+                              marginInline: "2rem",
+                              color: "#666",
+                            }}
+                          >
+                            <div
+                              style={{
+                                fontWeight: "600",
+                                fontSize: "1.2rem",
+                                color: "#444",
+                                marginLeft: "0.6rem",
+                                marginBottom: "0.8rem",
+                              }}
+                            >
+                              Features
+                            </div>
+                            <ul>
+                              <li>Capacity: 30-3300 ton</li>
+                              <li>Gas Pressure: 2.3-7.3 Psi (Standard)</li>
+                              <li>
+                                Dual Fuel Burner (Gas and Oil, Low NOx, &lt;
+                                10ppm)
+                              </li>
+                              <li>Exhaust Pressure Drop : 3 - 8 Inch W.C.</li>
+                              <li>Exhaust Temperature: 580-1200 F</li>
+                              <li>
+                                Hot Water Temperature: 190-220 F (Standard)
+                              </li>
+                            </ul>
+                          </Card.Text>
+                        </Card.Body>
+                      </Card>
+                    </Col>
+                  </Row>
+                </Tab.Pane>
+
+                <Tab.Pane eventKey="packageChillers">
+                  <h2 className="mb-4">Package Chillers</h2>
+                  <Row className="mb-4">
+                    <Col md={10}>
+                      <Card>
+                        <Card.Header>
+                          Package Chiller (Enclosure, Pump System and Cooling
+                          Tower included)
+                        </Card.Header>
+                        <Card.Body className="d-flex">
+                          <img
+                            src="https://broadusa.com/broad/wp-content/uploads/2020/03/package_chiller-300x279-1-200x186.jpg"
+                            alt="pkgchiller"
+                            style={{
+                              objectFit: "contain",
+                            }}
+                          />
+                          <Card.Text
+                            style={{
+                              fontSize: "1rem",
+                              marginInline: "2rem",
+                              color: "#666",
+                            }}
+                          >
+                            <div
+                              style={{
+                                fontWeight: "600",
+                                fontSize: "1.2rem",
+                                color: "#444",
+                                marginLeft: "0.6rem",
+                                marginBottom: "0.8rem",
+                              }}
+                            >
+                              Features
+                            </div>
+                            <ul>
+                              <li>Direct Fire/Hot water/Steam/Exhaust</li>
+                              <li>Capacity: 40-2200 ton</li>
+                              <li>Gas Pressure: 2.3-7.3 Psi (Standard)</li>
+                              <li>
+                                Dual Fuel Burner (Gas and Oil, Low NOx, &lt;
+                                10ppm)
+                              </li>
+                              <li>Cooling / Heating / Domestic Hot Water</li>
+                            </ul>
+                          </Card.Text>
+                        </Card.Body>
+                      </Card>
+                    </Col>
+                  </Row>
+                </Tab.Pane>
+
+                <Tab.Pane eventKey="solarDriven">
+                  <h2 className="mb-4">Solar Driven</h2>
+                  <Row className="mb-4">
+                    <Col md={10}>
+                      <Card>
+                        <Card.Header>
+                          Solar Driven (Solar Driven with Gas Burner back up)
+                        </Card.Header>
+                        <Card.Body className="d-flex">
+                          <img
+                            src="https://broadusa.com/broad/wp-content/uploads/2020/03/solar-driven-200x161.png"
+                            alt="pkgchiller"
+                            style={{
+                              objectFit: "contain",
+                            }}
+                          />
+                          <Card.Text
+                            style={{
+                              fontSize: "1rem",
+                              marginInline: "2rem",
+                              color: "#666",
+                            }}
+                          >
+                            <div
+                              style={{
+                                fontWeight: "600",
+                                fontSize: "1.2rem",
+                                color: "#444",
+                                marginLeft: "0.6rem",
+                                marginBottom: "0.8rem",
+                              }}
+                            >
+                              Features
+                            </div>
+                            <ul>
+                              <li>Capacity: 40-1000 ton</li>
+                              <li>Hot Water: 160-350F</li>
+                              <li>Gas Pressure:2.3-7.3 Psi (Standard)</li>
+                              <li>Dual Fuel Burner</li>
+                              <li>Cooling Only</li>
+                            </ul>
+                          </Card.Text>
+                        </Card.Body>
+                      </Card>
+                    </Col>
+                  </Row>
+                </Tab.Pane>
               </Tab.Content>
             </Col>
           </Row>
         </Tab.Container>
+        <br />
+        <br />
+        <ContactForm />
       </Container>
       <Footer />
     </div>

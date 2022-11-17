@@ -32,8 +32,9 @@ export default function TrustedClient() {
           }}
         >
           <img
-            src="https://broadusa.com/broad/wp-content/uploads/2020/02/marriott_logo.png"
-            alt="mariot"
+            src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3c/JSW_Group_logo.svg/1200px-JSW_Group_logo.svg.png"
+            alt="JSW"
+            style={{ width: "40%" }}
           />
         </div>
         <div
@@ -43,8 +44,9 @@ export default function TrustedClient() {
           style={{ display: "flex", justifyContent: "center" }}
         >
           <img
-            src="https://broadusa.com/broad/wp-content/uploads/2020/02/qualcomm-logo.png"
-            alt="Qualcomm"
+            src="https://download.logo.wine/logo/Indian_Oil_Corporation/Indian_Oil_Corporation-Logo.wine.png"
+            alt="IOCL"
+            style={{ width: "50%" }}
           />
         </div>
         <div
@@ -57,8 +59,9 @@ export default function TrustedClient() {
           }}
         >
           <img
-            src="https://broadusa.com/broad/wp-content/uploads/2020/02/columbia_university_logo.png"
-            alt="Columbia Uni"
+            src="https://jpplaschem.sg/img/supreme-petrochem/supreme-petrochem-logo.jpg"
+            alt="supreme"
+            style={{ width: "50%", objectFit: "cover" }}
           />
         </div>
       </div>
@@ -73,8 +76,9 @@ export default function TrustedClient() {
           }}
         >
           <img
-            src="https://broadusa.com/broad/wp-content/uploads/2020/02/princeton-university-logo2.png"
-            alt="Princeton Uni"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/ITC_Limited_Logo.svg/1200px-ITC_Limited_Logo.svg.png"
+            alt="itc"
+            style={{ width: "35%", objectFit: "cover" }}
           />
         </div>
         <div
@@ -84,8 +88,9 @@ export default function TrustedClient() {
           style={{ display: "flex", justifyContent: "center" }}
         >
           <img
-            src="https://broadusa.com/broad/wp-content/uploads/2020/02/Rutgers-University-logo.png"
-            alt="Rutgers"
+            src="https://www.gfl.co.in/assets/images/gfl-logo-new-11-11.png"
+            alt="gfl"
+            style={{ width: "50%", objectFit: "contain" }}
           />
         </div>
         <div
@@ -98,8 +103,9 @@ export default function TrustedClient() {
           }}
         >
           <img
-            src="https://broadusa.com/broad/wp-content/uploads/2020/02/metro-vancover-logo.png"
-            alt="MetroVancover"
+            src="https://logos-world.net/wp-content/uploads/2020/12/Hero-MotoCorp-Emblem.png"
+            alt="hero"
+            style={{ width: "50%", objectFit: "contain" }}
           />
         </div>
       </div>

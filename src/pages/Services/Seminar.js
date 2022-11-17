@@ -49,7 +49,7 @@ export default function Seminar() {
       </div>
       <Container>
         <br />
-        <h1>BROAD U.S.A. Complete Chiller Service Webinar Schedule on 2022</h1>
+        <h1>BROAD India Complete Chiller Service Webinar Schedule on 2022</h1>
         <br />
         <ol>
           <li>

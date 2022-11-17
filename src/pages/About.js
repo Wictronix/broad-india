@@ -17,6 +17,8 @@ import rollAbso from "../assets/images/rolling_absorbers.jpg";
 import cchp from "../assets/images/cchp.png";
 import bti from "../assets/images/broad_town_intro3.jpg";
 
+import logo from "../assets/images/logo.png";
+
 export default function About() {
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -66,13 +68,34 @@ export default function About() {
           marginBlock: "5rem",
         }}
       >
-        <p style={{ fontSize: "1.2rem", marginBottom: "5rem" }}>
-          BROAD U.S.A. is a privately held company headquartered in New Jersey,
-          supporting the sales and service to our customers in North America.
-          Relying on our innovative and environmental-friendly technology, BROAD
-          U.S.A commits itself to optimize energy efficiency for clients in
-          Commercial, Civil and Industrial markets.
-        </p>
+        <div className="row">
+          <div className="col-md-8">
+            <h2>Broad Air conditioning India Pvt. Ltd.</h2>
+            <br />
+            <ul>
+              <li>Subsidised Company of Broad group, China.</li>
+              <li>Broad has been serving India market for last 22 years.</li>
+              <li>
+                Broad India has more than 200 VAM installations, Service and O&M
+                in India.
+              </li>
+              <li>Operating Asia's biggest CHP project in DLF, Gurugram</li>
+              <li>
+                Broad chillers installed in industries: Petrochemical, Food,
+                Textile, Hospital and office
+              </li>
+            </ul>
+          </div>
+          <div className="col-md-4">
+            <img
+              src={logo}
+              alt="logo"
+              style={{ width: "80%", height: "auto" }}
+            />
+          </div>
+        </div>
+        <br />
+        <br />
         <Tab.Container id="left-tabs-example" defaultActiveKey="about">
           <Row>
             <Col sm={3}>
@@ -100,8 +123,8 @@ export default function About() {
                   <h2>About Broad India</h2>
                   <br />
                   <h4>
-                    BROAD U.S.A. is committed to the Absorption Marketplace - It
-                    is our primary business since we started in 1998
+                    BROAD India is committed to the Absorption Marketplace - It
+                    is our primary business since we started in 2001
                   </h4>
                   <br />
                   <p>

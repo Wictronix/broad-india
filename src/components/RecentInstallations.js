@@ -32,18 +32,20 @@ export default function RecentInstallations() {
           >
             <div className="card-body">
               <img
-                src="https://broadusa.com/broad/wp-content/uploads/2020/04/portfilio_mgm_features-400x400.jpg"
-                alt="mgm"
+                src="https://www.jswsteel.in/sites/default/files/assets/cache/images//facilitiesvijayanagarsection41-resize-552x290-a7542dd51f-3f1af835a4930653.png"
+                alt="jsw"
                 style={{
                   width: "100%",
+                  height: "auto",
+                  aspectRatio: "1",
                   objectFit: "cover",
                 }}
               />
               <br />
-              <h4 style={{ marginTop: "1rem" }}>MGM National Harbor</h4>
+              <h4 style={{ marginTop: "1rem" }}>JSW Bellary</h4>
               <p style={{ color: "rgba(255, 255, 255, 0.75)" }}>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Ratione, unde!
+                The JSW group is amongst the leading conglomerates in India,
+                with presence across the vital sectors of the Indian economy.
               </p>
             </div>
           </div>
@@ -57,20 +59,23 @@ export default function RecentInstallations() {
           >
             <div className="card-body">
               <img
-                src="https://broadusa.com/broad/wp-content/uploads/2020/04/portfilio-Central-Valley-Water-Reclamation-Facility-_feature-pic-400x400.jpg"
-                alt="mgm"
+                src="https://www.constructionweekonline.in/cloud/2021/11/24/StFDepyN-IOCL-6.jpg"
+                alt="iocl"
                 style={{
                   width: "100%",
+                  height: "auto",
+                  aspectRatio: "1",
                   objectFit: "cover",
                 }}
               />
               <br />
-              <h4 style={{ marginTop: "1rem" }}>
-                Central Valley Water Reclamation
-              </h4>
+              <h5 style={{ marginTop: "1rem" }}>
+                Indian Oil Corporation Vadodra, Gujarat
+              </h5>
               <p style={{ color: "rgba(255, 255, 255, 0.75)" }}>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Ratione, unde!
+                Indian Oil is India's flagship national oil company with
+                business interests straddling the entire hydrocarbon value
+                chain.
               </p>
             </div>
           </div>
@@ -84,18 +89,20 @@ export default function RecentInstallations() {
           >
             <div className="card-body">
               <img
-                src="https://broadusa.com/broad/wp-content/uploads/2020/04/prtofilio-whole-food2.jpg"
-                alt="mgm"
+                src="https://www.itcportal.com/images/cigarette-video.jpg"
+                alt="itc"
                 style={{
                   width: "100%",
+                  height: "auto",
+                  aspectRatio: "1",
                   objectFit: "cover",
                 }}
               />
               <br />
-              <h4 style={{ marginTop: "1rem" }}>Whole Foods Store</h4>
+              <h4 style={{ marginTop: "1rem" }}>ITC</h4>
               <p style={{ color: "rgba(255, 255, 255, 0.75)" }}>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Ratione, unde!
+                ITC group is one biggest business house in India. BROAD will
+                supply VAM for their 4 plants. Application- Process Cooling
               </p>
             </div>
           </div>
