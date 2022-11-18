@@ -308,9 +308,9 @@ export default function NavbarComp() {
             >
               <h3>Broad Group</h3>
             </div>
-            <Button onClick={() => (window.location = "/contactUs")}>
-              Contact Us
-            </Button>
+            <Link to="/contactUs" className="btn btn-primary">
+              Contact us
+            </Link>
             <br />
             <div style={{ display: isMobile ? "none" : "block" }}>
               {/* <Button as="Link" >Contact Us</Button> */}
