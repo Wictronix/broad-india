@@ -1,14 +1,12 @@
 import React from "react";
 import { Button, Dropdown, Offcanvas } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import logo from "../assets/images/broad-logo.png";
 
 export default function NavbarComp() {
   const [isMobile, setIsMobile] = React.useState(true);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
-  const navigate = useNavigate();
 
   React.useEffect(() => {
     setIsMobile(window.innerWidth < 768);
@@ -315,7 +313,10 @@ export default function NavbarComp() {
             </Button>
             <br />
             <div style={{ display: isMobile ? "none" : "block" }}>
-              <Button onClick={() => navigate("/contactUs")}>Contact Us</Button>
+              {/* <Button as="Link" >Contact Us</Button> */}
+              <Link to="/contactUs" className="btn btn-primary">
+                Contact us
+              </Link>
             </div>
           </div>
         </Offcanvas.Body>
