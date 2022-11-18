@@ -18,7 +18,7 @@ export default function RecentNews() {
           <div className="card mb-2">
             <div className="card-body">
               <img
-                src="http://picsum.photos/seed/n1/400"
+                src="https://broadusa.com/broad/wp-content/uploads/2020/11/trainning-800x600.jpg"
                 alt=""
                 style={{
                   width: "100%",
@@ -35,10 +35,12 @@ export default function RecentNews() {
                 Job and Career
               </h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel,
-                accusamus.
+                Job Title: HVAC Engineers (Hackensack, NJ) Job duties:
+                Install/inspect/analyze large chillers/HVAC system
+                Service/diagnose/analyze/repair products/system with experience
+                in chiller & CCHP, HVAC, green energy technology.
               </p>
-              <Link to="/article" className="btn btn-primary">
+              <Link to="/article/1" className="btn btn-primary">
                 Read more
               </Link>
             </div>
@@ -48,7 +50,7 @@ export default function RecentNews() {
           <div className="card mb-2">
             <div className="card-body">
               <img
-                src="http://picsum.photos/seed/n2/400"
+                src="https://broadusa.com/broad/wp-content/uploads/2020/04/newsWhite-Paper-on-Waste-Wa.jpg"
                 alt=""
                 style={{
                   width: "100%",
@@ -65,10 +67,12 @@ export default function RecentNews() {
                 Absorption Chillers
               </h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel,
-                accusamus.
+                There are mandatory needs and methods informed to reduce thermal
+                impacts from municipal wastewater treatment plant discharges to
+                surface water. The goal set for the reduction in effluent
+                temperature from the Waste Water Treatment Plants
               </p>
-              <Link to="/article" className="btn btn-primary">
+              <Link to="/article/2" className="btn btn-primary">
                 Read more
               </Link>
             </div>
@@ -78,7 +82,7 @@ export default function RecentNews() {
           <div className="card mb-2">
             <div className="card-body">
               <img
-                src="http://picsum.photos/seed/n3/400"
+                src="https://broadusa.com/broad/wp-content/uploads/2020/04/newsNatural-Refrigerant-H2.jpg"
                 alt=""
                 style={{
                   width: "100%",
@@ -95,10 +99,13 @@ export default function RecentNews() {
                 Environment Friendly
               </h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel,
-                accusamus.
+                Buildings account for most electricity consumed in the world
+                today, with air conditioning systems within buildings accounting
+                for over 30% of total consumption1. Compared to conventional
+                electric air conditioning, natural gas thermal absorption
+                technology
               </p>
-              <Link to="/article" className="btn btn-primary">
+              <Link to="/article/3" className="btn btn-primary">
                 Read more
               </Link>
             </div>
@@ -113,7 +120,7 @@ export default function RecentNews() {
         }}
       >
         <Link
-          to="/article"
+          to="/article/more"
           className="btn btn-outline-primary px-5 my-5 mx-auto"
         >
           More articles

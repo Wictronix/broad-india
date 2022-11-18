@@ -43,15 +43,6 @@ function HomePageCarousel() {
               >
                 For Humanity's Future
               </div>
-              <p
-                style={{ fontSize: "0.8rem" }}
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                data-aos-delay="600"
-              >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Provident, blanditiis.
-              </p>
             </div>
           </Carousel.Caption>
         </Carousel.Item>
@@ -82,10 +73,6 @@ function HomePageCarousel() {
               >
                 A new world of cooling
               </div>
-              <p style={{ fontSize: "0.8rem" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Provident, blanditiis.
-              </p>
             </div>
           </Carousel.Caption>
         </Carousel.Item>

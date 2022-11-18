@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Form, Button, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 import NavbarComp from "../components/NavbarComp";

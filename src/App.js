@@ -17,7 +17,7 @@ export default function App() {
       element: <Homepage />,
     },
     {
-      path: "/about",
+      path: "/about/",
       element: <About />,
     },
     {
@@ -37,7 +37,7 @@ export default function App() {
       element: <PEChillers />,
     },
     {
-      path: "/article",
+      path: "/article/:id",
       element: <Article />,
     },
     {

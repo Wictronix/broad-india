@@ -98,6 +98,7 @@ export default function AbsorptionChiller() {
                             }}
                           />
                           <Card.Text
+                            as="div"
                             style={{
                               fontSize: "1rem",
                               marginInline: "2rem",
@@ -142,6 +143,7 @@ export default function AbsorptionChiller() {
                             }}
                           />
                           <Card.Text
+                            as="div"
                             style={{
                               fontSize: "1rem",
                               marginInline: "2rem",
@@ -186,6 +188,7 @@ export default function AbsorptionChiller() {
                             }}
                           />
                           <Card.Text
+                            as="div"
                             style={{
                               fontSize: "1rem",
                               marginInline: "2rem",
@@ -230,6 +233,7 @@ export default function AbsorptionChiller() {
                             }}
                           />
                           <Card.Text
+                            as="div"
                             style={{
                               fontSize: "1rem",
                               marginInline: "2rem",
@@ -280,6 +284,7 @@ export default function AbsorptionChiller() {
                             }}
                           />
                           <Card.Text
+                            as="div"
                             style={{
                               fontSize: "1rem",
                               marginInline: "2rem",
@@ -325,6 +330,7 @@ export default function AbsorptionChiller() {
                             }}
                           />
                           <Card.Text
+                            as="div"
                             style={{
                               fontSize: "1rem",
                               marginInline: "2rem",
@@ -367,6 +373,7 @@ export default function AbsorptionChiller() {
                             }}
                           />
                           <Card.Text
+                            as="div"
                             style={{
                               fontSize: "1rem",
                               marginInline: "2rem",
@@ -414,6 +421,7 @@ export default function AbsorptionChiller() {
                             }}
                           />
                           <Card.Text
+                            as="div"
                             style={{
                               fontSize: "1rem",
                               marginInline: "2rem",
@@ -462,6 +470,7 @@ export default function AbsorptionChiller() {
                             }}
                           />
                           <Card.Text
+                            as="div"
                             style={{
                               fontSize: "1rem",
                               marginInline: "2rem",
@@ -508,6 +517,7 @@ export default function AbsorptionChiller() {
                             }}
                           />
                           <Card.Text
+                            as="div"
                             style={{
                               fontSize: "1rem",
                               marginInline: "2rem",
@@ -563,6 +573,7 @@ export default function AbsorptionChiller() {
                             }}
                           />
                           <Card.Text
+                            as="div"
                             style={{
                               fontSize: "1rem",
                               marginInline: "2rem",
@@ -614,6 +625,7 @@ export default function AbsorptionChiller() {
                             }}
                           />
                           <Card.Text
+                            as="div"
                             style={{
                               fontSize: "1rem",
                               marginInline: "2rem",

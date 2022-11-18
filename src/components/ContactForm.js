@@ -10,7 +10,7 @@ export default function ContactForm() {
         <div className="card-body">
           <form
             action="https://send.pageclip.co/6S2REiT1SN7CqV0e9AXuUshYIZaft5yz"
-            class="pageclip-form"
+            className="pageclip-form"
             method="post"
           >
             <div className="row mb-3">

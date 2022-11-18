@@ -38,21 +38,20 @@ export default function Sustainable() {
         </div>
         <p
           style={{
-            margin: "2rem",
+            margin: isMobile ? "1rem" : "2rem 4rem",
             marginTop: "5rem",
             fontSize: "1rem",
           }}
         >
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis
-          quasi tenetur ipsum nisi pariatur sed incidunt vitae repellendus
-          aperiam, molestias temporibus minus accusantium similique cum
-          voluptates commodi facere quibusdam doloremque placeat quidem quaerat
-          quisquam aliquid a molestiae? Aperiam facilis eveniet, aliquid
-          distinctio aliquam quos at rerum nulla, voluptatem velit similique
-          recusandae aspernatur delectus temporibus omnis voluptas inventore.
-          Suscipit nisi officia est laudantium quam placeat? Nobis accusamus,
-          est id, reprehenderit quod fugit modi tempora a ullam quam
-          perspiciatis eum optio tenetur!
+          Sustainable industrial development ensures that resources are used
+          conservatively and efficiently. To achieve resource productivity,
+          manufacturers must optimize the supply circle, analyzing how raw
+          materials are extracted, how components are produced, how products are
+          designed and how return markets are organized. Broad is focused to
+          bring the next generation of sustainable products to contribute to the
+          well being of planet earth. Broad builds power efficient absorption
+          chillers that have reduced carbon emission. Broad India realises, and
+          keeps this vision in mind, and delivers clean and green solutions.
         </p>
         <div className="row m-md-5">
           <div
