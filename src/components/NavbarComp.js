@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Dropdown, Offcanvas } from "react-bootstrap";
+import { Dropdown, Offcanvas } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import logo from "../assets/images/broad-logo.png";
@@ -172,9 +172,9 @@ export default function NavbarComp() {
             </div>
             <br />
             <div style={{ display: isMobile ? "none" : "block" }}>
-              <Button onClick={() => (window.location = "/contactUs")}>
-                Contact Us
-              </Button>
+              <Link to="/contactUs" className="btn btn-primary">
+                Contact us
+              </Link>
             </div>
           </div>
         )}

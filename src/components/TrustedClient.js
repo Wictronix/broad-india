@@ -103,9 +103,9 @@ export default function TrustedClient() {
           }}
         >
           <img
-            src="https://logos-world.net/wp-content/uploads/2020/12/Hero-MotoCorp-Emblem.png"
+            src="https://imgs.search.brave.com/SnU0NkktO2S-wIQ__3_bn7LPebAKBFqsL4EHVJ0N_7c/rs:fit:420:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5I/OGg3Q0U3QzJuOVlU/UEhfWWNPZ09BSGFJ/VyZwaWQ9QXBp"
             alt="hero"
-            style={{ width: "50%", objectFit: "contain" }}
+            style={{ width: "35%", objectFit: "contain" }}
           />
         </div>
       </div>
