@@ -3,6 +3,9 @@ import { Container } from "react-bootstrap";
 import Footer from "../../components/Footer";
 import NavbarComp from "../../components/NavbarComp";
 
+import nonElec from "../../assets/images/nonElec.jpg";
+import wasteHeat from "../../assets/images/wasteHeat.jpg";
+
 export default function NonElectricChiller() {
   const [isMobile, setIsMobile] = React.useState(true);
   React.useEffect(() => {
@@ -54,11 +57,7 @@ export default function NonElectricChiller() {
         <div className="row">
           <h1>Direct Fired Chiller</h1>
           <div className="col-md-6 mt-3">
-            <img
-              src="http://en.broad.com/storage/products/mthumb1/7c446105b8934d4ab4118848e2d3270a.jpg"
-              alt="dfc"
-              style={{ width: "100%" }}
-            />
+            <img src={nonElec} alt="dfc" style={{ width: "100%" }} />
           </div>
           <div className="col-md-6 ps-md-1">
             <h4>Function</h4>
@@ -119,11 +118,7 @@ export default function NonElectricChiller() {
             </a>
           </div>
           <div className="col-md-6">
-            <img
-              src="http://en.broad.com/storage/products/mthumb1/66f0693856044fdb978539403af6dfc4.jpg"
-              alt="dfc"
-              style={{ width: "100%" }}
-            />
+            <img src={wasteHeat} alt="dfc" style={{ width: "100%" }} />
           </div>
         </div>
       </Container>
