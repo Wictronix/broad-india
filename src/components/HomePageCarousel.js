@@ -3,7 +3,7 @@ import { Carousel } from "react-bootstrap";
 
 import broadBG1 from "../assets/images/broad-bg-1.jpg";
 import broadBG2 from "../assets/images/broad-bg-2.jpg";
-import broadBG3 from "../assets/images/green.webp";
+import broadBG3 from "../assets/images/bg3.jpeg";
 
 function HomePageCarousel() {
   const [isMobile, setIsMobile] = React.useState(false);
@@ -99,11 +99,11 @@ function HomePageCarousel() {
             >
               <div
                 style={{
-                  fontSize: isMobile ? "2rem" : "4rem",
+                  fontSize: isMobile ? "2rem" : "3rem",
                   textTransform: "uppercase",
                 }}
               >
-                Serving India for 22 years.{" "}
+                Serving India for 22 years{" "}
               </div>
             </div>
           </Carousel.Caption>
