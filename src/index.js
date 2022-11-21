@@ -3,8 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 
 import "./assets/css/aos.css";
-// import "bootstrap/dist/css/bootstrap.min.css";
-import "./custom.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

@@ -12,7 +12,8 @@ export default function RecentInstallations() {
         width: "100%",
         marginBlock: "10rem",
         paddingBlock: "5rem",
-        backgroundImage: "linear-gradient(to top, green, rgb(0, 200, 0)) ",
+        backgroundImage:
+          "linear-gradient(to top, rgb(13, 80, 253), rgb(13, 110, 253)) ",
         padding: isMobile ? "0.5rem" : "2rem",
         color: "white",
       }}

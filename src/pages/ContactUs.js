@@ -4,6 +4,8 @@ import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 import NavbarComp from "../components/NavbarComp";
 
+import bg from "../assets/images/contactBG.jpg";
+
 export default function ContactUs() {
   const [isMobile, setIsMobile] = React.useState(true);
   React.useEffect(() => {
@@ -18,8 +20,7 @@ export default function ContactUs() {
         style={{
           width: "100%",
           height: "75vh",
-          backgroundImage:
-            "url('https://broadusa.com/broad/wp-content/uploads/2020/03/contact-us.jpg')",
+          backgroundImage: `url(${bg})`,
           backgroundOrigin: "center",
           backgroundAttachment: "fixed",
           display: "flex",
@@ -62,11 +63,11 @@ export default function ContactUs() {
             <ContactForm />
           </div>
           <div className="col-md-3">
-            <div className="card">
+            <div className="card mx-2">
               <div className="card-header">Contact Details</div>
               <div className="card-body">
-                <h3>Akshay Mangal</h3>
-                <div>Customer manager</div>
+                <h3>Broad India</h3>
+                <div></div>
                 <br />
                 <div className="d-flex mb-1">
                   <svg

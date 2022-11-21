@@ -9,6 +9,9 @@ import Installations from "./pages/Services/Installations";
 import PEChillers from "./pages/Products/PEChillers";
 import Article from "./pages/Article";
 import Seminar from "./pages/Services/Seminar";
+import NonElectricChiller from "./pages/Products/NonElectricChiller";
+import CCHPSystem from "./pages/Products/CCHPSystem";
+import BroadGroup from "./pages/BroadGroup";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -37,12 +40,24 @@ export default function App() {
       element: <PEChillers />,
     },
     {
+      path: "/nonElectricChiller",
+      element: <NonElectricChiller />,
+    },
+    {
+      path: "/cchpSystem",
+      element: <CCHPSystem />,
+    },
+    {
       path: "/article/:id",
       element: <Article />,
     },
     {
       path: "/seminar",
       element: <Seminar />,
+    },
+    {
+      path: "/broadGroup",
+      element: <BroadGroup />,
     },
   ]);
 

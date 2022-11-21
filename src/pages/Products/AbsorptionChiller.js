@@ -61,25 +61,32 @@ export default function AbsorptionChiller() {
         <Tab.Container id="left-tabs-example" defaultActiveKey="twoStage">
           <Row>
             <Col sm={3}>
-              <Nav variant="pills" className="flex-column">
-                <Nav.Item>
-                  <Nav.Link eventKey="twoStage">Two Stage</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="singleStage">Single State</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="multiEnergy">Multi Energy</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="packageChillers">
-                    Package Chillers
-                  </Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="solarDriven">Solar Driven</Nav.Link>
-                </Nav.Item>
-              </Nav>
+              <div
+                style={{
+                  backgroundColor: "rgba(0, 110, 253, 0.2)",
+                  borderRadius: "0.5rem",
+                }}
+              >
+                <Nav variant="pills" className="flex-column">
+                  <Nav.Item>
+                    <Nav.Link eventKey="twoStage">Two Stage</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="singleStage">Single State</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="multiEnergy">Multi Energy</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="packageChillers">
+                      Package Chillers
+                    </Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="solarDriven">Solar Driven</Nav.Link>
+                  </Nav.Item>
+                </Nav>
+              </div>
             </Col>
             <Col sm={9}>
               <Tab.Content>

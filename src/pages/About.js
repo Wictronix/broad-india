@@ -1,23 +1,15 @@
 import React from "react";
-import {
-  Card,
-  Container,
-  ListGroup,
-  Row,
-  Col,
-  Tab,
-  Nav,
-  Accordion,
-} from "react-bootstrap";
+import { Container, Row, Col, Tab, Nav, Accordion } from "react-bootstrap";
 import Footer from "../components/Footer";
 import NavbarComp from "../components/NavbarComp";
 
-import bg from "../assets/images/aboutBG.jpg";
+// import bg from "../assets/images/aboutBG.jpg";
 import rollAbso from "../assets/images/rolling_absorbers.jpg";
-import cchp from "../assets/images/cchp.png";
+// import cchp from "../assets/images/cchp.png";
 import bti from "../assets/images/broad_town_intro3.jpg";
 
 import logo from "../assets/images/logo.png";
+import bg from "../assets/images/broadIndGrp.jpeg";
 
 export default function About() {
   React.useEffect(() => {
@@ -32,8 +24,9 @@ export default function About() {
           width: "100%",
           height: "75vh",
           backgroundImage: `url(${bg})`,
-          backgroundOrigin: "center",
-          backgroundAttachment: "fixed",
+          // backgroundOrigin: "initial",
+          // backgroundAttachment: "fixed",
+          backgroundSize: "cover",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -99,23 +92,36 @@ export default function About() {
         <Tab.Container id="left-tabs-example" defaultActiveKey="about">
           <Row>
             <Col sm={3}>
-              <Nav variant="pills" className="flex-column">
-                <Nav.Item>
-                  <Nav.Link eventKey="about">About</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="bthq">Broad Town HQ</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="culture">Our Culture</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="values">Core Values</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="FAQ">FAQ</Nav.Link>
-                </Nav.Item>
-              </Nav>
+              <div
+                // className="card"
+                style={{
+                  backgroundColor: "rgba(0, 110, 253, 0.2)",
+                  borderRadius: "0.5rem",
+                }}
+              >
+                <Nav variant="pills" className="flex-column">
+                  <Nav.Item>
+                    <Nav.Link eventKey="about">About</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="awards">
+                      Awards and Recognition
+                    </Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="culture">Our Culture</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="values">Core Values</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="bthq">Broad Town HQ</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="FAQ">FAQ</Nav.Link>
+                  </Nav.Item>
+                </Nav>
+              </div>
             </Col>
             <Col sm={9}>
               <Tab.Content>
@@ -152,20 +158,6 @@ export default function About() {
                     plus counties.
                   </div>
                   <br />
-                  <h4>Broad supports CCHP/Co-generation</h4>
-                  <br />
-                  <div className="d-flex flex-column flex-md-row-reverse">
-                    <img src={cchp} alt="rolling absorber" className="me-2" />
-                    BROAD has worked closely with the US Department of Energy
-                    (DOE) to cchpassist in some early US-based demonstration
-                    deployments of high-efficiency solutions to co-generation
-                    heat recovery. A prime example of this early cooperation was
-                    the demonstration site at Fort Bragg in North Carolina “The
-                    82nd Airborne” back in 2001 BROAD USA is an active member of
-                    the USCHP and EPA CHP partnership. Broad is assisting in the
-                    August 2012 executive order to deploy over 40GW of CHP by
-                    2020.
-                  </div>
                 </Tab.Pane>
                 <Tab.Pane eventKey="bthq">
                   <h2>A Brief Introduction of BROAD Town</h2>
@@ -277,6 +269,30 @@ export default function About() {
                     service no one else can provide. So what sort of enterprise
                     does that make us?
                   </p>
+                </Tab.Pane>
+                <Tab.Pane eventKey="awards">
+                  <h2>Awards and Recognitions</h2>
+                  <br />
+                  <br />
+                  <img
+                    src="http://en.broad.com/Storage/uploads/201512/20151231093755_5959.jpg"
+                    alt="coe"
+                    style={{ width: "100%" }}
+                  />
+                  <br />
+                  <br />
+                  <img
+                    src="http://en.broad.com/Storage/uploads/201512/20151231100601_6937.jpg"
+                    alt="ch"
+                    style={{ width: "100%" }}
+                  />
+                  <br />
+                  <br />
+                  <img
+                    src="http://en.broad.com/Storage/uploads/201601/20160119165641_8854.jpg"
+                    alt="100"
+                    style={{ width: "100%" }}
+                  />
                 </Tab.Pane>
                 <Tab.Pane eventKey="FAQ">
                   <h2>FAQ</h2>

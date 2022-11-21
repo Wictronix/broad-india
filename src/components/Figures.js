@@ -24,7 +24,7 @@ export default function Figures() {
           height: "100%",
           borderRadius: "2rem",
           backgroundImage:
-            "linear-gradient(to bottom, rgba(0, 150, 0, 0.8), rgba(0, 150, 0, 0.5))",
+            "linear-gradient(to bottom, rgba(13, 110, 253, 0.8), rgba(13, 110, 253, 0.5))",
           display: "flex",
           flexDirection: isMobile ? "column" : "row",
           alignItems: "center",

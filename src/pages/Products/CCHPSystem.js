@@ -3,7 +3,9 @@ import { Container } from "react-bootstrap";
 import Footer from "../../components/Footer";
 import NavbarComp from "../../components/NavbarComp";
 
-export default function PEChillers() {
+import cchp from "../../assets/images/cchp.jpg";
+
+export default function CCHPSystem() {
   const [isMobile, setIsMobile] = React.useState(true);
   React.useEffect(() => {
     setIsMobile(window.innerWidth < 768);
@@ -46,22 +48,19 @@ export default function PEChillers() {
             }}
             data-aos="fade-up"
           >
-            Power Efficient Chillers
+            Broad CCHP
           </div>
         </div>
       </div>
       <Container style={{ margin: isMobile ? "1rem 0.5rem" : "5rem 10rem" }}>
-        <div className="display-6 mb-4">BROAD Magnetic bearing chiller</div>
+        <div className="display-6 mb-4">COMBINED COOLING-HEATING-POWER</div>
         <div className="row">
-          <div className="col-md-4">
-            <img
-              src="https://broadusa.com/broad/wp-content/uploads/2020/04/Magnetic-bearing-chiller.jpg"
-              alt="pec"
-              style={{ width: "100%" }}
-            />
+          <div className="col-md-12">
+            <img src={cchp} alt="cchp" style={{ width: "100%" }} />
           </div>
-          <div className="col-md-1"></div>
-          <div className="col-md-7">
+          <br />
+          <br />
+          <div className="col-md-12 mt-3">
             <ul>
               <li>Cooling capacity ranging from 150 ton to 2000 ton</li>
               <li>The Danfoss Turbocor, Portfolio of Oil free Compressors</li>

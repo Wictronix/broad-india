@@ -74,8 +74,6 @@ export default function Installations() {
                 <div className="card-text">
                   The JSW group is amongst the leading conglomerates in India,
                   with presence across the vital sectors of the Indian economy.
-                  Cooling capacity: 16198 kW Model: BS400*4 unit Heat Source:
-                  Steam Shipment date: July 2007, November 2012
                 </div>
               </div>
             </div>
@@ -97,9 +95,7 @@ export default function Installations() {
                 <div className="card-text">
                   Indian Oil is India's flagship national oil company with
                   business interests straddling the entire hydrocarbon value
-                  chain., Cooling capacity: 7,926kW, Model:
-                  BS318X0.44-37.5/32-9/18-400* 2, Heat Source: Steam, Shipment
-                  date: September 2013
+                  chain.
                 </div>
               </div>
             </div>
@@ -121,9 +117,7 @@ export default function Installations() {
                 <div className="card-text">
                   ITC group is one biggest business house in India. BROAD will
                   supply VAM for their 4 plants. Application- Process Cooling
-                  Location: Haridwar, Kolkata, Pune, Trichy , Cooling capacity:
-                  886*4 = 3544kW , Model: BDS*4 units , Heat Source: Steam from
-                  PC fryer ,Shipment date: Jan, 2020
+                  Location: Haridwar, Kolkata, Pune, Trichy
                 </div>
               </div>
             </div>
@@ -150,9 +144,7 @@ export default function Installations() {
                 <div className="card-text">
                   Supreme Petrochem Ltd is India's largest producer and exporter
                   of polystyrene polymer Application- Process Cooling Location:
-                  Roha Mumbai , Cooling capacity: 350TR *1 Chiller (Single Stage
-                  Hot Water Chiller) , Model: BDH , Heat Source: Hot Water from
-                  Gas Engine ,Shipment date: 2010
+                  Roha Mumbai/
                 </div>
               </div>
             </div>
@@ -174,10 +166,7 @@ export default function Installations() {
                 <div className="card-text">
                   It is the biggest CCHP case in the world. This project
                   successfully set up an outstanding case for studying
-                  distribution energy system in the world. , Cooling capacity
-                  275MW , Model: BE1000*8; BZHE400*14; BZHE150*11 , Heat source:
-                  exhaust & jacket water, natural gas , Shipment date: April,
-                  2005
+                  distribution energy system in the world.
                 </div>
               </div>
             </div>
@@ -199,9 +188,7 @@ export default function Installations() {
                 <div className="card-text">
                   Gujarat Gas is India's largest city gas distribution player
                   with presence spread across 19 Districts in the State of
-                  Gujarat , Cooling capacity: 410 kW , Model: BZ25 & BZ15 2
-                  units , Heat Source: Natural gas , Shipment date: December
-                  2005 & September 2009
+                  Gujarat
                 </div>
               </div>
             </div>

@@ -11,14 +11,14 @@ export default function RecentNews() {
     if (window.innerHeight > window.innerWidth) setIsMobile(true);
   }, []);
   return (
-    <div style={{ padding: isMobile ? "0" : "5rem" }}>
+    <div>
       <div className="display-5 text-center mb-5">Articles</div>
       <div className="row" style={{ marginInline: isMobile ? 0 : "5rem" }}>
         <div className="col-md-4">
           <div className="card mb-2">
             <div className="card-body">
               <img
-                src="https://broadusa.com/broad/wp-content/uploads/2020/11/trainning-800x600.jpg"
+                src="https://www.prysmiangroup.com/sites/default/files/thumbnails/image/banner-sustainable-energy-1150x650.png"
                 alt=""
                 style={{
                   width: "100%",
@@ -32,13 +32,48 @@ export default function RecentNews() {
                   fontWeight: "600",
                 }}
               >
-                Job and Career
+                Sustainablility in Action
               </h4>
               <p>
-                Job Title: HVAC Engineers (Hackensack, NJ) Job duties:
-                Install/inspect/analyze large chillers/HVAC system
-                Service/diagnose/analyze/repair products/system with experience
-                in chiller & CCHP, HVAC, green energy technology.
+                Use as a basis for class discussion rather than to illustrate
+                either effective or ineffective handling of an administrative
+                situation. A real approach to sustainable development for higher
+                life quality on the environment.
+              </p>
+              <a
+                href="http://en.broad.com/Storage/article/d86c3db4c155464b9fe10dbf82db7c7f.pdf"
+                className="btn btn-primary"
+              >
+                Read more
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-md-4">
+          <div className="card mb-2">
+            <div className="card-body">
+              <img
+                src="https://m.economictimes.com/thumb/msid-69127844,width-1200,height-900,resizemode-4,imgsize-347903/construction-site-generators-types-features-of-generators-used-at-construction-sites.jpg"
+                alt=""
+                style={{
+                  width: "100%",
+                  height: "16rem",
+                  objectFit: "cover",
+                }}
+              />
+              <h4
+                style={{
+                  marginBlock: "1rem",
+                  fontWeight: "600",
+                }}
+              >
+                Rethink Conventinal Construction{" "}
+              </h4>
+              <p>
+                Traditional construction practices can be costly, inefficient,
+                and detrimental on the environment, In this article, Zhang Yue,
+                CEO, Broad group reflectes how industry can change.
               </p>
               <Link to="/article/1" className="btn btn-primary">
                 Read more
@@ -46,11 +81,12 @@ export default function RecentNews() {
             </div>
           </div>
         </div>
+
         <div className="col-md-4">
           <div className="card mb-2">
             <div className="card-body">
               <img
-                src="https://broadusa.com/broad/wp-content/uploads/2020/04/newsWhite-Paper-on-Waste-Wa.jpg"
+                src="https://media.proprofs.com/images/QM/user_images/2503852/New%20Project%20(68)(134).jpg"
                 alt=""
                 style={{
                   width: "100%",
@@ -64,48 +100,14 @@ export default function RecentNews() {
                   fontWeight: "600",
                 }}
               >
-                Absorption Chillers
+                World's Top 25 eco Innovators{" "}
               </h4>
               <p>
-                There are mandatory needs and methods informed to reduce thermal
-                impacts from municipal wastewater treatment plant discharges to
-                surface water. The goal set for the reduction in effluent
-                temperature from the Waste Water Treatment Plants
+                Fortune presents our inaugural list of the World's Top 25
+                Eco-Innovators. To identify them, we surveyed dozens of experts
+                in the sustainability world. Here's the report article.
               </p>
-              <Link to="/article/2" className="btn btn-primary">
-                Read more
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-4">
-          <div className="card mb-2">
-            <div className="card-body">
-              <img
-                src="https://broadusa.com/broad/wp-content/uploads/2020/04/newsNatural-Refrigerant-H2.jpg"
-                alt=""
-                style={{
-                  width: "100%",
-                  height: "16rem",
-                  objectFit: "cover",
-                }}
-              />
-              <h4
-                style={{
-                  marginBlock: "1rem",
-                  fontWeight: "600",
-                }}
-              >
-                Environment Friendly
-              </h4>
-              <p>
-                Buildings account for most electricity consumed in the world
-                today, with air conditioning systems within buildings accounting
-                for over 30% of total consumption1. Compared to conventional
-                electric air conditioning, natural gas thermal absorption
-                technology
-              </p>
-              <Link to="/article/3" className="btn btn-primary">
+              <Link to="/article/4" className="btn btn-primary">
                 Read more
               </Link>
             </div>

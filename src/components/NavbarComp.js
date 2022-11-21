@@ -112,6 +112,17 @@ export default function NavbarComp() {
               >
                 <Dropdown.Item>
                   <Link
+                    to="/nonElectricChiller"
+                    style={{
+                      textDecoration: "none",
+                      color: "black",
+                    }}
+                  >
+                    Non-Electric Chiller{" "}
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link
                     to="/absorptionChiller"
                     style={{
                       textDecoration: "none",
@@ -119,6 +130,17 @@ export default function NavbarComp() {
                     }}
                   >
                     Absorption Chiller
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link
+                    to="/cchpSystem"
+                    style={{
+                      textDecoration: "none",
+                      color: "black",
+                    }}
+                  >
+                    Broad CCHP System{" "}
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item>
@@ -157,19 +179,18 @@ export default function NavbarComp() {
             >
               About
             </Link>
-            <div
+            <Link
               style={{
                 marginLeft: "0.8rem",
                 marginRight: "1.2rem",
                 textDecoration: "none",
                 cursor: "pointer",
+                color: "#333",
               }}
-              onClick={() => {
-                window.location.href = "http://en.broad.com/";
-              }}
+              to="/broadGroup"
             >
               Broad Group
-            </div>
+            </Link>
             <br />
             <div style={{ display: isMobile ? "none" : "block" }}>
               <Link to="/contactUs" className="btn btn-primary">
@@ -237,6 +258,26 @@ export default function NavbarComp() {
             >
               Power efficient Chiller
             </Link>
+            <Link
+              to="/nonElectricChiller"
+              style={{
+                textDecoration: "none",
+                color: "black",
+                marginBottom: "0.5rem",
+              }}
+            >
+              Non-Electric Chiller
+            </Link>
+            <Link
+              to="/cchpSystem"
+              style={{
+                textDecoration: "none",
+                color: "black",
+                marginBottom: "0.5rem",
+              }}
+            >
+              Broad CCHP System{" "}
+            </Link>
             {/* <Link
               to="/peChillers"
               style={{
@@ -293,21 +334,19 @@ export default function NavbarComp() {
             >
               <h3>About</h3>
             </Link>
-            <div
+            <Link
               style={{
                 marginLeft: "0.8rem",
                 marginRight: "1.2rem",
                 marginBottom: "1rem",
                 textDecoration: "none",
-                color: "green",
                 cursor: "pointer",
+                color: "#333",
               }}
-              onClick={() => {
-                window.location.href = "http://en.broad.com/";
-              }}
+              to="/broadGroup"
             >
               <h3>Broad Group</h3>
-            </div>
+            </Link>
             <Link to="/contactUs" className="btn btn-primary">
               Contact us
             </Link>
