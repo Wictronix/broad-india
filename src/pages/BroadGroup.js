@@ -46,7 +46,7 @@ export default function BroadGroup() {
             }}
             data-aos="fade-up"
           >
-            Broad Group{" "}
+            BROAD Group{" "}
           </div>
         </div>
       </div>

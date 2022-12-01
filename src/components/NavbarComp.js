@@ -189,7 +189,7 @@ export default function NavbarComp() {
               }}
               to="/broadGroup"
             >
-              Broad Group
+              BROAD Group
             </Link>
             <br />
             <div style={{ display: isMobile ? "none" : "block" }}>
@@ -276,7 +276,7 @@ export default function NavbarComp() {
                 marginBottom: "0.5rem",
               }}
             >
-              Broad CCHP System{" "}
+              BROAD CCHP System{" "}
             </Link>
             {/* <Link
               to="/peChillers"
@@ -345,7 +345,7 @@ export default function NavbarComp() {
               }}
               to="/broadGroup"
             >
-              <h3>Broad Group</h3>
+              <h3>BROAD Group</h3>
             </Link>
             <Link to="/contactUs" className="btn btn-primary">
               Contact us

@@ -48,7 +48,7 @@ export default function CCHPSystem() {
             }}
             data-aos="fade-up"
           >
-            Broad CCHP
+            BROAD CCHP
           </div>
         </div>
       </div>

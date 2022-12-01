@@ -15,7 +15,7 @@ export default function CoreValues() {
         Every day, BROAD India aims to demonstrate our loyalty to our customers,
         fairness to our vendors, and dedication to our employees.
         <br />
-        Long term relationships are more important than gains or losses.
+        Long-term relationships are more important than gains or losses.
       </div>
       <div
         className="row"
@@ -38,6 +38,7 @@ export default function CoreValues() {
                 justifyContent: "space-evenly",
                 alignItems: "center",
                 paddingBlock: "2rem",
+                height: "450px",
               }}
             >
               <div
@@ -101,6 +102,7 @@ export default function CoreValues() {
                 justifyContent: "space-evenly",
                 alignItems: "center",
                 paddingBlock: "2rem",
+                height: "450px",
               }}
             >
               <div
@@ -161,6 +163,7 @@ export default function CoreValues() {
                 justifyContent: "space-evenly",
                 alignItems: "center",
                 paddingBlock: "2rem",
+                height: "450px",
               }}
             >
               <div

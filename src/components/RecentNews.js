@@ -73,7 +73,7 @@ export default function RecentNews() {
               <p>
                 Traditional construction practices can be costly, inefficient,
                 and detrimental on the environment, In this article, Zhang Yue,
-                CEO, Broad group reflectes how industry can change.
+                CEO, BROAD group reflectes how industry can change.
               </p>
               <Link to="/article/1" className="btn btn-primary">
                 Read more

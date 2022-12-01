@@ -63,61 +63,13 @@ export default function SpecialistsProduct() {
                     <h2>Non-Electric Chillers</h2>
                     <p>
                       Building Central A/C System &amp; Domestic Hot Water.
-                      Providing cooling with fuel saves 4-time energy
-                      conversions.
+                      Providing cooling with fuel saving caused by 4 times' less
+                      energy conversions.
                     </p>
                   </div>
                 </div>
               </div>
-              <div
-                className="col-md-3"
-                style={{ paddingRight: "1rem", marginBottom: "1rem" }}
-              >
-                <div
-                  className="shadow"
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                  style={{
-                    height: "26rem",
-                    borderRadius: "1rem",
-                    padding: "1rem 2rem",
-                    backgroundColor: "#fff",
-                    transform: mouseIdx === 2 ? "scale(1.1)" : "scale(1)",
-                    cursor: "pointer",
-                  }}
-                  onMouseEnter={() => setMouseIdx(2)}
-                  onMouseLeave={() => setMouseIdx(-1)}
-                  onClick={() => navigate("/absorptionChiller")}
-                >
-                  <div
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      textAlign: "center",
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "space-evenly",
-                      alignItems: "center",
-                    }}
-                  >
-                    <img
-                      src="https://broadusa.com/broad/wp-content/uploads/2020/05/WeChat-Image_20200513110329-300x207.jpg"
-                      alt="ahp"
-                      style={{
-                        width: "85%",
-                        height: "auto",
-                        marginBottom: "8px",
-                      }}
-                    />
-                    <h2>Absorption Heat Pumps</h2>
-                    <p>
-                      Pumping Heat from lower Temperature to Medium Temperature
-                      using High Grade Energy. It is VARIATION of single stage
-                      absorption chiller
-                    </p>
-                  </div>
-                </div>
-              </div>
+
               <div
                 className="col-md-3"
                 style={{ paddingRight: "1rem", marginBottom: "1rem" }}
@@ -158,10 +110,10 @@ export default function SpecialistsProduct() {
                         marginBottom: "8px",
                       }}
                     />
-                    <h2>Broad CCHP System</h2>
+                    <h2>BROAD CCHP System</h2>
                     <p>
                       Achieves Zero Emission with Exhaust Heat as Power Source -
-                      The CHP System powered by exhaust heat from generator.
+                      The CCHP System powered by exhaust heat from generator.
                     </p>
                   </div>
                 </div>
@@ -210,6 +162,54 @@ export default function SpecialistsProduct() {
                     <p>
                       Cooling capacity ranging from 150 ton to 2000 ton, High
                       COP (6.5) and excellent IPLV ( maximum 13.26)
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="col-md-3"
+                style={{ paddingRight: "1rem", marginBottom: "1rem" }}
+              >
+                <div
+                  className="shadow"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                  style={{
+                    height: "26rem",
+                    borderRadius: "1rem",
+                    padding: "1rem 2rem",
+                    backgroundColor: "#fff",
+                    transform: mouseIdx === 2 ? "scale(1.1)" : "scale(1)",
+                    cursor: "pointer",
+                  }}
+                  onMouseEnter={() => setMouseIdx(2)}
+                  onMouseLeave={() => setMouseIdx(-1)}
+                  onClick={() => navigate("/absorptionChiller")}
+                >
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      textAlign: "center",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "space-evenly",
+                      alignItems: "center",
+                    }}
+                  >
+                    <img
+                      src="https://broadusa.com/broad/wp-content/uploads/2020/05/WeChat-Image_20200513110329-300x207.jpg"
+                      alt="ahp"
+                      style={{
+                        width: "85%",
+                        height: "auto",
+                        marginBottom: "8px",
+                      }}
+                    />
+                    <h2>Absorption Heat Pumps</h2>
+                    <p>
+                      Pumping Heat from lower Temperature to Medium Temperature
+                      using High Grade Energy.
                     </p>
                   </div>
                 </div>

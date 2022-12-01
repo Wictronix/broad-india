@@ -47,10 +47,10 @@ export default function Sustainable() {
           conservatively and efficiently. To achieve resource productivity,
           manufacturers must optimize the supply circle, analyzing how raw
           materials are extracted, how components are produced, how products are
-          designed and how return markets are organized. Broad is focused to
+          designed and how return markets are organized. BROAD is focused to
           bring the next generation of sustainable products to contribute to the
-          well being of planet earth. Broad builds power efficient absorption
-          chillers that have reduced carbon emission. Broad India realises, and
+          well being of planet earth. BROAD builds power efficient absorption
+          chillers that have reduced carbon emission. BROAD India realises, and
           keeps this vision in mind, and delivers clean and green solutions.
         </p>
         <div className="row m-md-5">

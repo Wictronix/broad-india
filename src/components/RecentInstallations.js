@@ -31,7 +31,7 @@ export default function RecentInstallations() {
             style={{ backgroundColor: "rgba(255, 255, 255, 0.4)" }}
             data-aos="fade-right"
           >
-            <div className="card-body">
+            <div className="card-body" style={{ minHeight: "500px" }}>
               <img
                 src="https://www.jswsteel.in/sites/default/files/assets/cache/images//facilitiesvijayanagarsection41-resize-552x290-a7542dd51f-3f1af835a4930653.png"
                 alt="jsw"
@@ -58,7 +58,7 @@ export default function RecentInstallations() {
             data-aos="fade-right"
             data-aos-delay="100"
           >
-            <div className="card-body">
+            <div className="card-body" style={{ minHeight: "500px" }}>
               <img
                 src="https://www.constructionweekonline.in/cloud/2021/11/24/StFDepyN-IOCL-6.jpg"
                 alt="iocl"
@@ -88,7 +88,7 @@ export default function RecentInstallations() {
             data-aos="fade-right"
             data-aos-delay="200"
           >
-            <div className="card-body">
+            <div className="card-body" style={{ minHeight: "500px" }}>
               <img
                 src="https://www.itcportal.com/images/cigarette-video.jpg"
                 alt="itc"

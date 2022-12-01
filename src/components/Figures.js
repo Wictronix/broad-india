@@ -34,14 +34,13 @@ export default function Figures() {
       >
         <div>
           <div style={{ fontWeight: "600" }}>
-            <div style={{ fontSize: "4rem" }}>
+            <div style={{ fontSize: "4rem", textAlign: "center" }}>
               <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
                 {({ isVisible }) => (
                   <div style={{ height: 100 }}>
                     {isVisible ? (
                       <>
                         <CountUp end={90} />
-                        k+
                       </>
                     ) : null}
                   </div>
@@ -49,23 +48,18 @@ export default function Figures() {
               </VisibilitySensor>
             </div>
             <br />
-            <div style={{ textAlign: "center" }}>Saved Trees</div>
+            <div style={{ textAlign: "center" }}>Thosand+ trees Saved</div>
           </div>
         </div>
         <div>
           <div style={{ fontWeight: "600" }}>
-            <div style={{ fontSize: "4rem" }}>
+            <div style={{ fontSize: "4rem", textAlign: "center" }}>
               <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
                 {({ isVisible }) => (
                   <div style={{ height: 100 }}>
                     {isVisible ? (
                       <>
-                        <CountUp
-                          end={235}
-                          style={{
-                            marginLeft: "2.5rem",
-                          }}
-                        />
+                        <CountUp end={122} style={{ marginInline: "auto" }} />
                       </>
                     ) : null}
                   </div>
@@ -74,17 +68,21 @@ export default function Figures() {
             </div>
             <br />
             <div style={{ textAlign: "center" }}>
-              Reduction in Carbon Footpring
+              TCO2e Reduction in Carbon Footpring
             </div>
           </div>
         </div>
         <div>
           <div style={{ fontWeight: "600" }}>
-            <div style={{ fontSize: "4rem" }}>
+            <div style={{ fontSize: "4rem", textAlign: "center" }}>
               <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
                 {({ isVisible }) => (
                   <div style={{ height: 100 }}>
-                    {isVisible ? <CountUp end={125} /> : null}
+                    {isVisible ? (
+                      <>
+                        <CountUp end={125} />
+                      </>
+                    ) : null}
                   </div>
                 )}
               </VisibilitySensor>

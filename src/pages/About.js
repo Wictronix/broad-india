@@ -26,6 +26,7 @@ export default function About() {
           backgroundImage: `url(${bg})`,
           // backgroundOrigin: "initial",
           // backgroundAttachment: "fixed",
+          backgroundPosition: "center",
           backgroundSize: "cover",
           display: "flex",
           justifyContent: "center",
@@ -63,13 +64,13 @@ export default function About() {
       >
         <div className="row">
           <div className="col-md-8">
-            <h2>Broad Air conditioning India Pvt. Ltd.</h2>
+            <h2>BROAD Air conditioning India Pvt. Ltd.</h2>
             <br />
             <ul>
-              <li>Subsidised Company of Broad group, China.</li>
-              <li>Broad has been serving India market for last 22 years.</li>
+              <li>Subsidised Company of BROAD group, China.</li>
+              <li>BROAD has been serving India market for last 22 years.</li>
               <li>
-                Broad India has more than 200 VAM installations, Service and O&M
+                BROAD India has more than 200 VAM installations, Service and O&M
                 in India.
               </li>
               <li>Operating Asia's biggest CHP project in DLF, Gurugram</li>
@@ -115,7 +116,7 @@ export default function About() {
                     <Nav.Link eventKey="values">Core Values</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="bthq">Broad Town HQ</Nav.Link>
+                    <Nav.Link eventKey="bthq">BROAD Town HQ</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
                     <Nav.Link eventKey="FAQ">FAQ</Nav.Link>
@@ -126,7 +127,7 @@ export default function About() {
             <Col sm={9}>
               <Tab.Content>
                 <Tab.Pane eventKey="about">
-                  <h2>About Broad India</h2>
+                  <h2>About BROAD India</h2>
                   <br />
                   <h4>
                     BROAD India is committed to the Absorption Marketplace - It
@@ -134,9 +135,9 @@ export default function About() {
                   </h4>
                   <br />
                   <p>
-                    Broad is dedicated and focused on ensuring our owners can
-                    always find proper training, service and after sale support
-                    with replacement parts and or units. Broad is committed to
+                    BROAD is dedicated and focused on ensuring our owners can
+                    always find proper training, service and after sales support
+                    with replacement parts and or units. BROAD is committed to
                     the inherent value and flexible solutions that thermally
                     driven absorption plays in our modern world.
                   </p>
@@ -150,10 +151,10 @@ export default function About() {
                       className="me-2"
                     />
                     Absorption design is our core competency and primary focus.
-                    Unlike many current players in the absorption market, Broad
+                    Unlike many current players in the absorption market, BROAD
                     designed and created its first absorber in 1988 with its own
                     human capital, hard work, the desire to be the best. This
-                    homegrown approach has allowed Broad to continue to innovate
+                    homegrown approach has allowed BROAD to continue to innovate
                     and lead as the worldwide customer base has grown to over 80
                     plus counties.
                   </div>
@@ -165,9 +166,9 @@ export default function About() {
                   <p>
                     BROAD Town is the headquarters of BROAD Group. It is located
                     in the eastern suburbs of Changsha City, 16 Km from downtown
-                    12km from the airport. Named as “Broad Tech Park” in 1997,
-                    it was the first tech park named after a company in China.
-                    It is home to dozens of technological inventions that have
+                    12km from the airport. Named as BROAD Tech Park” in 1997, it
+                    was the first tech park named after a company in China. It
+                    is home to dozens of technological inventions that have
                     impacted the whole world, for instance, the world's first
                     noe-electric exhaust air conditioning, the world's first
                     fresh air purification machine, the world's first
@@ -175,7 +176,7 @@ export default function About() {
                   </p>
                   <img
                     src={bti}
-                    alt="Broad town intro"
+                    alt="BROAD town intro"
                     className="w-100 my-2"
                   />
                   <p>

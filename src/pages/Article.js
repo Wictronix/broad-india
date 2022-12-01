@@ -269,8 +269,8 @@ export default function Article() {
               in April and is now valued at $1 billion. Opower's big idea: Tell
               homeowners how much energy their neighbors are using to motivate
               them to use less.
-              <h4>8. Zhang Yue Chairman, Broad Group</h4>
-              As chairman of China's Broad Group, Zhang has become a billionaire
+              <h4>8. Zhang Yue Chairman, BROAD Group</h4>
+              As chairman of China's BROAD Group, Zhang has become a billionaire
               selling energy-efficient cooling systems to commercial buildings.
               He figures that China's urbanization drive can't be stopped, but
               it can be made more sustainable. His Sky City project, if built,
@@ -502,7 +502,7 @@ export default function Article() {
                       <p>
                         Traditional construction practices can be costly,
                         inefficient, and detrimental on the environment, In this
-                        article, Zhang Yue, CEO, Broad group reflectes how
+                        article, Zhang Yue, CEO, BROAD group reflectes how
                         industry can change.
                       </p>
                       <Link to="/article/1" className="btn btn-primary">
