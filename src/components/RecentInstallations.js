@@ -1,4 +1,5 @@
 import React from "react";
+import itcImg from "../assets/images/itc.jpg";
 
 export default function RecentInstallations() {
   const [isMobile, setIsMobile] = React.useState(false);
@@ -90,7 +91,7 @@ export default function RecentInstallations() {
           >
             <div className="card-body" style={{ minHeight: "500px" }}>
               <img
-                src="https://www.itcportal.com/images/cigarette-video.jpg"
+                src={itcImg}
                 alt="itc"
                 style={{
                   width: "100%",

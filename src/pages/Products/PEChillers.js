@@ -77,7 +77,7 @@ export default function PEChillers() {
               <li>Package design (option)</li>
             </ul>
             <a
-              href="https://broadusa.com/broad/wp-content/uploads/2020/04/BROAD-Power-Efficient-Chiller-Catalog-2018.pdf"
+              href={"files/broadElectricChiller.pdf"}
               className="btn btn-primary"
             >
               Download Catalog

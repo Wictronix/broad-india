@@ -77,7 +77,7 @@ export default function SpecialistsProduct() {
                 <div
                   className="shadow"
                   data-aos="fade-up"
-                  data-aos-delay="300"
+                  data-aos-delay="200"
                   style={{
                     height: "26rem",
                     borderRadius: "1rem",
@@ -125,7 +125,7 @@ export default function SpecialistsProduct() {
                 <div
                   className="shadow"
                   data-aos="fade-up"
-                  data-aos-delay="400"
+                  data-aos-delay="300"
                   style={{
                     height: "26rem",
                     borderRadius: "1rem",
@@ -173,7 +173,7 @@ export default function SpecialistsProduct() {
                 <div
                   className="shadow"
                   data-aos="fade-up"
-                  data-aos-delay="200"
+                  data-aos-delay="400"
                   style={{
                     height: "26rem",
                     borderRadius: "1rem",

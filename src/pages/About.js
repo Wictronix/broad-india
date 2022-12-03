@@ -110,6 +110,9 @@ export default function About() {
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
+                    <Nav.Link eventKey="history">Broad History</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
                     <Nav.Link eventKey="culture">Our Culture</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
@@ -270,6 +273,203 @@ export default function About() {
                     service no one else can provide. So what sort of enterprise
                     does that make us?
                   </p>
+                </Tab.Pane>
+                <Tab.Pane eventKey="history">
+                  <table className="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th class="col-4 col-md-2">Year</th>
+                        <th class="col-8 col-md-10">Events</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1992</td>
+                        <td>
+                          {" "}
+                          Invented China's first CFC-free direct-fired
+                          non-electric air conditioning
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1997</td>
+                        <td>
+                          {" "}
+                          Invented the world's first plate heat exchanger for
+                          non-electric air conditioning with energy efficiency
+                          increased by 40%
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1998</td>
+                        <td>
+                          {" "}
+                          Release the BROAD Declaration , advocating “fighting
+                          against low energy efficiency and material waste to
+                          the fullest, extending product lifespan to the
+                          longest” Pesticide and fertilizer prohibited in BROAD
+                          Town Implemented the water and electricity metering
+                          systems for BROAD staff
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1999</td>
+                        <td>
+                          {" "}
+                          Invented the world's first non-electric zero emission
+                          air conditioning powered by exhaust gas from turbine
+                          Recommended low-load design to customers in product
+                          brochures to advocate energy conservation even at the
+                          risk of receiving complaints
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2002</td>
+                        <td>
+                          {" "}
+                          BROAD Organic Farm was developed to provide organic
+                          food to staff
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2003</td>
+                        <td>
+                          {" "}
+                          Released the BROAD Values to advocate “environmental
+                          protection is more important than profit”
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2004</td>
+                        <td>
+                          {" "}
+                          Invented the world's first Packaged Water Distribution
+                          System with operational energy decreased by 70-85% for
+                          cooling water and chilled water Initiated the annual
+                          energy consumption check policy for all customers with
+                          open reports The world's first company to take dispute
+                          risk by showing energy efficiency on chiller's control
+                          panel
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2005</td>
+                        <td>
+                          {" "}
+                          Translated and published 250,000 copies of
+                          YouthXchange , an environment guideline of UNEP
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2006</td>
+                        <td>
+                          {" "}
+                          Translated & published the 780-page Living in the
+                          Environment , an English environment encyclopedia
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2008</td>
+                        <td>
+                          {" "}
+                          China's first thoroughly-renovated community with all
+                          buildings at BROAD Town retrofitted with 15cm thermal
+                          insulation, 3-paned windows, external solar shading
+                          and heat recovery fresh air Invented the world's first
+                          clean fresh air machine, recovering exhaust heat by
+                          80% and filtering PM2.5 by 99.9%
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2009</td>
+                        <td>
+                          {" "}
+                          Invented the world's first factory-made sustainable
+                          building (BSB) that saves energy by 80% Invented the
+                          world's first Life Phone (Air Monitor) to detect
+                          PM2.5, CO2, etc. Completely replaced detergent with
+                          caustic soda and adopted reverse osmosis water as
+                          drinking water at BROAD Town
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2010</td>
+                        <td>
+                          {" "}
+                          Provided central air conditioning system and operation
+                          services to all 250 pavilions at World Expo Shanghai,
+                          cutting 73,000 tons of CO2 emissions, which equals to
+                          planting 4 million trees Built a sustainable building
+                          demo for The United Nations Framework Convention on
+                          Climate Change (COP16, Cancun)
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2011</td>
+                        <td>
+                          {" "}
+                          BROAD chairman was awarded the “Champions of the
+                          Earth” by the UN for his contributions to energy
+                          conservation
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2012</td>
+                        <td>
+                          {" "}
+                          UN Secretary General cited BROAD as the only energy
+                          conservation case in the “RIO +20 Declaration” The
+                          Oval Mountain Organic Farm was built in Xiangyin
+                          County, gradually increase the food organic rate of
+                          staff to 80% Launched the 8-catergory garbage sorting
+                          system. Low Carbon Commute Incentives for Staff was
+                          carried out to encourage car-free staff
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2013</td>
+                        <td>
+                          {" "}
+                          BSB was awarded the CTBUH (Council on Tall Buildings
+                          and Urban Habitat) Innovation Award for its
+                          contribution to innovative environmental conservation
+                          Installed solar panels for all factory roofs (230,000
+                          m2) in BSB factory
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2014</td>
+                        <td>
+                          {" "}
+                          BROAD chairman was awarded the World's Top 25
+                          Eco-Innovators by Fortune Magaine BROAD Recycled Oil
+                          Company obtained the qualification to utilize 30% of
+                          national waste mineral oil
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2015</td>
+                        <td>
+                          {" "}
+                          To make building an eternal wealth, BROAD started the
+                          invention of core tubular stainless steel slab and
+                          stopped production of steel structure during the same
+                          year
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2016</td>
+                        <td>
+                          {" "}
+                          To extend the lifespan of air-conditioning to 60 years
+                          and extend the lifespan of heat exchange tube to
+                          unlimited , BROAD replaced brass heat exchange tubes
+                          and stainless steel heat exchange tubes with titanium
+                          tubes
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </Tab.Pane>
                 <Tab.Pane eventKey="awards">
                   <h2>Awards and Recognitions</h2>

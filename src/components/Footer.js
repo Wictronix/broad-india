@@ -5,18 +5,7 @@ import wxLogo from "../assets/images/wxWhite.svg";
 
 export default function Footer() {
   return (
-    <div
-      className="bg-black py-md-5"
-      // style={{
-      //   width: "100%",
-      //   backgroundColor: "black",s
-      //   padding: "5rem",
-      //   color: "white",
-      //   display: "flex",
-      //   justifyContent: "space-between",
-      //   adivgnItems: "center",
-      // }}
-    >
+    <div className="bg-black py-md-5">
       <div className="container" style={{ color: "#ccc" }}>
         <div className="row">
           <div className="col-md-4 mt-4">
@@ -77,6 +66,20 @@ export default function Footer() {
                     style={{ height: "24px" }}
                   />
                 </a>
+                <a
+                  href="http://www.linkedin.com/in/broad-india"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="me-4"
+                >
+                  <img
+                    src={require("../assets/images/linkedin.png")}
+                    target="_blank"
+                    rel="noreferrer"
+                    alt="yt"
+                    style={{ height: "24px" }}
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -104,7 +107,7 @@ export default function Footer() {
                   to="/about"
                   style={{ color: "#ccc", textDecoration: "none" }}
                 >
-                  Privacy and Podivcy
+                  Privacy and Policy
                 </Link>
               </div>
               <div>

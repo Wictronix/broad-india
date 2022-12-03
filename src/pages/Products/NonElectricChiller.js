@@ -79,10 +79,7 @@ export default function NonElectricChiller() {
             waste streams (steam, hot water, exhaust, etc.)
             <br />
             <br />
-            <a
-              href="http://en.broad.com/Storage/Largedownloads/en_fdktxxsjsc.pdf"
-              className="btn btn-primary"
-            >
+            <a href="/files/nonElec.pdf" className="btn btn-primary">
               Download Catalogue
             </a>
           </div>
@@ -110,10 +107,7 @@ export default function NonElectricChiller() {
             hot water, exhaust, etc.)
             <br />
             <br />
-            <a
-              href="http://en.broad.com/Storage/Largedownloads/en_fdktxxsjsc.pdf"
-              className="btn btn-primary"
-            >
+            <a href="/files/nonElec.pdf" className="btn btn-primary">
               Download Catalogue
             </a>
           </div>

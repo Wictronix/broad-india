@@ -18,64 +18,41 @@ export default function TrustedClient() {
       <div
         className="row"
         style={{
-          marginInline: isMobile ? 0 : "5rem",
+          marginInline: isMobile ? "3rem" : "5rem",
           marginTop: "5rem",
         }}
       >
-        <div
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.ntpc.co.in/"
           data-aos="fade-up"
           data-aos-delay="100"
           className="col-md-4"
           style={{
             display: "flex",
             justifyContent: isMobile ? "center" : "end",
+            marginBottom: isMobile ? "2rem" : 0,
           }}
         >
           <img
-            src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3c/JSW_Group_logo.svg/1200px-JSW_Group_logo.svg.png"
-            alt="JSW"
-            style={{ width: isMobile ? "80%" : "40%" }}
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/National_Thermal_Power_logo.svg/1200px-National_Thermal_Power_logo.svg.png"
+            alt="NTPC"
+            style={{ width: isMobile ? "100%" : "50%", objectFit: "contain" }}
           />
-        </div>
-        <div
+        </a>
+
+        <a
+          rel="noreferrer"
+          target="_blank"
+          href="https://www.itcportal.com/"
           data-aos="fade-up"
           data-aos-delay="200"
           className="col-md-4"
-          style={{ display: "flex", justifyContent: "center" }}
-        >
-          <img
-            src="https://download.logo.wine/logo/Indian_Oil_Corporation/Indian_Oil_Corporation-Logo.wine.png"
-            alt="IOCL"
-            style={{ width: isMobile ? "100%" : "50%" }}
-          />
-        </div>
-        <div
-          data-aos="fade-up"
-          data-aos-delay="300"
-          className="col-md-4"
           style={{
             display: "flex",
-            justifyContent: isMobile ? "center" : "start",
-          }}
-        >
-          <img
-            src="https://jpplaschem.sg/img/supreme-petrochem/supreme-petrochem-logo.jpg"
-            alt="supreme"
-            style={{ width: isMobile ? "100%" : "50%", objectFit: "cover" }}
-          />
-        </div>
-      </div>
-      <div
-        className="row"
-        style={{ marginInline: isMobile ? "4rem" : "5rem", marginTop: "5rem" }}
-      >
-        <div
-          data-aos="fade-up"
-          data-aos-delay="400"
-          className="col-md-4"
-          style={{
-            display: "flex",
-            justifyContent: isMobile ? "center" : "end",
+            justifyContent: "center",
+            marginBottom: isMobile ? "2rem" : 0,
           }}
         >
           <img
@@ -87,15 +64,45 @@ export default function TrustedClient() {
               marginBottom: "0.5rem",
             }}
           />
-        </div>
-        <div
+        </a>
+        <a
+          rel="noreferrer"
+          target="_blank"
+          href="https://iocl.com/"
           data-aos="fade-up"
-          data-aos-delay="500"
+          data-aos-delay="300"
           className="col-md-4"
-          style={{ display: "flex", justifyContent: "center" }}
+          style={{
+            display: "flex",
+            justifyContent: isMobile ? "center" : "start",
+          }}
         >
           <img
-            src="https://www.gfl.co.in/assets/images/gfl-logo-new-11-11.png"
+            src="https://download.logo.wine/logo/Indian_Oil_Corporation/Indian_Oil_Corporation-Logo.wine.png"
+            alt="IOCL"
+            style={{ width: isMobile ? "100%" : "70%" }}
+          />
+        </a>
+      </div>
+      <div
+        className="row"
+        style={{ marginInline: isMobile ? "3rem" : "5rem", marginTop: "5rem" }}
+      >
+        <a
+          rel="noreferrer"
+          target="_blank"
+          href="https://bhilosa.com/"
+          data-aos="fade-up"
+          data-aos-delay="400"
+          className="col-md-4"
+          style={{
+            display: "flex",
+            justifyContent: isMobile ? "center" : "end",
+            marginBottom: isMobile ? "2rem" : 0,
+          }}
+        >
+          <img
+            src="http://bhilosa.com/wp-content/uploads/2022/06/bhilosa-logo-01-1.png"
             alt="gfl"
             style={{
               width: isMobile ? "100%" : "50%",
@@ -103,8 +110,30 @@ export default function TrustedClient() {
               marginBottom: "0.5rem",
             }}
           />
-        </div>
-        <div
+        </a>
+        <a
+          rel="noreferrer"
+          target="_blank"
+          href="https://www.jsw.in/"
+          data-aos="fade-up"
+          data-aos-delay="500"
+          className="col-md-4"
+          style={{
+            display: "flex",
+            justifyContent: isMobile ? "center" : "center",
+            marginBottom: isMobile ? "2rem" : 0,
+          }}
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3c/JSW_Group_logo.svg/1200px-JSW_Group_logo.svg.png"
+            alt="JSW"
+            style={{ width: isMobile ? "80%" : "40%", objectFit: "contain" }}
+          />
+        </a>
+        <a
+          rel="noreferrer"
+          target="_blank"
+          href="https://www.dlf.in/"
           data-aos="fade-up"
           data-aos-delay="600"
           className="col-md-4"
@@ -114,15 +143,15 @@ export default function TrustedClient() {
           }}
         >
           <img
-            src="https://imgs.search.brave.com/SnU0NkktO2S-wIQ__3_bn7LPebAKBFqsL4EHVJ0N_7c/rs:fit:420:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5I/OGg3Q0U3QzJuOVlU/UEhfWWNPZ09BSGFJ/VyZwaWQ9QXBp"
-            alt="hero"
+            src="https://animationvisarts.com/wp-content/uploads/2016/10/dlf-logo-design.jpg"
+            alt="dlf"
             style={{
               width: isMobile ? "100%" : "50%",
               height: "auto",
               objectFit: "contain",
             }}
           />
-        </div>
+        </a>
       </div>
     </div>
   );

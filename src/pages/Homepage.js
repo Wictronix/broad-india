@@ -10,6 +10,7 @@ import TrustedClient from "../components/TrustedClient";
 import RecentNews from "../components/RecentNews";
 import Footer from "../components/Footer";
 import IntroText from "../components/IntroText";
+import CTA from "../components/CTA";
 
 export default function Homepage() {
   React.useEffect(() => {
@@ -19,6 +20,7 @@ export default function Homepage() {
     <div style={{ backgroundColor: "#eee" }}>
       <NavbarComp />
       <HomePageCarousel />
+      <CTA />
       <Figures />
       <IntroText />
       <Sustainable />
