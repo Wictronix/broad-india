@@ -26,7 +26,7 @@ export default function About() {
           backgroundImage: `url(${bg})`,
           // backgroundOrigin: "initial",
           // backgroundAttachment: "fixed",
-          backgroundPosition: "center",
+          backgroundPosition: "top",
           backgroundSize: "cover",
           display: "flex",
           justifyContent: "center",
@@ -278,8 +278,8 @@ export default function About() {
                   <table className="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th class="col-4 col-md-2">Year</th>
-                        <th class="col-8 col-md-10">Events</th>
+                        <th className="col-4 col-md-2">Year</th>
+                        <th className="col-8 col-md-10">Events</th>
                       </tr>
                     </thead>
                     <tbody>

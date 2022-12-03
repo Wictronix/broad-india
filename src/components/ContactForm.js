@@ -4,8 +4,8 @@ export default function ContactForm() {
   return (
     <div className="container mb-3">
       <div className="card">
-        <div className="card-header">
-          <h4>Get in touch</h4>
+        <div className="card-header bg-primary text-white">
+          <h4>Get in Touch</h4>
         </div>
         <div className="card-body">
           <form
@@ -85,11 +85,17 @@ export default function ContactForm() {
               ></textarea>
             </div>
             <div className="d-flex justify-center">
-              <input
+              {/* <input
                 type="submit"
                 value="Submit"
                 className="btn btn-primary mx-auto"
-              />
+              /> */}
+              <button
+                type="submit"
+                className="btn btn-primary mx-auto pageclip-form__submit"
+              >
+                <span>Submit</span>
+              </button>
             </div>
           </form>
         </div>

@@ -3,8 +3,8 @@ import { Carousel } from "react-bootstrap";
 
 import broadBG1 from "../assets/images/broad-bg-1.jpg";
 import broadBG2 from "../assets/images/broad-bg-2.jpg";
-import broadBG3 from "../assets/images/serving.jpg";
-import broadBG4 from "../assets/images/paving.jpg";
+import broadBG3 from "../assets/images/13Podium.jpg";
+import broadBG4 from "../assets/images/57floors.jpeg";
 
 function HomePageCarousel() {
   const [isMobile, setIsMobile] = React.useState(false);
@@ -86,7 +86,8 @@ function HomePageCarousel() {
               width: "100vw",
               height: isMobile ? "81vh" : "default",
               aspectRatio: "2.44",
-              objectFit: "cover",
+              objectFit: "contain",
+              backgroundColor: "skyblue",
             }}
           />
           <Carousel.Caption>
@@ -104,7 +105,7 @@ function HomePageCarousel() {
                   textTransform: "uppercase",
                 }}
               >
-                Serving India for 22 years{" "}
+                Serving India for 22 years
               </div>
             </div>
           </Carousel.Caption>
@@ -131,11 +132,11 @@ function HomePageCarousel() {
             >
               <div
                 style={{
-                  fontSize: isMobile ? "2rem" : "3rem",
+                  fontSize: isMobile ? "2rem" : "2rem",
                   textTransform: "uppercase",
                 }}
               >
-                Paving the path for a Better Future.{" "}
+                57 floor building build in just 19 days.
               </div>
             </div>
           </Carousel.Caption>

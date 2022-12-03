@@ -102,7 +102,7 @@ export default function ContactUs() {
                     />
                   </svg>
 
-                  <div>+91 9427851584</div>
+                  <a href="tel:9427851584">9427851584</a>
                 </div>
                 <div className="d-flex">
                   <svg
@@ -120,7 +120,7 @@ export default function ContactUs() {
                     />
                   </svg>
 
-                  <div>01244012824</div>
+                  <a href="tel:01244012824">01244012824</a>
                 </div>
               </div>
             </div>

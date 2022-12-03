@@ -29,7 +29,10 @@ export default function RecentInstallations() {
         <div className="col-md-4">
           <div
             className="card mb-2"
-            style={{ backgroundColor: "rgba(255, 255, 255, 0.4)" }}
+            style={{
+              backgroundColor: "rgba(255, 255, 255, 0.4)",
+              height: "600px",
+            }}
             data-aos="fade-right"
           >
             <div className="card-body" style={{ minHeight: "500px" }}>
@@ -55,7 +58,10 @@ export default function RecentInstallations() {
         <div className="col-md-4">
           <div
             className="card mb-2"
-            style={{ backgroundColor: "rgba(255, 255, 255, 0.4)" }}
+            style={{
+              backgroundColor: "rgba(255, 255, 255, 0.4)",
+              height: "600px",
+            }}
             data-aos="fade-right"
             data-aos-delay="100"
           >
@@ -85,7 +91,10 @@ export default function RecentInstallations() {
         <div className="col-md-4">
           <div
             className="card mb-2"
-            style={{ backgroundColor: "rgba(255, 255, 255, 0.4)" }}
+            style={{
+              backgroundColor: "rgba(255, 255, 255, 0.4)",
+              height: "600px",
+            }}
             data-aos="fade-right"
             data-aos-delay="200"
           >
