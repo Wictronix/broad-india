@@ -11,6 +11,10 @@ import bti from "../assets/images/broad_town_intro3.jpg";
 import logo from "../assets/images/logo.png";
 import bg from "../assets/images/broadIndGrp.jpeg";
 
+import awards1 from "../assets/images/awards1.jpeg";
+import awards2 from "../assets/images/awards2.jpeg";
+import awards3 from "../assets/images/awards3.jpeg";
+
 export default function About() {
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -475,25 +479,13 @@ export default function About() {
                   <h2>Awards and Recognitions</h2>
                   <br />
                   <br />
-                  <img
-                    src="http://en.broad.com/Storage/uploads/201512/20151231093755_5959.jpg"
-                    alt="coe"
-                    style={{ width: "100%" }}
-                  />
+                  <img src={awards1} alt="coe" style={{ width: "100%" }} />
                   <br />
                   <br />
-                  <img
-                    src="http://en.broad.com/Storage/uploads/201512/20151231100601_6937.jpg"
-                    alt="ch"
-                    style={{ width: "100%" }}
-                  />
+                  <img src={awards2} alt="ch" style={{ width: "100%" }} />
                   <br />
                   <br />
-                  <img
-                    src="http://en.broad.com/Storage/uploads/201601/20160119165641_8854.jpg"
-                    alt="100"
-                    style={{ width: "100%" }}
-                  />
+                  <img src={awards3} alt="100" style={{ width: "100%" }} />
                 </Tab.Pane>
                 <Tab.Pane eventKey="FAQ">
                   <h2>FAQ</h2>
