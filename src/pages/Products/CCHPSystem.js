@@ -52,7 +52,7 @@ export default function CCHPSystem() {
           </div>
         </div>
       </div>
-      <Container style={{ margin: isMobile ? "1rem 0.5rem" : "5rem 10rem" }}>
+      <Container style={{ margin: isMobile ? "1rem 0.5rem" : "5rem 6rem" }}>
         <div className="display-6 mb-4">COMBINED COOLING-HEATING-POWER</div>
         <div className="row">
           <div className="col-md-12">

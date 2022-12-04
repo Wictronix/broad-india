@@ -208,7 +208,7 @@ export default function SpecialistsProduct() {
                     />
                     <h2>Absorption Heat Pumps</h2>
                     <p>
-                      Pumping Heat from lower Temperature to Medium Temperature
+                      Pumping Heat from Lower Temperature to Medium Temperature
                       using High Grade Energy.
                     </p>
                   </div>

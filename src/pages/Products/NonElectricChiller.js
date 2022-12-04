@@ -44,7 +44,7 @@ export default function NonElectricChiller() {
               position: "absolute",
               bottom: 0,
               left: isMobile ? "-1rem" : "5rem",
-              margin: isMobile ? "2rem" : "5rem",
+              margin: isMobile ? "2rem" : "4rem",
               fontWeight: "700",
             }}
             data-aos="fade-up"
@@ -53,7 +53,7 @@ export default function NonElectricChiller() {
           </div>
         </div>
       </div>
-      <Container style={{ margin: isMobile ? "1rem 0.5rem" : "5rem 10rem" }}>
+      <Container style={{ margin: isMobile ? "1rem 0.5rem" : "5rem 6rem" }}>
         <div className="row">
           <h1>Direct Fired Chiller</h1>
           <div className="col-md-6 mt-3">

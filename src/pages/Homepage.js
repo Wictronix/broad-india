@@ -17,7 +17,7 @@ export default function Homepage() {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div style={{ backgroundColor: "#eee" }}>
+    <div style={{ backgroundColor: "#eee", paddingLeft: "0" }}>
       <NavbarComp />
       <HomePageCarousel />
       <CTA />

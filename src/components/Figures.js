@@ -48,7 +48,7 @@ export default function Figures() {
               </VisibilitySensor>
             </div>
             <br />
-            <div style={{ textAlign: "center" }}>Thosand+ trees Saved</div>
+            <div style={{ textAlign: "center" }}>Thousand+ trees Saved</div>
           </div>
         </div>
         <div>
@@ -68,7 +68,7 @@ export default function Figures() {
             </div>
             <br />
             <div style={{ textAlign: "center" }}>
-              TCO2e Reduction in Carbon Footpring
+              TCO2e Reduction in Carbon Footprint
             </div>
           </div>
         </div>

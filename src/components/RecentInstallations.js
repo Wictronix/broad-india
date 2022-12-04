@@ -31,7 +31,7 @@ export default function RecentInstallations() {
             className="card mb-2"
             style={{
               backgroundColor: "rgba(255, 255, 255, 0.4)",
-              height: "600px",
+              height: isMobile ? "500px" : "600px",
             }}
             data-aos="fade-right"
           >
@@ -60,7 +60,7 @@ export default function RecentInstallations() {
             className="card mb-2"
             style={{
               backgroundColor: "rgba(255, 255, 255, 0.4)",
-              height: "600px",
+              height: isMobile ? "500px" : "600px",
             }}
             data-aos="fade-right"
             data-aos-delay="100"
@@ -93,7 +93,7 @@ export default function RecentInstallations() {
             className="card mb-2"
             style={{
               backgroundColor: "rgba(255, 255, 255, 0.4)",
-              height: "600px",
+              height: isMobile ? "500px" : "600px",
             }}
             data-aos="fade-right"
             data-aos-delay="200"
