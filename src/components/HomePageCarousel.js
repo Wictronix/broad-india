@@ -4,7 +4,7 @@ import { Carousel } from "react-bootstrap";
 import broadBG1 from "../assets/images/broad-bg-1.jpg";
 import broadBG2 from "../assets/images/broad-bg-2.jpg";
 import broadBG3 from "../assets/images/13Podium.jpg";
-import broadBG4 from "../assets/images/57floors.jpeg";
+import broadBG4 from "../assets/images/FTower.png";
 
 function HomePageCarousel() {
   const [isMobile, setIsMobile] = React.useState(false);
@@ -132,11 +132,22 @@ function HomePageCarousel() {
             >
               <div
                 style={{
-                  fontSize: isMobile ? "2rem" : "2rem",
+                  fontSize: isMobile ? "2rem" : "1.5rem",
                   textTransform: "uppercase",
                 }}
               >
-                57 floor building build in just 19 days.
+                F Tower - The Most Unique Building In the World <br />
+                <a
+                  href="https://www.youtube.com/watch?v=UldIK4Qb-J0&t=72s"
+                  target="_blank"
+                  className="btn btn-primary"
+                  style={{
+                    textTransform: "none",
+                    fontSize: "1.25rem",
+                  }}
+                >
+                  Know more.
+                </a>
               </div>
             </div>
           </Carousel.Caption>

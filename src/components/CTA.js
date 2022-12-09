@@ -19,7 +19,7 @@ export default function CTA() {
                     .pauseFor(2000)
                     .deleteAll()
                     .typeString(
-                      "We offer <span class='text-primary'>most power efficient Oil Chillers.</span>"
+                      "We offer <span class='text-primary'>power efficient Oil Free Centrifugal Chillers.</span>"
                     )
                     .pauseFor(2000)
                     .deleteAll()
