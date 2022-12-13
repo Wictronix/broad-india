@@ -22,6 +22,7 @@ export default function AbsorptionChiller() {
           backgroundOrigin: "center",
           backgroundSize: "cover",
           backgroundAttachment: "fixed",
+          backgroundPosition: "center",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",

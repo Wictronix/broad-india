@@ -22,6 +22,7 @@ export default function CCHPSystem() {
             "url('https://broadusa.com/broad/wp-content/uploads/2020/04/broadusa-products.jpg')",
           backgroundOrigin: "center",
           backgroundSize: "cover",
+          backgroundPosition: "center",
           backgroundAttachment: "fixed",
           display: "flex",
           justifyContent: "center",
