@@ -154,6 +154,17 @@ export default function NavbarComp() {
                     Power efficient Chiller
                   </Link>
                 </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link
+                    to="/pump"
+                    style={{
+                      textDecoration: "none",
+                      color: "black",
+                    }}
+                  >
+                    Pumpset
+                  </Link>
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
 
@@ -257,6 +268,16 @@ export default function NavbarComp() {
               }}
             >
               Power efficient Chiller
+            </Link>
+            <Link
+              to="/pump"
+              style={{
+                textDecoration: "none",
+                color: "black",
+                marginBottom: "0.5rem",
+              }}
+            >
+              Pumpset
             </Link>
             <Link
               to="/nonElectricChiller"

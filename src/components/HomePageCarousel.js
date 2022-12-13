@@ -140,6 +140,7 @@ function HomePageCarousel() {
                 <a
                   href="https://www.youtube.com/watch?v=UldIK4Qb-J0&t=72s"
                   target="_blank"
+                  rel="noreferrer"
                   className="btn btn-primary"
                   style={{
                     textTransform: "none",

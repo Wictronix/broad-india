@@ -8,10 +8,10 @@ import AbsorptionChiller from "./pages/Products/AbsorptionChiller";
 import Installations from "./pages/Services/Installations";
 import PEChillers from "./pages/Products/PEChillers";
 import Article from "./pages/Article";
-import Seminar from "./pages/Services/Seminar";
 import NonElectricChiller from "./pages/Products/NonElectricChiller";
 import CCHPSystem from "./pages/Products/CCHPSystem";
 import BroadGroup from "./pages/BroadGroup";
+import Pump from "./pages/Products/Pump";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -40,6 +40,10 @@ export default function App() {
       element: <PEChillers />,
     },
     {
+      path: "/pump",
+      element: <Pump />,
+    },
+    {
       path: "/nonElectricChiller",
       element: <NonElectricChiller />,
     },
@@ -50,10 +54,6 @@ export default function App() {
     {
       path: "/article/:id",
       element: <Article />,
-    },
-    {
-      path: "/seminar",
-      element: <Seminar />,
     },
     {
       path: "/broadGroup",

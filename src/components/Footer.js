@@ -129,6 +129,7 @@ export default function Footer() {
             <a
               href="https://www.wictronix.com"
               target="_blank"
+              rel="noreferrer"
               className="my-2"
             >
               <img src={wxLogo} alt="WictroniX" style={{ height: "40px" }} />

@@ -75,10 +75,7 @@ export default function CCHPSystem() {
               <li>Life design: 30 years</li>
               <li>Package design (option)</li>
             </ul>
-            <a
-              href="https://broadusa.com/broad/wp-content/uploads/2020/04/BROAD-Power-Efficient-Chiller-Catalog-2018.pdf"
-              className="btn btn-primary"
-            >
+            <a href="/files/CCHP.pdf" className="btn btn-primary">
               Download Catalog
             </a>
           </div>
