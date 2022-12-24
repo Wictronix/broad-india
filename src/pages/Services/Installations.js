@@ -85,7 +85,7 @@ export default function Installations() {
                     economy.
                   </div>
                   <div
-                    className="btn btn-primary"
+                    className="btn btn-primary mt-2"
                     onClick={() => setDetailsIdx(1)}
                   >
                     Know more
@@ -115,7 +115,7 @@ export default function Installations() {
                     chain.
                   </div>
                   <div
-                    className="btn btn-primary"
+                    className="btn btn-primary mt-2"
                     onClick={() => setDetailsIdx(2)}
                   >
                     Know more
@@ -143,7 +143,7 @@ export default function Installations() {
                     Pune, Trichy
                   </div>
                   <div
-                    className="btn btn-primary"
+                    className="btn btn-primary mt-2"
                     onClick={() => setDetailsIdx(3)}
                   >
                     Know more
@@ -174,7 +174,7 @@ export default function Installations() {
                     of electricity.
                   </div>
                   <div
-                    className="btn btn-primary"
+                    className="btn btn-primary mt-2"
                     onClick={() => setDetailsIdx(4)}
                   >
                     Know more
@@ -202,7 +202,7 @@ export default function Installations() {
                     distribution energy system in the world.
                   </div>
                   <div
-                    className="btn btn-primary"
+                    className="btn btn-primary mt-2"
                     onClick={() => setDetailsIdx(5)}
                   >
                     Know more
@@ -230,7 +230,7 @@ export default function Installations() {
                     Gujarat
                   </div>
                   <div
-                    className="btn btn-primary"
+                    className="btn btn-primary mt-2"
                     onClick={() => setDetailsIdx(6)}
                   >
                     Know more
@@ -250,9 +250,9 @@ export default function Installations() {
               <li>Location - Bellary, Karnataka</li>
               <li>Application - Coke Oven Process Primary Cooling</li>
               <li>Cooling capacity: 16198 kW</li>
-              <li>Model: BS*4 unit</li>
+              <li>Model: BS*9 unit</li>
               <li>Heat Source: Steam</li>
-              <li>Shipment date: July 2007, November 2012</li>
+              <li>Shipment date: July 2007, November 2012, 2022</li>
             </ul>
           )}
           {detailsIdx === 2 && (
