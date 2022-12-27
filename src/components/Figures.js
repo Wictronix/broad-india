@@ -40,7 +40,7 @@ export default function Figures() {
                   <div style={{ height: 100 }}>
                     {isVisible ? (
                       <>
-                        <CountUp end={90} />
+                        <CountUp end={36} />
                       </>
                     ) : null}
                   </div>
@@ -48,7 +48,7 @@ export default function Figures() {
               </VisibilitySensor>
             </div>
             <br />
-            <div style={{ textAlign: "center" }}>Thousand+ trees Saved</div>
+            <div style={{ textAlign: "center" }}>Lakh+ trees Saved</div>
           </div>
         </div>
         <div>
@@ -59,7 +59,7 @@ export default function Figures() {
                   <div style={{ height: 100 }}>
                     {isVisible ? (
                       <>
-                        <CountUp end={122} style={{ marginInline: "auto" }} />
+                        <CountUp end={69} style={{ marginInline: "auto" }} />
                       </>
                     ) : null}
                   </div>
@@ -68,7 +68,7 @@ export default function Figures() {
             </div>
             <br />
             <div style={{ textAlign: "center" }}>
-              TCO2e Reduction in Carbon Footprint
+              thousand+ TCO2e Reduction in Carbon Footprint
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@ export default function Figures() {
                   <div style={{ height: 100 }}>
                     {isVisible ? (
                       <>
-                        <CountUp end={125} />
+                        <CountUp end={478} />
                       </>
                     ) : null}
                   </div>
@@ -88,7 +88,9 @@ export default function Figures() {
               </VisibilitySensor>
             </div>
             <br />
-            <div style={{ textAlign: "center" }}>Tons of oxygen saved</div>
+            <div style={{ textAlign: "center" }}>
+              thousand kW+ air conditioning installed in India
+            </div>
           </div>
         </div>
       </div>
