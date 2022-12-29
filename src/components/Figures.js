@@ -32,7 +32,7 @@ export default function Figures() {
           color: "white",
         }}
       >
-        <div>
+        <div style={{ flex: "1" }}>
           <div style={{ fontWeight: "600" }}>
             <div style={{ fontSize: "4rem", textAlign: "center" }}>
               <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
@@ -51,7 +51,7 @@ export default function Figures() {
             <div style={{ textAlign: "center" }}>Lakh+ trees Saved</div>
           </div>
         </div>
-        <div>
+        <div style={{ flex: "1" }}>
           <div style={{ fontWeight: "600" }}>
             <div style={{ fontSize: "4rem", textAlign: "center" }}>
               <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
@@ -59,7 +59,7 @@ export default function Figures() {
                   <div style={{ height: 100 }}>
                     {isVisible ? (
                       <>
-                        <CountUp end={69} style={{ marginInline: "auto" }} />
+                        <CountUp end={697} style={{ marginInline: "auto" }} />
                       </>
                     ) : null}
                   </div>
@@ -72,7 +72,7 @@ export default function Figures() {
             </div>
           </div>
         </div>
-        <div>
+        <div style={{ flex: "1" }}>
           <div style={{ fontWeight: "600" }}>
             <div style={{ fontSize: "4rem", textAlign: "center" }}>
               <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
@@ -88,7 +88,13 @@ export default function Figures() {
               </VisibilitySensor>
             </div>
             <br />
-            <div style={{ textAlign: "center" }}>
+            <div
+              style={{
+                textAlign: "center",
+                marginBottom: isMobile ? "1rem" : "auto",
+                marginRight: !isMobile ? "1rem" : "auto",
+              }}
+            >
               thousand kW+ air conditioning installed in India
             </div>
           </div>

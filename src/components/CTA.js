@@ -33,7 +33,7 @@ export default function CTA() {
             <div className="d-flex flex-column flex-md-row gap-4">
               <div className="d-flex mb-1">
                 <a
-                  href="mailto:akshay@broad.net"
+                  href="mailto:info@broadindia.com?cc=akshay@broad.net"
                   className=" text-decoration-none"
                 >
                   <svg
@@ -51,7 +51,7 @@ export default function CTA() {
                       d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
                     />
                   </svg>
-                  akshay@broad.net
+                  info@broadindia.com
                 </a>
               </div>
               <div className="d-flex">
