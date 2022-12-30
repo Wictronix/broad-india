@@ -121,7 +121,10 @@ export default function Footer() {
             </div>
           </div>
           <div className="col-md-4" style={{ textAlign: "center" }}>
-            <h5>BROAD India is a subsidiary of BROAD Group.</h5>
+            <h5>
+              Broad Air Conditioning Pvt. Ltd. (Broad India) is a subsidiary of
+              BROAD Group.
+            </h5>
             <br />
             powered by
             <br />

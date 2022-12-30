@@ -74,8 +74,8 @@ export default function About() {
               <li>Subsidised Company of BROAD group, China.</li>
               <li>BROAD has been serving India market for last 22 years.</li>
               <li>
-                BROAD India has more than 200 VAM installations, Service and O&M
-                in India.
+                Broad Air Conditioning Pvt. Ltd. (Broad India) has more than 200
+                VAM installations, Service and O&M in India.
               </li>
               <li>Operating Asia's biggest CHP project in DLF, Gurugram</li>
               <li>
@@ -134,11 +134,12 @@ export default function About() {
             <Col sm={9}>
               <Tab.Content>
                 <Tab.Pane eventKey="about">
-                  <h2>About BROAD India</h2>
+                  <h2>About Broad Air Conditioning Pvt. Ltd. (Broad India)</h2>
                   <br />
                   <h4>
-                    BROAD India is committed to the Absorption Marketplace - It
-                    is our primary business since we started in 2001
+                    Broad Air Conditioning Pvt. Ltd. (Broad India) is committed
+                    to the Absorption Marketplace - It is our primary business
+                    since we started in 2001
                   </h4>
                   <br />
                   <p>
