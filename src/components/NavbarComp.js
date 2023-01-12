@@ -53,9 +53,7 @@ export default function NavbarComp() {
             alt="logo"
             style={{ height: "3rem", marginRight: "1rem" }}
           />
-          <div style={{ marginTop: "0.2rem" }}>
-            Broad Air Conditioning Pvt. Ltd. (Broad India)
-          </div>
+          <div style={{ marginTop: "0.2rem" }}>BROAD India</div>
         </Link>
         {isMobile ? (
           <div onClick={() => setIsMenuOpen(true)}>
