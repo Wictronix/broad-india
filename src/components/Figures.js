@@ -100,7 +100,7 @@ export default function Figures() {
                 marginRight: !isMobile ? "1rem" : "auto",
               }}
             >
-              Lakh+ trees saved
+              trees saved
             </div>
           </div>
         </div>
