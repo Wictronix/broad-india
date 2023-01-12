@@ -109,20 +109,20 @@ export default function Article() {
             <br />
             <div>
               Buildings account for most electricity consumed in the world
-              today, with air conditioning systems within buildings accounting
+              today, with Air Conditioning systems within buildings accounting
               for over 30% of total consumption1. Compared to conventional
-              electric air conditioning, natural gas thermal absorption
+              electric Air Conditioning, natural gas thermal absorption
               technology, also called non-electric technology, is gaining favor
               by energy services providers, facilities managers, and building
               owners, because of its economic and environmental benefits.
               Utilization of natural gas-driven absorption technology helps
-              lower electricity use in air conditioning improves occupant
+              lower electricity use in Air Conditioning improves occupant
               happiness and helps mitigate the impacts of buildings on local
               environments and climate change².
               <br />
               <br />
               <h4>Cleaner Fuel</h4>
-              Rather than using conventional electric-powered air conditioning,
+              Rather than using conventional electric-powered Air Conditioning,
               an absorption chiller using cleaner natural gas as the thermal
               energy source has immediate positive environmental benefits.
               According to the United States EPA, natural gas produces 50% less
@@ -597,7 +597,7 @@ export default function Article() {
                     </h4>
                     <p>
                       Buildings account for most electricity consumed in the
-                      world today, with air conditioning systems within
+                      world today, with Air Conditioning systems within
                       buildings accounting for over 30% of total consumption1.
                     </p>
                     <Link to="/article/3" className="btn btn-primary">

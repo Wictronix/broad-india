@@ -5,7 +5,7 @@ import wxLogo from "../assets/images/wxWhite.svg";
 
 export default function Footer() {
   return (
-    <div className="bg-black py-md-5">
+    <div className="bg-black pt-md-4">
       <div className="container" style={{ color: "#ccc" }}>
         <div className="row">
           <div className="col-md-4 mt-4">

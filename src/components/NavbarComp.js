@@ -118,7 +118,7 @@ export default function NavbarComp() {
                       color: "black",
                     }}
                   >
-                    Non-Electric Chiller{" "}
+                    Vapour absorption chiller{" "}
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item>
@@ -287,7 +287,7 @@ export default function NavbarComp() {
                 marginBottom: "0.5rem",
               }}
             >
-              Non-Electric Chiller
+              Vapour absorption chiller
             </Link>
             <Link
               to="/cchpSystem"

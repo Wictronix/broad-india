@@ -64,7 +64,7 @@ export default function BroadGroup() {
             <ol>
               <li>
                 BROAD Air Conditioning Co., Ltd., registered in 1988,
-                manufactures non-electric air conditioning systems and district
+                manufactures non-electric Air Conditioning systems and district
                 heating and cooling systems powered by industrial waste heat,
                 power exhaust gas and natural gas with the mission of
                 “continuously deepening research, development and service,
@@ -90,7 +90,7 @@ export default function BroadGroup() {
               <li>
                 BROAD Energy Ser vice Co., Ltd., founded in 2009, provides
                 clients with investment consulting, design, implementation and
-                operational ser vice of large central air conditioning systems
+                operational ser vice of large central Air Conditioning systems
                 and industrial heating and cooling systems by means of BROAD low
                 carbon technologies, products and energy management contract
                 (EMC), with the mission of “optimizing resources, being

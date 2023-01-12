@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import NavbarComp from "../components/NavbarComp";
 
 // import bg from "../assets/images/aboutBG.jpg";
-import rollAbso from "../assets/images/rolling_absorbers.jpg";
+// import rollAbso from "../assets/images/rolling_absorbers.jpg";
 // import cchp from "../assets/images/cchp.png";
 import bti from "../assets/images/broad_town_intro3.jpg";
 
@@ -68,18 +68,18 @@ export default function About() {
       >
         <div className="row">
           <div className="col-md-8">
-            <h2>BROAD Air conditioning India Pvt. Ltd.</h2>
+            <h2>BROAD Air Conditioning India Pvt. Ltd.</h2>
             <br />
             <ul>
               <li>Subsidised Company of BROAD group, China.</li>
-              <li>BROAD has been serving India market for last 22 years.</li>
+              <li>BROAD has been serving India market since 2001.</li>
               <li>
-                Broad Air Conditioning Pvt. Ltd. (Broad India) has more than 200
+                BROAD Air Conditioning Pvt. Ltd. (BROAD India) has more than 200
                 VAM installations, Service and O&M in India.
               </li>
               <li>Operating Asia's biggest CHP project in DLF, Gurugram</li>
               <li>
-                Broad chillers installed in industries: Petrochemical, Food,
+                BROAD chillers installed in industries: Petrochemical, Food,
                 Textile, Hospital and office
               </li>
             </ul>
@@ -114,10 +114,15 @@ export default function About() {
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="history">Broad History</Nav.Link>
+                    <Nav.Link eventKey="history">BROAD History</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
                     <Nav.Link eventKey="culture">Our Culture</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="declaration">
+                      BROAD Declaration
+                    </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
                     <Nav.Link eventKey="values">Core Values</Nav.Link>
@@ -134,10 +139,10 @@ export default function About() {
             <Col sm={9}>
               <Tab.Content>
                 <Tab.Pane eventKey="about">
-                  <h2>About Broad Air Conditioning Pvt. Ltd. (Broad India)</h2>
+                  <h2>About BROAD Air Conditioning Pvt. Ltd. (BROAD India)</h2>
                   <br />
                   <h4>
-                    Broad Air Conditioning Pvt. Ltd. (Broad India) is committed
+                    BROAD Air Conditioning Pvt. Ltd. (BROAD India) is committed
                     to the Absorption Marketplace - It is our primary business
                     since we started in 2001
                   </h4>
@@ -150,22 +155,6 @@ export default function About() {
                     driven absorption plays in our modern world.
                   </p>
                   <br />
-                  <h4>We Roll Our Own - Absorbers</h4>
-                  <br />
-                  <div className="d-flex flex-column flex-md-row">
-                    <img
-                      src={rollAbso}
-                      alt="rolling absorber"
-                      className="me-2"
-                    />
-                    Absorption design is our core competency and primary focus.
-                    Unlike many current players in the absorption market, BROAD
-                    designed and created its first absorber in 1988 with its own
-                    human capital, hard work, the desire to be the best. This
-                    homegrown approach has allowed BROAD to continue to innovate
-                    and lead as the worldwide customer base has grown to over 80
-                    plus counties.
-                  </div>
                   <br />
                 </Tab.Pane>
                 <Tab.Pane eventKey="bthq">
@@ -178,7 +167,7 @@ export default function About() {
                     was the first tech park named after a company in China. It
                     is home to dozens of technological inventions that have
                     impacted the whole world, for instance, the world's first
-                    noe-electric exhaust air conditioning, the world's first
+                    noe-electric exhaust Air Conditioning, the world's first
                     fresh air purification machine, the world's first
                     factory-made sustainable buildings…
                   </p>
@@ -194,8 +183,8 @@ export default function About() {
                     at 0.25 million m² on the campus have adopted 15-20 cm
                     thermal insulation, 3-4 paned windows, external solar
                     shading and fresh air heat recovery machine. BROAD exports
-                    air conditioning to more than 80 countries, yet it seldom
-                    uses air conditioning itself. At BROAD Town Organic
+                    Air Conditioning to more than 80 countries, yet it seldom
+                    uses Air Conditioning itself. At BROAD Town Organic
                     food,self -processed cerels and edible oils, and reverse
                     osmosis water is all available. Staff have no desires to buy
                     vehicles are awarded monthly, and garbage is classified
@@ -289,192 +278,268 @@ export default function About() {
                     </thead>
                     <tbody>
                       <tr>
-                        <td>1992</td>
+                        <td>1988</td>
                         <td>
-                          {" "}
-                          Invented China's first CFC-free direct-fired
-                          non-electric air conditioning
+                          The brothers, Zhang Yue and Zhang Jian, registered the
+                          private company BROAD Thermal Research Institute in
+                          Chenzhou, Hunan with a capital of RMB 30,000
                         </td>
                       </tr>
                       <tr>
-                        <td>1997</td>
+                        <td>1990</td>
                         <td>
-                          {" "}
-                          Invented the world's first plate heat exchanger for
-                          non-electric air conditioning with energy efficiency
-                          increased by 40%
+                          Successively assigned the patents and drawings of
+                          pressure-free hot water boiler for 7 times with a
+                          collective income of nearly RMB 1 Million
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1992 </td>
+                        <td>
+                          The direct-fired non-electric chiller was invented.
+                          BROAD relocated to Changsha and renamed as BROAD Air
+                          Conditioning, staff totaling 43
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1994</td>
+                        <td>
+                          Started setting up sales and service offices in key
+                          provinces around China The Advertisement of
+                          BROAD·Opening a New Era of Central Air Conditioning
+                          was broadcasted at CCTV prime time
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1995 </td>
+                        <td>
+                          Built up the first phase of BROAD Town and the
+                          assembly line for non-electric air conditioning, staff
+                          totaling 433
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1996</td>
+                        <td>
+                          The world's No.1 seller of non-electric air
+                          conditioning and China's No.1 seller of central air
+                          conditioning by sales volume
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1997 </td>
+                        <td>
+                          Founded BROAD USA and started international sales A
+                          corporate jet and helicopter were purchased, marking
+                          BROAD the first company in China to own private
+                          aircraft (5 more aircrafts were purchased afterwards.
+                          However, with increased environmental consciousness,
+                          BROAD stopped using corporate jets 10 years later)
                         </td>
                       </tr>
                       <tr>
                         <td>1998</td>
                         <td>
-                          {" "}
-                          Release the BROAD Declaration , advocating “fighting
-                          against low energy efficiency and material waste to
-                          the fullest, extending product lifespan to the
-                          longest” Pesticide and fertilizer prohibited in BROAD
-                          Town Implemented the water and electricity metering
-                          systems for BROAD staff
+                          The two brothers separated. Zhang Yue took over BROAD
+                          Group. Zhang Jian operated the Sino-Japanese joint
+                          venture BROAD Beltecno and the later BROAD Homes. The
+                          two shared the brand of BROAD and operational
+                          management resources
                         </td>
                       </tr>
                       <tr>
-                        <td>1999</td>
+                        <td>2000</td>
                         <td>
-                          {" "}
-                          Invented the world's first non-electric zero emission
-                          air conditioning powered by exhaust gas from turbine
-                          Recommended low-load design to customers in product
-                          brochures to advocate energy conservation even at the
-                          risk of receiving complaints
+                          BROAD Town expanded to 0.7km2 after 5 land
+                          acquisitions, and the construction of the new
+                          millennium area was completed
                         </td>
                       </tr>
                       <tr>
                         <td>2002</td>
                         <td>
-                          {" "}
-                          BROAD Organic Farm was developed to provide organic
-                          food to staff
+                          BROAD was rated China's No.1 taxpayer among private
+                          companies by the State Administration of Taxation
                         </td>
                       </tr>
                       <tr>
                         <td>2003</td>
                         <td>
-                          {" "}
-                          Released the BROAD Values to advocate “environmental
-                          protection is more important than profit”
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2004</td>
-                        <td>
-                          {" "}
-                          Invented the world's first Packaged Water Distribution
-                          System with operational energy decreased by 70-85% for
-                          cooling water and chilled water Initiated the annual
-                          energy consumption check policy for all customers with
-                          open reports The world's first company to take dispute
-                          risk by showing energy efficiency on chiller's control
-                          panel
+                          The BROAD Values was released, with BROAD positioned
+                          as a "social enterprise"{" "}
                         </td>
                       </tr>
                       <tr>
                         <td>2005</td>
                         <td>
-                          {" "}
-                          Translated and published 250,000 copies of
-                          YouthXchange , an environment guideline of UNEP
+                          China's first company to implement Energy Management
+                          Contract of Central Air Conditioning The Premier and
+                          the NPC chairman of China visited BROAD Town and spoke
+                          highly of BROAD innovations and environmental
+                          protection endeavors Launched the transparent sales
+                          model with the Product Price List and the Fair Pricing
+                          Policy disclosed to the public
                         </td>
                       </tr>
                       <tr>
                         <td>2006</td>
                         <td>
-                          {" "}
-                          Translated & published the 780-page Living in the
-                          Environment , an English environment encyclopedia
+                          China's first company to invent clean air products{" "}
                         </td>
                       </tr>
                       <tr>
-                        <td>2008</td>
+                        <td>2007</td>
                         <td>
-                          {" "}
-                          China's first thoroughly-renovated community with all
-                          buildings at BROAD Town retrofitted with 15cm thermal
-                          insulation, 3-paned windows, external solar shading
-                          and heat recovery fresh air Invented the world's first
-                          clean fresh air machine, recovering exhaust heat by
-                          80% and filtering PM2.5 by 99.9%
+                          BROAD Town expanded to 1km2 after 12 land
+                          acquisitions, staff totaling 1829{" "}
                         </td>
                       </tr>
                       <tr>
-                        <td>2009</td>
+                        <td>2010 </td>
                         <td>
-                          {" "}
-                          Invented the world's first factory-made sustainable
-                          building (BSB) that saves energy by 80% Invented the
-                          world's first Life Phone (Air Monitor) to detect
-                          PM2.5, CO2, etc. Completely replaced detergent with
-                          caustic soda and adopted reverse osmosis water as
-                          drinking water at BROAD Town
+                          BROAD Group was established, consisting 6 subsidiaries
+                          covering air conditioning, clean air technology,
+                          energy service, sustainable building, building energy
+                          efficiency, recycling fuel oil as well as 2 other
+                          located in Tianjin and USA
                         </td>
                       </tr>
                       <tr>
-                        <td>2010</td>
+                        <td>2012 </td>
                         <td>
-                          {" "}
-                          Provided central air conditioning system and operation
-                          services to all 250 pavilions at World Expo Shanghai,
-                          cutting 73,000 tons of CO2 emissions, which equals to
-                          planting 4 million trees Built a sustainable building
-                          demo for The United Nations Framework Convention on
-                          Climate Change (COP16, Cancun)
+                          BSB Town reached 1.3 km2 with factory area covering
+                          230,000m2 BROAD products have been sold to more than
+                          80 countries
                         </td>
                       </tr>
                       <tr>
-                        <td>2011</td>
+                        <td>2015 </td>
                         <td>
-                          {" "}
-                          BROAD chairman was awarded the “Champions of the
-                          Earth” by the UN for his contributions to energy
-                          conservation
+                          The 57-floor Mini Sky City was constructed within 19
+                          days and was selected as one of "the 40 influential
+                          innovations in the world" BROAD hosted the annual
+                          meeting of the Mountain Tai Club Staff of BROAD Group
+                          totaling 3992
                         </td>
                       </tr>
                       <tr>
-                        <td>2012</td>
+                        <td>2016 </td>
                         <td>
-                          {" "}
-                          UN Secretary General cited BROAD as the only energy
-                          conservation case in the “RIO +20 Declaration” The
-                          Oval Mountain Organic Farm was built in Xiangyin
-                          County, gradually increase the food organic rate of
-                          staff to 80% Launched the 8-catergory garbage sorting
-                          system. Low Carbon Commute Incentives for Staff was
-                          carried out to encourage car-free staff
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2013</td>
-                        <td>
-                          {" "}
-                          BSB was awarded the CTBUH (Council on Tall Buildings
-                          and Urban Habitat) Innovation Award for its
-                          contribution to innovative environmental conservation
-                          Installed solar panels for all factory roofs (230,000
-                          m2) in BSB factory
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2014</td>
-                        <td>
-                          {" "}
-                          BROAD chairman was awarded the World's Top 25
-                          Eco-Innovators by Fortune Magaine BROAD Recycled Oil
-                          Company obtained the qualification to utilize 30% of
-                          national waste mineral oil
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2015</td>
-                        <td>
-                          {" "}
-                          To make building an eternal wealth, BROAD started the
-                          invention of core tubular stainless steel slab and
-                          stopped production of steel structure during the same
-                          year
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2016</td>
-                        <td>
-                          {" "}
-                          To extend the lifespan of air-conditioning to 60 years
-                          and extend the lifespan of heat exchange tube to
-                          unlimited , BROAD replaced brass heat exchange tubes
-                          and stainless steel heat exchange tubes with titanium
-                          tubes
+                          BSB case was listed in the Annual report of global
+                          construction development by the World Economic Forum
                         </td>
                       </tr>
                     </tbody>
                   </table>
+                </Tab.Pane>
+                <Tab.Pane eventKey="declaration">
+                  Any enterprise in the world that is defined only by its
+                  organizational system will have limited vitality, and will
+                  expire due to market, social or political factors, or the
+                  enterprise's own internal factors. To give an enterprise
+                  unlimited vitality, we must build another system around the
+                  organizational system; this is the cultural system.
+                  <br />
+                  <br />
+                  It is invisible, yet it is infinite. It transcends the
+                  concepts of time and geography, and the concepts of
+                  individuals, groups and races.
+                  <br />
+                  <br />
+                  The BROAD cultural system will connect us with each other,
+                  closely linking our feelings together, coordinating our
+                  behavior and allowing us to complement each other's knowledge.
+                  The BROAD cultural system will make us an indestructible
+                  spiritual unity.
+                  <br />
+                  <br />
+                  The BROAD cultural system will be established on the laws of
+                  nature, and reveal the principle - centered corporate
+                  philosophy. It will inspire our infinite wisdom and realize
+                  human aspiration to pursue a higher quality life, and will not
+                  fail the best company name in the world - BROAD!
+                  <br />
+                  <br />
+                  <ol>
+                    <li>
+                      We must address the complacency and humbleness that
+                      undermine our mental health, and always embrace the
+                      brightness, and the twists and turns of the company' s
+                      future.
+                    </li>
+                    <li>
+                      We must set aside short-term interests along with
+                      temporary gains and losses, which can hinder our vision.
+                      We reject any short - term action, and always clearly see
+                      the long - term goals of the company and individuals.{" "}
+                    </li>
+                    <li>
+                      We must reject speculative behaviors that violate our
+                      values and always believe in the “farming law” of equal
+                      pay and return.{" "}
+                    </li>
+                    <li>
+                      We must avoid the hedonism that can distort our view of
+                      life, and firmly believe that working is a necessity and a
+                      source of happiness.{" "}
+                    </li>
+                    <li>
+                      We respect each person's right - to - work and labor
+                      achievements, and always advocate the life - time
+                      employment policy, pursuing the "5 High Policy": high
+                      quality, high responsibility, high workload, high
+                      performance and high income.
+                    </li>
+                    <li>
+                      We promote a rational work attitude, always advocating
+                      process-oriented and regulation-guided management
+                      principles, and strictly implement a 6-point quality
+                      problem-solving system, discouraging rash actions, and
+                      never underestimating any slight incident.{" "}
+                    </li>
+                    <li>
+                      We abide by the credit principle of “Keep Promises”, and
+                      always regard credit as the cornerstone of a company's
+                      survival and development. We never break any promise
+                      internally or externally.{" "}
+                    </li>
+                    <li>
+                      We adhere to our corporate ethical policy, “7 Nos and 1
+                      Without”, sticking always to: no environmental pollution,
+                      no technology plagiarism, no deceiving customers, no
+                      vicious competition, no chain debts, no tax evasion, no
+                      bribery, without malicious conscience.{" "}
+                    </li>
+                    <li>
+                      We adhere to the employees' morality policy of “10 Nos and
+                      1 Without”, sticking always to: no dereliction of duty, no
+                      indolence, no promise-breaking, no lying, no cliques, no
+                      betrayal, no bribery, no greed, no waste, no pollution,
+                      without sourness.{" "}
+                    </li>
+                    <li>
+                      We give top priority to environment protection, and only
+                      develop products that can essentially reduce environmental
+                      pollution. We prioritize pollution reduction and health
+                      improvement in all aspects of corporate activities, and
+                      embed environmental protection concepts into every
+                      employee's genes.{" "}
+                    </li>
+                    <li>
+                      We challenge the limits of technology, focusing on
+                      disruptive innovations and unique products and services
+                      with which others cannot compete or better. We will always
+                      adhere to the principle of "Perfect Oneself to be
+                      Outstanding" and always fulfill the mission, "For
+                      Humanity's Future". We must encourage the progression of
+                      our employees' morality, knowledge, teamwork and work
+                      efficiency every day. To bring our various products which
+                      people desperately need to benefit the whole world, we
+                      must increase our profits year by year, ensuring that our
+                      corporate life can be sustained, our ambitious dreams not
+                      become a fantasy, and our name will shine forever.
+                    </li>
+                  </ol>
                 </Tab.Pane>
                 <Tab.Pane eventKey="awards">
                   <h2>Awards and Recognitions</h2>

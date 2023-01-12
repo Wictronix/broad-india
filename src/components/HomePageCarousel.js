@@ -105,7 +105,7 @@ function HomePageCarousel() {
                   textTransform: "uppercase",
                 }}
               >
-                Serving India for 22 years
+                Serving India since 2001
               </div>
             </div>
           </Carousel.Caption>

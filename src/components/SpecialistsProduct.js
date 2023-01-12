@@ -60,7 +60,7 @@ export default function SpecialistsProduct() {
                         marginBottom: "8px",
                       }}
                     />
-                    <h2>Non-Electric Chillers</h2>
+                    <h3>Vapour absorption chillers</h3>
                     <p>
                       Building Central A/C System &amp; Domestic Hot Water.
                       Providing cooling with fuel saving caused by 4 times' less
@@ -206,7 +206,7 @@ export default function SpecialistsProduct() {
                         marginBottom: "8px",
                       }}
                     />
-                    <h2>Absorption Heat Pumps</h2>
+                    <h2>Absorptions Chillers</h2>
                     <p>
                       Pumping Heat from Lower Temperature to Medium Temperature
                       using High Grade Energy.

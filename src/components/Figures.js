@@ -40,26 +40,7 @@ export default function Figures() {
                   <div style={{ height: 100 }}>
                     {isVisible ? (
                       <>
-                        <CountUp end={36} />
-                      </>
-                    ) : null}
-                  </div>
-                )}
-              </VisibilitySensor>
-            </div>
-            <br />
-            <div style={{ textAlign: "center" }}>Lakh+ trees Saved</div>
-          </div>
-        </div>
-        <div style={{ flex: "1" }}>
-          <div style={{ fontWeight: "600" }}>
-            <div style={{ fontSize: "4rem", textAlign: "center" }}>
-              <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
-                {({ isVisible }) => (
-                  <div style={{ height: 100 }}>
-                    {isVisible ? (
-                      <>
-                        <CountUp end={697} style={{ marginInline: "auto" }} />
+                        <CountUp end={478} />
                       </>
                     ) : null}
                   </div>
@@ -68,7 +49,7 @@ export default function Figures() {
             </div>
             <br />
             <div style={{ textAlign: "center" }}>
-              thousand+ TCO2e Reduction in Carbon Footprint
+              MW+ Air Conditioning installed in India
             </div>
           </div>
         </div>
@@ -80,7 +61,31 @@ export default function Figures() {
                   <div style={{ height: 100 }}>
                     {isVisible ? (
                       <>
-                        <CountUp end={478} />
+                        <CountUp
+                          end={697000}
+                          style={{ marginInline: "auto" }}
+                        />
+                      </>
+                    ) : null}
+                  </div>
+                )}
+              </VisibilitySensor>
+            </div>
+            <br />
+            <div style={{ textAlign: "center" }}>
+              TCO2e Reduction in Carbon Footprint
+            </div>
+          </div>
+        </div>
+        <div style={{ flex: "1" }}>
+          <div style={{ fontWeight: "600" }}>
+            <div style={{ fontSize: "4rem", textAlign: "center" }}>
+              <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+                {({ isVisible }) => (
+                  <div style={{ height: 100 }}>
+                    {isVisible ? (
+                      <>
+                        <CountUp end={360000} />
                       </>
                     ) : null}
                   </div>
@@ -95,7 +100,7 @@ export default function Figures() {
                 marginRight: !isMobile ? "1rem" : "auto",
               }}
             >
-              thousand kW+ air conditioning installed in India
+              Lakh+ trees saved
             </div>
           </div>
         </div>

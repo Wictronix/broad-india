@@ -50,7 +50,7 @@ export default function NonElectricChiller() {
             }}
             data-aos="fade-up"
           >
-            Non Electric Chillers
+            Vapour absorption chillers
           </div>
         </div>
       </div>
@@ -66,7 +66,7 @@ export default function NonElectricChiller() {
             <br />
             <br />
             <h4>Application</h4>
-            Provide chilled/heating water for central air conditioning system
+            Provide chilled/heating water for central Air Conditioning system
             Produce chilled water over 5℃ and heating water below 95℃
             <br />
             <br />
@@ -95,7 +95,7 @@ export default function NonElectricChiller() {
             <br />
             <br />
             <h4>Application</h4>
-            Provide chilled/heating water for central air conditioning system
+            Provide chilled/heating water for central Air Conditioning system
             Produce chilled water over 5℃ and heating water below 95℃.
             <br />
             <br />

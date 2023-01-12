@@ -170,13 +170,10 @@ export default function AbsorptionChiller() {
                               Features
                             </div>
                             <ul>
-                              <li>Capacity: 30-3300 ton</li>
-                              <li>Gas Pressure: 2.3-7.3 Psi (Standard)</li>
-                              <li>
-                                Dual Fuel Burner (Gas and Oil, Low NOx,
-                                &lt;10ppm)
-                              </li>
-                              <li>Cooling / Heating / Domestic Hot Water</li>
+                              <li>Capacity:30-3300 ton</li>
+                              <li>Steam Pressure: 60 - 150 Psi</li>
+                              <li>Chiller Come With Steam Valve</li>
+                              <li>Cooling Only</li>
                             </ul>
                           </Card.Text>
                         </Card.Body>
@@ -215,13 +212,10 @@ export default function AbsorptionChiller() {
                               Features
                             </div>
                             <ul>
-                              <li>Capacity: 30-3300 ton</li>
-                              <li>Gas Pressure: 2.3-7.3 Psi (Standard)</li>
-                              <li>
-                                Dual Fuel Burner (Gas and Oil, Low NOx,
-                                &lt;10ppm)
-                              </li>
-                              <li>Cooling / Heating / Domestic Hot Water</li>
+                              <li>Capacity:40-3300 ton</li>
+                              <li>Exhaust Pressure Drop: 3 - 8 Inch W.C.</li>
+                              <li>Exhaust Temperature: 536-990F</li>
+                              <li>Cooling / Heating Only</li>
                             </ul>
                           </Card.Text>
                         </Card.Body>
@@ -260,13 +254,10 @@ export default function AbsorptionChiller() {
                               Features
                             </div>
                             <ul>
-                              <li>Capacity: 30-3300 ton</li>
-                              <li>Gas Pressure: 2.3-7.3 Psi (Standard)</li>
-                              <li>
-                                Dual Fuel Burner (Gas and Oil, Low NOx,
-                                &lt;10ppm)
-                              </li>
-                              <li>Cooling / Heating / Domestic Hot Water</li>
+                              <li>Capacity:30-3300 ton</li>
+                              <li>Hot Water Temperature: 280 - 356 F</li>
+                              <li>Provides Hot Water Valve</li>
+                              <li>Cooling Only</li>
                             </ul>
                           </Card.Text>
                         </Card.Body>
