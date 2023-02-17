@@ -4,11 +4,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import About from "./pages/About";
 import ContactUs from "./pages/ContactUs";
-import AbsorptionChiller from "./pages/Products/AbsorptionChiller";
+import HeatPump from "./pages/Products/HeatPump";
 import Installations from "./pages/Services/Installations";
 import PEChillers from "./pages/Products/PEChillers";
 import Article from "./pages/Article";
-import NonElectricChiller from "./pages/Products/NonElectricChiller";
+import VapAbsorptionChiller from "./pages/Products/VapAbsorptionChiller";
 import CCHPSystem from "./pages/Products/CCHPSystem";
 import BroadGroup from "./pages/BroadGroup";
 import Pump from "./pages/Products/Pump";
@@ -28,8 +28,8 @@ export default function App() {
       element: <ContactUs />,
     },
     {
-      path: "/absorptionChiller",
-      element: <AbsorptionChiller />,
+      path: "/HeatPump",
+      element: <HeatPump />,
     },
     {
       path: "/installations",
@@ -44,8 +44,8 @@ export default function App() {
       element: <Pump />,
     },
     {
-      path: "/nonElectricChiller",
-      element: <NonElectricChiller />,
+      path: "/VapAbsorptionChiller",
+      element: <VapAbsorptionChiller />,
     },
     {
       path: "/cchpSystem",

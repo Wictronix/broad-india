@@ -100,7 +100,7 @@ export default function Figures() {
                 marginRight: !isMobile ? "1rem" : "auto",
               }}
             >
-              trees saved
+              Trees saved
             </div>
           </div>
         </div>

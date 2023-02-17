@@ -6,10 +6,10 @@ export default (
     <Route path="/" />
     <Route path="/about" />
     <Route path="/contactUs" />
-    <Route path="/absorptionChiller" />
+    <Route path="/HeatPump" />
     <Route path="/installations" />
     <Route path="/peChillers" />
-    <Route path="/nonElectricChiller" />
+    <Route path="/vapAbsorptionChiller" />
     <Route path="/cchpSystem" />
     <Route path="/article/:id" />
     <Route path="/seminar" />

@@ -4,7 +4,7 @@ import ContactForm from "../../components/ContactForm";
 import Footer from "../../components/Footer";
 import NavbarComp from "../../components/NavbarComp";
 
-export default function AbsorptionChiller() {
+export default function HeatPump() {
   const [isMobile, setIsMobile] = React.useState(true);
   React.useEffect(() => {
     setIsMobile(window.innerWidth < 768);
@@ -47,14 +47,14 @@ export default function AbsorptionChiller() {
               fontWeight: "700",
             }}
           >
-            Absorption Chillers
+            Heat Pump
           </div>
         </div>
       </div>
       <div style={{ paddingBlock: "2rem", backgroundColor: "#ccc" }}>
         <Container>
           <p style={{ fontSize: "1.2rem" }}>
-            Better <strong>Absorption Chillers</strong> for a better world.
+            Better <strong>Heat Pumps</strong> for a better world.
           </p>
         </Container>
       </div>

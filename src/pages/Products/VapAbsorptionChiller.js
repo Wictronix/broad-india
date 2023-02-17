@@ -6,7 +6,7 @@ import NavbarComp from "../../components/NavbarComp";
 import nonElec from "../../assets/images/nonElec.jpg";
 import wasteHeat from "../../assets/images/wasteHeat.jpg";
 
-export default function NonElectricChiller() {
+export default function VapAbsorptionChiller() {
   const [isMobile, setIsMobile] = React.useState(true);
   React.useEffect(() => {
     setIsMobile(window.innerWidth < 768);
@@ -50,7 +50,7 @@ export default function NonElectricChiller() {
             }}
             data-aos="fade-up"
           >
-            Vapour absorption chillers
+            Vapour Absorption Chillers
           </div>
         </div>
       </div>

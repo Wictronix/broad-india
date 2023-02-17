@@ -112,24 +112,24 @@ export default function NavbarComp() {
               >
                 <Dropdown.Item>
                   <Link
-                    to="/nonElectricChiller"
+                    to="/vapAbsorptionChiller"
                     style={{
                       textDecoration: "none",
                       color: "black",
                     }}
                   >
-                    Vapour absorption chiller{" "}
+                    Vapour Absorption Chiller{" "}
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item>
                   <Link
-                    to="/absorptionChiller"
+                    to="/HeatPump"
                     style={{
                       textDecoration: "none",
                       color: "black",
                     }}
                   >
-                    Absorption Chiller
+                    Heat Pump
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item>
@@ -151,7 +151,7 @@ export default function NavbarComp() {
                       color: "black",
                     }}
                   >
-                    Power efficient Chiller
+                    Magnetic Bearing Oil Free Chiller
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item>
@@ -250,14 +250,14 @@ export default function NavbarComp() {
               Products
             </h5>
             <Link
-              to="/absorptionChiller"
+              to="/HeatPump"
               style={{
                 textDecoration: "none",
                 color: "black",
                 marginBottom: "0.5rem",
               }}
             >
-              Absorption Chiller
+              Heat Pump
             </Link>
             <Link
               to="/peChillers"
@@ -267,7 +267,7 @@ export default function NavbarComp() {
                 marginBottom: "0.5rem",
               }}
             >
-              Power efficient Chiller
+              Magnetic Bearing Oil Free Chiller
             </Link>
             <Link
               to="/pump"
@@ -280,14 +280,14 @@ export default function NavbarComp() {
               Pumpset
             </Link>
             <Link
-              to="/nonElectricChiller"
+              to="/vapAbsorptionChiller"
               style={{
                 textDecoration: "none",
                 color: "black",
                 marginBottom: "0.5rem",
               }}
             >
-              Vapour absorption chiller
+              Vapour Absorption Chiller
             </Link>
             <Link
               to="/cchpSystem"

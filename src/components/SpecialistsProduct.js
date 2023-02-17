@@ -11,7 +11,7 @@ export default function SpecialistsProduct() {
     <div>
       <Container>
         <div className="display-5 mb-5 text-center">
-          Specialists in Absorption Chillers
+          our Best Quality Products
         </div>
         <p className="text-center">
           A cost-effective cooling and heating solution that can better utilize
@@ -38,7 +38,7 @@ export default function SpecialistsProduct() {
                   }}
                   onMouseEnter={() => setMouseIdx(1)}
                   onMouseLeave={() => setMouseIdx(-1)}
-                  onClick={() => navigate("/nonElectricChiller")}
+                  onClick={() => navigate("/vapAbsorptionChiller")}
                 >
                   <div
                     style={{
@@ -60,7 +60,7 @@ export default function SpecialistsProduct() {
                         marginBottom: "8px",
                       }}
                     />
-                    <h3>Vapour absorption chillers</h3>
+                    <h3>Vapour Absorption Chiller</h3>
                     <p>
                       Building Central A/C System &amp; Domestic Hot Water.
                       Providing cooling with fuel saving caused by 4 times' less
@@ -110,7 +110,7 @@ export default function SpecialistsProduct() {
                         marginBottom: "8px",
                       }}
                     />
-                    <h2>BROAD CCHP System</h2>
+                    <h3>BROAD CCHP System</h3>
                     <p>
                       Achieves Zero Emission with Exhaust Heat as Power Source -
                       The CCHP System powered by exhaust heat from generator.
@@ -158,7 +158,7 @@ export default function SpecialistsProduct() {
                         marginBottom: "8px",
                       }}
                     />
-                    <h2>Power Efficient Chiller</h2>
+                    <h3>Magnetic Bearing Oil Free Chillers</h3>
                     <p>
                       Cooling capacity ranging from 150 ton to 2000 ton, High
                       COP (6.5) and excellent IPLV ( maximum 13.26)
@@ -184,7 +184,7 @@ export default function SpecialistsProduct() {
                   }}
                   onMouseEnter={() => setMouseIdx(2)}
                   onMouseLeave={() => setMouseIdx(-1)}
-                  onClick={() => navigate("/absorptionChiller")}
+                  onClick={() => navigate("/HeatPump")}
                 >
                   <div
                     style={{
@@ -206,7 +206,7 @@ export default function SpecialistsProduct() {
                         marginBottom: "8px",
                       }}
                     />
-                    <h2>Absorptions Chillers</h2>
+                    <h3>Absorptions Chillers</h3>
                     <p>
                       Pumping Heat from Lower Temperature to Medium Temperature
                       using High Grade Energy.

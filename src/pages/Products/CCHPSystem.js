@@ -63,18 +63,10 @@ export default function CCHPSystem() {
           <br />
           <div className="col-md-12 mt-3">
             <ul>
-              <li>Cooling capacity ranging from 150 ton to 2000 ton</li>
-              <li>The Danfoss Turbocor, Portfolio of Oil free Compressors</li>
-              <li>
-                Multi Compressors provided un-compatible Reliable and flexible
-              </li>
-              <li>High COP (6.5) and excellent IPLV ( maximum 13.26)</li>
-              <li>Minimum impact to electrical grid ( as low as 2A)</li>
-              <li>Adjustable load: 10~100%</li>
-              <li>Operation noise: ≤65dB (A)</li>
-              <li>Operation vibration: ≤0.30mm</li>
-              <li>Life design: 30 years</li>
-              <li>Package design (option)</li>
+              <li>Achieves zero emission with exhaust heat as power source.</li>
+              <li>For more than 100 years, thermal power plants have been located a considerable distance from urban areas and waste heat can not be easily utilized. The energy loss from voltage fluctuation and long-distance power transmission has reached 2/3 in most cases, but this centralized energy model has been regarded as reasonable enough all the time.</li>
+              <li>In 1999, BROAD pioneered the distributed energy model - the CCHP System powered by exhaust heat from a turbine generator. This system has been applied in more than 70 countries and has typically doubled the energy efficiency of most projects, and is equals to - zero energy cost for cooling and heating.</li>            
+              <li>With the growing awareness of the climate change crisis, local distributed CCHP systems will ultimately displace the bulk grid ones, just as wireless communications largely replacing hard wired communications.</li>
             </ul>
             <a href="/files/CCHP.pdf" className="btn btn-primary">
               Download Catalog

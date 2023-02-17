@@ -235,6 +235,7 @@ export default function About() {
                   <br />
                 </Tab.Pane>
                 <Tab.Pane eventKey="values">
+                  <h3>Core Values</h3>
                   <p>
                     The core values of BROAD include responsibility to our
                     environment which nurtures us, responsibility to humanity
@@ -433,6 +434,7 @@ export default function About() {
                   </table>
                 </Tab.Pane>
                 <Tab.Pane eventKey="declaration">
+                  <h3>Broad Declaration</h3>
                   Any enterprise in the world that is defined only by its
                   organizational system will have limited vitality, and will
                   expire due to market, social or political factors, or the

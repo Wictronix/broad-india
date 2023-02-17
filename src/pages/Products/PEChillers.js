@@ -47,12 +47,12 @@ export default function PEChillers() {
             }}
             data-aos="fade-up"
           >
-            Power Efficient Chillers
+            Magnetic Bearing Oil Free Chillers
           </div>
         </div>
       </div>
       <Container style={{ margin: isMobile ? "1rem 0.5rem" : "5rem 6rem" }}>
-        <div className="display-6 mb-4">BROAD Magnetic bearing chiller</div>
+        <div className="display-6 mb-4">BROAD Magnetic Bearing Oil Free Chiller</div>
         <div className="row">
           <div className="col-md-4">
             <img
