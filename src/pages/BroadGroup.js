@@ -152,7 +152,7 @@ export default function BroadGroup() {
           </div>
         </div>
         <div className="d-flex justify-content-center">
-          <a href="http://en.broad.com">Visit Broad Group website</a>
+          <a href="http://en.broad.com">Visit BROAD Group website</a>
         </div>
       </Container>
       <Footer />

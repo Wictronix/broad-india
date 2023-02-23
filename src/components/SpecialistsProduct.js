@@ -206,7 +206,7 @@ export default function SpecialistsProduct() {
                         marginBottom: "8px",
                       }}
                     />
-                    <h3>Absorptions Chillers</h3>
+                    <h3>Heat Pump</h3>
                     <p>
                       Pumping Heat from Lower Temperature to Medium Temperature
                       using High Grade Energy.

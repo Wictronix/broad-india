@@ -66,7 +66,7 @@ export default function ContactUs() {
             <div className="card mx-2">
               <div className="card-header">Contact Details</div>
               <div className="card-body">
-                <h3>Broad Air Conditioning Pvt. Ltd. (Broad India)</h3>
+                <h3>BROAD Air Conditioning India Pvt. Ltd. (BROAD India)</h3>
                 <div></div>
                 <br />
                 <div className="d-flex mb-1">

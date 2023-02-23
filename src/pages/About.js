@@ -74,7 +74,7 @@ export default function About() {
               <li>Subsidised Company of BROAD group, China.</li>
               <li>BROAD has been serving India market since 2001.</li>
               <li>
-                BROAD Air Conditioning Pvt. Ltd. (BROAD India) has more than 200
+                BROAD Air Conditioning India Pvt. Ltd. (BROAD India) has more than 200
                 VAM installations, Service and O&M in India.
               </li>
               <li>Operating Asia's biggest CHP project in DLF, Gurugram</li>
@@ -139,10 +139,10 @@ export default function About() {
             <Col sm={9}>
               <Tab.Content>
                 <Tab.Pane eventKey="about">
-                  <h2>About BROAD Air Conditioning Pvt. Ltd. (BROAD India)</h2>
+                  <h2>About BROAD Air Conditioning India Pvt. Ltd. (BROAD India)</h2>
                   <br />
                   <h4>
-                    BROAD Air Conditioning Pvt. Ltd. (BROAD India) is committed
+                    BROAD Air Conditioning India Pvt. Ltd. (BROAD India) is committed
                     to the Absorption Marketplace - It is our primary business
                     since we started in 2001
                   </h4>
@@ -434,7 +434,7 @@ export default function About() {
                   </table>
                 </Tab.Pane>
                 <Tab.Pane eventKey="declaration">
-                  <h3>Broad Declaration</h3>
+                  <h3>BROAD Declaration</h3>
                   Any enterprise in the world that is defined only by its
                   organizational system will have limited vitality, and will
                   expire due to market, social or political factors, or the

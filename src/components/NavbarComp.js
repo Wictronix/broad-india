@@ -140,7 +140,7 @@ export default function NavbarComp() {
                       color: "black",
                     }}
                   >
-                    Broad CCHP System{" "}
+                    BROAD CCHP System{" "}
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item>
@@ -327,7 +327,7 @@ export default function NavbarComp() {
                 marginBottom: "0.5rem",
               }}
             >
-              Broad NPI Facility
+              BROAD NPI Facility
             </Link> */}
             <br />
             <h3>

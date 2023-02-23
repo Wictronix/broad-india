@@ -12,7 +12,7 @@ export default function CoreValues() {
     <div style={{ overflowX: "hidden" }}>
       <div className="display-5 text-center">Core Values</div>
       <div className="text-center mt-2">
-        Every day, Broad Air Conditioning Pvt. Ltd. (Broad India) aims to
+        Every day, BROAD Air Conditioning India Pvt. Ltd. (BROAD India) aims to
         demonstrate our loyalty to our customers, fairness to our vendors, and
         dedication to our employees.
         <br />
