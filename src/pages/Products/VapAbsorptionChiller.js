@@ -116,6 +116,41 @@ export default function VapAbsorptionChiller() {
             <img src={wasteHeat} alt="dfc" style={{ width: "100%" }} />
           </div>
         </div>
+        <div className="row mt-5">
+          <h1>Absorption Heat Pump</h1>
+          <div className="col-md-6">
+            <img src={wasteHeat} alt="dfc" style={{ width: "100%" }} />
+          </div>
+          <div className="col-md-6">
+            <br />
+            <br />
+            <h4>Function</h4>
+            Low temperature. Waste Pleat recovery.
+            <br />
+            <br />
+            <h4>Application</h4>
+              District process and Building heating.
+              Make up water supply preheating.
+             
+            <br />
+            <br />
+            <h4>Cooling Capacity</h4>
+            282kW ~ 56,489kV
+            <br />
+            <br />
+            <h4>Energy sources</h4>
+            Steam
+              High temp. hot water, 
+              High temp. exhaust, 
+              Natural gas, coal gas, bio gas, diesel
+              1.7 COP with simultaneous cooling and heating.
+            <br />
+            <br />
+            <a href="/files/heatpump.pdf" className="btn btn-primary">
+              Download Catalogue
+            </a>
+          </div>
+        </div>
       </Container>
       <Footer />
     </div>

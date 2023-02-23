@@ -126,7 +126,7 @@ export default function HeatPump() {
                             </div>
                             <ul>
                               <li>Capacity: 30-3300 ton</li>
-                              <li>Gas Pressure: 2.3-7.3 Psi (Standard)</li>
+                              <li>Gas Pressure: 0.16 - 0.51 kg/cm2 (Standard)</li>
                               <li>
                                 Dual Fuel Burner (Gas and Oil, Low NOx,
                                 &lt;10ppm)
@@ -171,7 +171,7 @@ export default function HeatPump() {
                             </div>
                             <ul>
                               <li>Capacity:30-3300 ton</li>
-                              <li>Steam Pressure: 60 - 150 Psi</li>
+                              <li>Steam Pressure: - 14.2 - 10.5 kg/cm2</li>
                               <li>Chiller Come With Steam Valve</li>
                               <li>Cooling Only</li>
                             </ul>
@@ -214,7 +214,7 @@ export default function HeatPump() {
                             <ul>
                               <li>Capacity:40-3300 ton</li>
                               <li>Exhaust Pressure Drop: 3 - 8 Inch W.C.</li>
-                              <li>Exhaust Temperature: 536-990F</li>
+                              <li>Exhaust Temperature: 280 - 532 C</li>
                               <li>Cooling / Heating Only</li>
                             </ul>
                           </Card.Text>
@@ -440,7 +440,7 @@ export default function HeatPump() {
                             </div>
                             <ul>
                               <li>Capacity: 30-300 ton</li>
-                              Gas Pressure: 2.3-7.3 Psi (Standard)
+                              Gas Pressure: 0.16-0.51 kg/cm2 (Standard)
                               <li>
                                 Dual Fuel Burner (Gas and Oil, Low NOx, &lt;
                                 10ppm)
@@ -536,7 +536,7 @@ export default function HeatPump() {
                             </div>
                             <ul>
                               <li>Capacity: 30-3300 ton</li>
-                              <li>Gas Pressure: 2.3-7.3 Psi (Standard)</li>
+                              <li>Gas Pressure: 0.16-0.51 kg/cm2 (Standard)</li>
                               <li>
                                 Dual Fuel Burner (Gas and Oil, Low NOx, &lt;
                                 10ppm)
@@ -593,7 +593,7 @@ export default function HeatPump() {
                             <ul>
                               <li>Direct Fire/Hot water/Steam/Exhaust</li>
                               <li>Capacity: 40-2200 ton</li>
-                              <li>Gas Pressure: 2.3-7.3 Psi (Standard)</li>
+                              <li>Gas Pressure: 0.16-0.51 kg/cm2 (Standard)</li>
                               <li>
                                 Dual Fuel Burner (Gas and Oil, Low NOx, &lt;
                                 10ppm)
@@ -644,8 +644,8 @@ export default function HeatPump() {
                             </div>
                             <ul>
                               <li>Capacity: 40-1000 ton</li>
-                              <li>Hot Water: 160-350F</li>
-                              <li>Gas Pressure:2.3-7.3 Psi (Standard)</li>
+                              <li>Hot Water: 71-176 C</li>
+                              <li>Gas Pressure: 0.16-0.51 kg/cm2 (Standard)</li>
                               <li>Dual Fuel Burner</li>
                               <li>Cooling Only</li>
                             </ul>
