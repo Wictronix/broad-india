@@ -4,7 +4,7 @@ import ContactForm from "../../components/ContactForm";
 import Footer from "../../components/Footer";
 import NavbarComp from "../../components/NavbarComp";
 
-export default function HeatPump() {
+export default function Chillers() {
   const [isMobile, setIsMobile] = React.useState(true);
   React.useEffect(() => {
     setIsMobile(window.innerWidth < 768);
@@ -47,14 +47,14 @@ export default function HeatPump() {
               fontWeight: "700",
             }}
           >
-            Heat Pump
+            Waste Chillers
           </div>
         </div>
       </div>
       <div style={{ paddingBlock: "2rem", backgroundColor: "#ccc" }}>
         <Container>
           <p style={{ fontSize: "1.2rem" }}>
-            Better <strong>Heat Pumps</strong> for a better world.
+            Better <strong>Chillers</strong> for a better world.
           </p>
         </Container>
       </div>
@@ -109,7 +109,7 @@ export default function HeatPump() {
                             as="div"
                             style={{
                               fontSize: "1rem",
-                              marginInline: "2rem",
+                              marginInline: "1rem",
                               color: "#666",
                             }}
                           >
@@ -118,7 +118,7 @@ export default function HeatPump() {
                                 fontWeight: "600",
                                 fontSize: "1.2rem",
                                 color: "#444",
-                                marginLeft: "0.6rem",
+                                marginLeft: "0.5rem",
                                 marginBottom: "0.8rem",
                               }}
                             >
@@ -154,7 +154,7 @@ export default function HeatPump() {
                             as="div"
                             style={{
                               fontSize: "1rem",
-                              marginInline: "2rem",
+                              marginInline: "1rem",
                               color: "#666",
                             }}
                           >
@@ -163,7 +163,7 @@ export default function HeatPump() {
                                 fontWeight: "600",
                                 fontSize: "1.2rem",
                                 color: "#444",
-                                marginLeft: "0.6rem",
+                                marginLeft: "0.5rem",
                                 marginBottom: "0.8rem",
                               }}
                             >
@@ -196,7 +196,7 @@ export default function HeatPump() {
                             as="div"
                             style={{
                               fontSize: "1rem",
-                              marginInline: "2rem",
+                              marginInline: "1rem",
                               color: "#666",
                             }}
                           >
@@ -205,7 +205,7 @@ export default function HeatPump() {
                                 fontWeight: "600",
                                 fontSize: "1.2rem",
                                 color: "#444",
-                                marginLeft: "0.6rem",
+                                marginLeft: "0.5rem",
                                 marginBottom: "0.8rem",
                               }}
                             >
@@ -238,7 +238,7 @@ export default function HeatPump() {
                             as="div"
                             style={{
                               fontSize: "1rem",
-                              marginInline: "2rem",
+                              marginInline: "1rem",
                               color: "#666",
                             }}
                           >
@@ -247,7 +247,7 @@ export default function HeatPump() {
                                 fontWeight: "600",
                                 fontSize: "1.2rem",
                                 color: "#444",
-                                marginLeft: "0.6rem",
+                                marginLeft: "0.5rem",
                                 marginBottom: "0.8rem",
                               }}
                             >
@@ -286,7 +286,7 @@ export default function HeatPump() {
                             as="div"
                             style={{
                               fontSize: "1rem",
-                              marginInline: "2rem",
+                              marginInline: "1rem",
                               color: "#666",
                             }}
                           >
@@ -295,7 +295,7 @@ export default function HeatPump() {
                                 fontWeight: "600",
                                 fontSize: "1.2rem",
                                 color: "#444",
-                                marginLeft: "0.6rem",
+                                marginLeft: "0.5rem",
                                 marginBottom: "0.8rem",
                               }}
                             >
@@ -332,7 +332,7 @@ export default function HeatPump() {
                             as="div"
                             style={{
                               fontSize: "1rem",
-                              marginInline: "2rem",
+                              marginInline: "1rem",
                               color: "#666",
                             }}
                           >
@@ -341,7 +341,7 @@ export default function HeatPump() {
                                 fontWeight: "600",
                                 fontSize: "1.2rem",
                                 color: "#444",
-                                marginLeft: "0.6rem",
+                                marginLeft: "0.5rem",
                                 marginBottom: "0.8rem",
                               }}
                             >
@@ -376,7 +376,7 @@ export default function HeatPump() {
                             as="div"
                             style={{
                               fontSize: "1rem",
-                              marginInline: "2rem",
+                              marginInline: "1rem",
                               color: "#666",
                             }}
                           >
@@ -385,7 +385,7 @@ export default function HeatPump() {
                                 fontWeight: "600",
                                 fontSize: "1.2rem",
                                 color: "#444",
-                                marginLeft: "0.6rem",
+                                marginLeft: "0.5rem",
                                 marginBottom: "0.8rem",
                               }}
                             >
@@ -424,7 +424,7 @@ export default function HeatPump() {
                             as="div"
                             style={{
                               fontSize: "1rem",
-                              marginInline: "2rem",
+                              marginInline: "1rem",
                               color: "#666",
                             }}
                           >
@@ -433,7 +433,7 @@ export default function HeatPump() {
                                 fontWeight: "600",
                                 fontSize: "1.2rem",
                                 color: "#444",
-                                marginLeft: "0.6rem",
+                                marginLeft: "0.5rem",
                                 marginBottom: "0.8rem",
                               }}
                             >
@@ -473,7 +473,7 @@ export default function HeatPump() {
                             as="div"
                             style={{
                               fontSize: "1rem",
-                              marginInline: "2rem",
+                              marginInline: "1rem",
                               color: "#666",
                             }}
                           >
@@ -482,7 +482,7 @@ export default function HeatPump() {
                                 fontWeight: "600",
                                 fontSize: "1.2rem",
                                 color: "#444",
-                                marginLeft: "0.6rem",
+                                marginLeft: "0.5rem",
                                 marginBottom: "0.8rem",
                               }}
                             >
@@ -520,7 +520,7 @@ export default function HeatPump() {
                             as="div"
                             style={{
                               fontSize: "1rem",
-                              marginInline: "2rem",
+                              marginInline: "1rem",
                               color: "#666",
                             }}
                           >
@@ -529,7 +529,7 @@ export default function HeatPump() {
                                 fontWeight: "600",
                                 fontSize: "1.2rem",
                                 color: "#444",
-                                marginLeft: "0.6rem",
+                                marginLeft: "0.5rem",
                                 marginBottom: "0.8rem",
                               }}
                             >
@@ -576,7 +576,7 @@ export default function HeatPump() {
                             as="div"
                             style={{
                               fontSize: "1rem",
-                              marginInline: "2rem",
+                              marginInline: "1rem",
                               color: "#666",
                             }}
                           >
@@ -585,7 +585,7 @@ export default function HeatPump() {
                                 fontWeight: "600",
                                 fontSize: "1.2rem",
                                 color: "#444",
-                                marginLeft: "0.6rem",
+                                marginLeft: "0.5rem",
                                 marginBottom: "0.8rem",
                               }}
                             >
@@ -628,7 +628,7 @@ export default function HeatPump() {
                             as="div"
                             style={{
                               fontSize: "1rem",
-                              marginInline: "2rem",
+                              marginInline: "1rem",
                               color: "#666",
                             }}
                           >
@@ -637,7 +637,7 @@ export default function HeatPump() {
                                 fontWeight: "600",
                                 fontSize: "1.2rem",
                                 color: "#444",
-                                marginLeft: "0.6rem",
+                                marginLeft: "0.5rem",
                                 marginBottom: "0.8rem",
                               }}
                             >

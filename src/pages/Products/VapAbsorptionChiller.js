@@ -55,7 +55,7 @@ export default function VapAbsorptionChiller() {
         </div>
       </div>
       <Container style={{ margin: isMobile ? "1rem 0.5rem" : "5rem 6rem" }}>
-        <div className="row">
+        <div className="row shadow p-3 rounded">
           <h1>Direct Fired Chiller</h1>
           <div className="col-md-6 mt-3">
             <img src={nonElec} alt="dfc" style={{ width: "100%" }} />
@@ -85,7 +85,7 @@ export default function VapAbsorptionChiller() {
             </a>
           </div>
         </div>
-        <div className="row mt-5">
+        <div className="row mt-5 shadow bg-white p-3 rounded">
           <h1>Waste Heat Chiller</h1>
           <div className="col-md-6">
             <br />
@@ -111,12 +111,16 @@ export default function VapAbsorptionChiller() {
             <a href="/files/nonElec.pdf" className="btn btn-primary">
               Download Catalogue
             </a>
+            <span> </span>
+            <a href="/Chillers" className="btn btn-primary">
+              Know More
+            </a>
           </div>
           <div className="col-md-6">
             <img src={wasteHeat} alt="dfc" style={{ width: "100%" }} />
           </div>
         </div>
-        <div className="row mt-5">
+        <div className="row mt-5 shadow p-3 rounded">
           <h1>Absorption Heat Pump</h1>
           <div className="col-md-6">
             <img src={wasteHeat} alt="dfc" style={{ width: "100%" }} />

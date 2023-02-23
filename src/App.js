@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import About from "./pages/About";
 import ContactUs from "./pages/ContactUs";
-import HeatPump from "./pages/Products/HeatPump";
+import Chillers from "./pages/Products/Chillers";
 import Installations from "./pages/Services/Installations";
 import PEChillers from "./pages/Products/PEChillers";
 import Article from "./pages/Article";
@@ -28,8 +28,8 @@ export default function App() {
       element: <ContactUs />,
     },
     {
-      path: "/HeatPump",
-      element: <HeatPump />,
+      path: "/Chillers",
+      element: <Chillers />,
     },
     {
       path: "/installations",

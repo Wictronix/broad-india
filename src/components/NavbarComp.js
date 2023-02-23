@@ -123,7 +123,7 @@ export default function NavbarComp() {
                 </Dropdown.Item>
                 <Dropdown.Item>
                   <Link
-                    to="/HeatPump"
+                    to="/Chillers"
                     style={{
                       textDecoration: "none",
                       color: "black",
@@ -250,7 +250,7 @@ export default function NavbarComp() {
               Products
             </h5>
             <Link
-              to="/HeatPump"
+              to="/Chillers"
               style={{
                 textDecoration: "none",
                 color: "black",
@@ -267,6 +267,28 @@ export default function NavbarComp() {
             //     marginBottom: "0.5rem",
             //   }}
             >
+            Vapour Absorption Chiller
+          </Link>
+          <Link
+              to="/vapAbsorptionChiller"
+              style={{
+                textDecoration: "none",
+                color: "black",
+                marginBottom: "0.5rem",
+              }}
+          
+            >
+              BROAD CCHP System{" "}
+            </Link>
+          <Link
+            to="/cchpSystem"
+            style={{
+              textDecoration: "none",
+              color: "black",
+              marginBottom: "0.5rem",
+            }}
+            
+            >
               Magnetic Bearing Oil Free Chiller
             </Link>
             <Link
@@ -279,26 +301,7 @@ export default function NavbarComp() {
             >
               Pumpset
             </Link>
-            <Link
-              to="/vapAbsorptionChiller"
-              style={{
-                textDecoration: "none",
-                color: "black",
-                marginBottom: "0.5rem",
-              }}
-            >
-              Vapour Absorption Chiller
-            </Link>
-            <Link
-              to="/cchpSystem"
-              style={{
-                textDecoration: "none",
-                color: "black",
-                marginBottom: "0.5rem",
-              }}
-            >
-              BROAD CCHP System{" "}
-            </Link>
+          
             {/* <Link
               to="/peChillers"
               style={{

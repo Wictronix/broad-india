@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.42f2fe8f.css",
-    "main.js": "/static/js/main.fc4a9e22.js",
+    "main.js": "/static/js/main.98772779.js",
     "static/media/FTower.png": "/static/media/FTower.7bc372d82292372bdb20.png",
     "static/media/contactBG.jpg": "/static/media/contactBG.febcc87f061b73f053b0.jpg",
     "static/media/broad-bg-2.jpg": "/static/media/broad-bg-2.92d5fe9c9f69ee2f0ac4.jpg",
@@ -27,10 +27,10 @@
     "static/media/broad-logo.png": "/static/media/broad-logo.6a354596e96c23cb8b36.png",
     "index.html": "/index.html",
     "main.42f2fe8f.css.map": "/static/css/main.42f2fe8f.css.map",
-    "main.fc4a9e22.js.map": "/static/js/main.fc4a9e22.js.map"
+    "main.98772779.js.map": "/static/js/main.98772779.js.map"
   },
   "entrypoints": [
     "static/css/main.42f2fe8f.css",
-    "static/js/main.fc4a9e22.js"
+    "static/js/main.98772779.js"
   ]
 }
