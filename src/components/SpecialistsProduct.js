@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import pumpImg from "../assets/images/broadPump.png";
 
 import "../global.css";
 
@@ -184,7 +185,7 @@ export default function SpecialistsProduct() {
                   }}
                   onMouseEnter={() => setMouseIdx(2)}
                   onMouseLeave={() => setMouseIdx(-1)}
-                  onClick={() => navigate("/HeatPump")}
+                  onClick={() => navigate("/pump")}
                 >
                   <div
                     style={{
@@ -198,18 +199,17 @@ export default function SpecialistsProduct() {
                     }}
                   >
                     <img
-                      src="https://broadusa.com/broad/wp-content/uploads/2020/05/WeChat-Image_20200513110329-300x207.jpg"
-                      alt="ahp"
+                      src={pumpImg}
+                      alt="pumpset"
                       style={{
                         width: "85%",
                         height: "auto",
                         marginBottom: "8px",
                       }}
                     />
-                    <h3>Heat Pump</h3>
+                    <h3>Pump Set</h3>
                     <p>
-                      Pumping Heat from Lower Temperature to Medium Temperature
-                      using High Grade Energy.
+                    Zero water resistance design enables 60%+ electricity saving compared with conventional water distribution systems.
                     </p>
                   </div>
                 </div>

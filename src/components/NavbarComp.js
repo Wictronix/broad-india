@@ -128,17 +128,17 @@ export default function NavbarComp() {
                       textDecoration: "none",
                       color: "black",
                     }}
-                  >
-                    Heat Pump
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  <Link
-                    to="/cchpSystem"
-                    style={{
-                      textDecoration: "none",
-                      color: "black",
-                    }}
+                //   >
+                //     Heat Pump
+                //   </Link>
+                // </Dropdown.Item>
+                // <Dropdown.Item>
+                //   <Link
+                //     to="/cchpSystem"
+                //     style={{
+                //       textDecoration: "none",
+                //       color: "black",
+                //     }}
                   >
                     BROAD CCHP System{" "}
                   </Link>
@@ -256,16 +256,16 @@ export default function NavbarComp() {
                 color: "black",
                 marginBottom: "0.5rem",
               }}
-            >
-              Heat Pump
-            </Link>
-            <Link
-              to="/peChillers"
-              style={{
-                textDecoration: "none",
-                color: "black",
-                marginBottom: "0.5rem",
-              }}
+            // >
+            //   Heat Pump
+            // </Link>
+            // <Link
+            //   to="/peChillers"
+            //   style={{
+            //     textDecoration: "none",
+            //     color: "black",
+            //     marginBottom: "0.5rem",
+            //   }}
             >
               Magnetic Bearing Oil Free Chiller
             </Link>
