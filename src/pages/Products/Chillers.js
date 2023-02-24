@@ -171,7 +171,7 @@ export default function Chillers() {
                             </div>
                             <ul>
                               <li>Capacity:30-3300 ton</li>
-                              <li>Steam Pressure: - 14.2 - 10.5 kg/cm<sup>2</sup></li>
+                              <li>Steam Pressure: 4.2 - 10.5 kg/cm<sup>2</sup></li>
                               <li>Chiller Come With Steam Valve</li>
                               <li>Cooling Only</li>
                             </ul>

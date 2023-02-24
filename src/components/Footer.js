@@ -125,7 +125,7 @@ export default function Footer() {
             <div className="gap-4">
               <div className="d-flex mb-1">
                 <a
-                  href="mailto:info@broadindia.com?cc=akshay@broad.net"
+                  href="mailto:info@broadindia.com"
                   className="text-decoration-none text-light"
                   target="_blank" 
                   rel="noreferrer"

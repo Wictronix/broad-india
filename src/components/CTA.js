@@ -33,7 +33,7 @@ export default function CTA() {
             <div className="d-flex flex-column flex-md-row gap-4">
               <div className="d-flex mb-1">
                 <a
-                  href="mailto:info@broadindia.com?cc=akshay@broad.net"
+                  href="mailto:info@broadindia.com"
                   className=" text-decoration-none"
                 >
                   <svg
