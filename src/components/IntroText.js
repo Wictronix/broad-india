@@ -9,7 +9,7 @@ export default function IntroText() {
         market. More than 200 VAM installations, services, and O&M are provided
         by BROAD Air Conditioning India Pvt. Ltd. (BROAD India) across India. BROAD
         chillers placed in petrochemical, food, textile, hospital, and office
-        industries as part of Asia's largest CHP project
+        industries as part of Asia's largest CHP project.
       </div>
     </div>
   );
