@@ -53,7 +53,7 @@ export default function BroadGroup() {
       <Container className="my-5">
         <div className="row">
           <div className="col-md-6">
-            BROAD Group is a privately owned enterprise founded in 1988 with RMB
+            BROAD Group is a privately-owned enterprise founded in 1988 with RMB
             30,000. The company has developed hundreds of hi-tech products and
             has never copied any technology of its peers since inception. The
             mission of BROAD Group is “For Humanity's Future: Using original low
