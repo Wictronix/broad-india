@@ -1,4 +1,5 @@
 # Getting Started with Create React App
+![CD passing](https://github.com/WictroniX-GitHub/broad-india/actions/workflows/cd.yml/badge.svg)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
