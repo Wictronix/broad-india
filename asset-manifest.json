@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/static/css/main.42f2fe8f.css",
+    "main.js": "/static/js/main.323d4cb0.js",
+    "static/media/FTower.png": "/static/media/FTower.7bc372d82292372bdb20.png",
+    "static/media/contactBG.jpg": "/static/media/contactBG.febcc87f061b73f053b0.jpg",
+    "static/media/broad-bg-2.jpg": "/static/media/broad-bg-2.92d5fe9c9f69ee2f0ac4.jpg",
+    "static/media/bgbg.jpg": "/static/media/bgbg.fb274ea0d50a9fb6862f.jpg",
+    "static/media/broad-bg-1.jpg": "/static/media/broad-bg-1.2e23b6da1199ad277542.jpg",
+    "static/media/13Podium.jpg": "/static/media/13Podium.2121eeb5306d462db00c.jpg",
+    "static/media/itc.jpg": "/static/media/itc.9581bfb15d283d4c8eb8.jpg",
+    "static/media/broad_town_intro3.jpg": "/static/media/broad_town_intro3.3d96f0bce46b1082b05e.jpg",
+    "static/media/broadPump.png": "/static/media/broadPump.3df04b93d9a9bd6dfc6a.png",
+    "static/media/awards2.jpeg": "/static/media/awards2.a817d1b76b8889317873.jpeg",
+    "static/media/awards3.jpeg": "/static/media/awards3.9cfacc1cb8c45fc21d72.jpeg",
+    "static/media/BROAD INDIA.png": "/static/media/BROAD INDIA.42e5df0c21829d2adad7.png",
+    "static/media/logo.png": "/static/media/logo.42e5df0c21829d2adad7.png",
+    "static/media/broadIndGrp.jpeg": "/static/media/broadIndGrp.8d5b542dbf4feae25453.jpeg",
+    "static/media/wxWhite.svg": "/static/media/wxWhite.00992c87c7b3e51ff37c5f27f886689a.svg",
+    "static/media/wasteHeat.jpg": "/static/media/wasteHeat.ee341faab0015f6811f3.jpg",
+    "static/media/awards1.jpeg": "/static/media/awards1.9a6a431d86561f0cf20c.jpeg",
+    "static/media/cchp.jpg": "/static/media/cchp.845978bf9fd8d822093c.jpg",
+    "static/media/nonElec.jpg": "/static/media/nonElec.f26315e514144fd0ab24.jpg",
+    "static/media/instagram.png": "/static/media/instagram.e719d8b29f452a16302d.png",
+    "static/media/ntpc.webp": "/static/media/ntpc.86c6061aaf47403c113e.webp",
+    "static/media/youtube.png": "/static/media/youtube.c87142fc4c066477d04a.png",
+    "static/media/broad-logo.png": "/static/media/broad-logo.6a354596e96c23cb8b36.png",
+    "index.html": "/index.html",
+    "main.42f2fe8f.css.map": "/static/css/main.42f2fe8f.css.map",
+    "main.323d4cb0.js.map": "/static/js/main.323d4cb0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.42f2fe8f.css",
+    "static/js/main.323d4cb0.js"
+  ]
+}
