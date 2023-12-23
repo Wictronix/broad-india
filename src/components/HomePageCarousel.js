@@ -1,10 +1,10 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 
-import broadBG1 from "../assets/images/broad-bg-1.jpg";
-import broadBG2 from "../assets/images/broad-bg-2.jpg";
-import broadBG3 from "../assets/images/13Podium.jpg";
-import broadBG4 from "../assets/images/FTower.png";
+import broadBG1 from "../assets/images/broad-bg-1.webp";
+import broadBG2 from "../assets/images/broad-bg-2.webp";
+import broadBG3 from "../assets/images/13Podium.webp";
+import broadBG4 from "../assets/images/FTower.webp";
 
 function HomePageCarousel() {
   const [isMobile, setIsMobile] = React.useState(false);

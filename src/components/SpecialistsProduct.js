@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import pumpImg from "../assets/images/broadPump.png";
+import pumpImg from "../assets/images/broadPump.webp";
 
 import "../global.css";
 

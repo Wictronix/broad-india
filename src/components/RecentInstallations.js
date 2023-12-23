@@ -1,5 +1,5 @@
 import React from "react";
-import itcImg from "../assets/images/itc.jpg";
+import itcImg from "../assets/images/itc.webp";
 
 export default function RecentInstallations() {
   const [isMobile, setIsMobile] = React.useState(false);

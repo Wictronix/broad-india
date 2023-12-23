@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import Footer from "../../components/Footer";
 import NavbarComp from "../../components/NavbarComp";
 import ntpcImg from "../../assets/images/ntpc.webp";
-import itcImg from "../../assets/images/itc.jpg";
+import itcImg from "../../assets/images/itc.webp";
 import { Modal } from "react-bootstrap";
 
 export default function Installations() {

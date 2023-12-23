@@ -470,7 +470,7 @@ export default function Article() {
                       href="http://en.broad.com/Storage/article/d86c3db4c155464b9fe10dbf82db7c7f.pdf"
                       className="btn btn-primary"
                     >
-                      Read more
+                      Know more
                     </a>
                   </div>
                 </div>
@@ -503,7 +503,7 @@ export default function Article() {
                       industry can change.
                     </p>
                     <Link to="/article/1" className="btn btn-primary">
-                      Read more
+                      Know more
                     </Link>
                   </div>
                 </div>
@@ -536,7 +536,7 @@ export default function Article() {
                       article.
                     </p>
                     <Link to="/article/4" className="btn btn-primary">
-                      Read more
+                      Know more
                     </Link>
                   </div>
                 </div>

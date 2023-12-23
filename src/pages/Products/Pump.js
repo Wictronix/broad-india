@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import Footer from "../../components/Footer";
 import NavbarComp from "../../components/NavbarComp";
-import pumpImg from "../../assets/images/broadPump.png";
+import pumpImg from "../../assets/images/broadPump.webp";
 
 export default function Pump() {
   const [isMobile, setIsMobile] = React.useState(true);

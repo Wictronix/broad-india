@@ -2,7 +2,7 @@ import React from "react";
 import { Dropdown, Offcanvas } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-import logo from "../assets/images/broad-logo.png";
+import logo from "../assets/images/broad-logo.webp";
 
 export default function NavbarComp() {
   const [isMobile, setIsMobile] = React.useState(true);

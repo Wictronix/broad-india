@@ -18,7 +18,7 @@ export default function Footer() {
               }}
             >
                 <img
-                src={require("../assets/images/BROAD INDIA.png")}
+                src={require("../assets/images/BROAD INDIA.webp")}
                 alt="bi"
                 style={{ height: "120px" }}
               />
@@ -45,7 +45,7 @@ export default function Footer() {
                   className="me-4"
                 >
                   <img
-                    src={require("../assets/images/instagram.png")}
+                    src={require("../assets/images/instagram.webp")}
                     target="_blank"
                     rel="noreferrer"
                     alt="insta"
