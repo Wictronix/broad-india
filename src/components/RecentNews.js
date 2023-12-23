@@ -15,7 +15,7 @@ export default function RecentNews() {
       <div className="display-5 text-center mb-5">Articles</div>
       <div className="row" style={{ marginInline: isMobile ? 0 : "5rem" }}>
         <div className="col-md-4">
-          <div className="card mb-2" style={{ height: "500px" }}>
+          <div className="card mb-2" style={{ height: "554px" }}>
             <div className="card-body">
               <img
                 src="https://www.prysmiangroup.com/sites/default/files/thumbnails/image/banner-sustainable-energy-1150x650.png"
@@ -51,7 +51,7 @@ export default function RecentNews() {
         </div>
 
         <div className="col-md-4">
-          <div className="card mb-2" style={{ height: "500px" }}>
+          <div className="card mb-2" style={{ height: "554px" }}>
             <div className="card-body">
               <img
                 src="https://m.economictimes.com/thumb/msid-69127844,width-1200,height-900,resizemode-4,imgsize-347903/construction-site-generators-types-features-of-generators-used-at-construction-sites.jpg"
@@ -83,7 +83,7 @@ export default function RecentNews() {
         </div>
 
         <div className="col-md-4">
-          <div className="card mb-2" style={{ height: "500px" }}>
+          <div className="card mb-2" style={{ height: "554px" }}>
             <div className="card-body">
               <img
                 src="https://media.proprofs.com/images/QM/user_images/2503852/New%20Project%20(68)(134).jpg"

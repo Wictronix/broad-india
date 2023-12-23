@@ -19,6 +19,8 @@ function HomePageCarousel() {
           <img
             src={broadBG1}
             alt="bg"
+            rel="preload"
+            fetchpriority="high"
             style={{
               width: "100vw",
               height: isMobile ? "80vh" : "default",
