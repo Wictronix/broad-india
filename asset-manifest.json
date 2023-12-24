@@ -1,10 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.9fed6a0d.css",
-    "main.js": "/static/js/main.d19ee3b8.js",
-    "static/media/contactBG.jpg": "/static/media/contactBG.febcc87f061b73f053b0.jpg",
+    "main.js": "/static/js/main.bb509fb7.js",
     "static/media/bgbg.jpg": "/static/media/bgbg.fb274ea0d50a9fb6862f.jpg",
-    "static/media/broad-bg-1.webp": "/static/media/broad-bg-1.004aedd2de42864b6589.webp",
+    "static/media/contactBG.jpg": "/static/media/contactBG.a58fb13b4683335f2553.jpg",
     "static/media/broad_town_intro3.jpg": "/static/media/broad_town_intro3.3d96f0bce46b1082b05e.jpg",
     "static/media/itc.webp": "/static/media/itc.4fc73f256d9cec4fa190.webp",
     "static/media/13Podium.webp": "/static/media/13Podium.7a2f7761f14e80268d4a.webp",
@@ -17,6 +16,7 @@
     "static/media/FTower.webp": "/static/media/FTower.7e7030fd0cd7ba4e7c40.webp",
     "static/media/wasteHeat.jpg": "/static/media/wasteHeat.ee341faab0015f6811f3.jpg",
     "static/media/awards1.jpeg": "/static/media/awards1.9a6a431d86561f0cf20c.jpeg",
+    "static/media/broad-bg-1.webp": "/static/media/broad-bg-1.3ff5b6867f820d6e468f.webp",
     "static/media/BROAD INDIA.webp": "/static/media/BROAD INDIA.71807e7a5870ee5169ad.webp",
     "static/media/cchp.jpg": "/static/media/cchp.845978bf9fd8d822093c.jpg",
     "static/media/nonElec.jpg": "/static/media/nonElec.f26315e514144fd0ab24.jpg",
@@ -27,10 +27,10 @@
     "static/media/broad-logo.webp": "/static/media/broad-logo.04949f8d30e14c4880eb.webp",
     "index.html": "/index.html",
     "main.9fed6a0d.css.map": "/static/css/main.9fed6a0d.css.map",
-    "main.d19ee3b8.js.map": "/static/js/main.d19ee3b8.js.map"
+    "main.bb509fb7.js.map": "/static/js/main.bb509fb7.js.map"
   },
   "entrypoints": [
     "static/css/main.9fed6a0d.css",
-    "static/js/main.d19ee3b8.js"
+    "static/js/main.bb509fb7.js"
   ]
 }
