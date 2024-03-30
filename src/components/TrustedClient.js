@@ -1,4 +1,5 @@
 import React from "react";
+import bhilosa from "../assets/images/bhilosa.png";
 
 export default function TrustedClient() {
   const [isMobile, setIsMobile] = React.useState(false);
@@ -93,7 +94,7 @@ export default function TrustedClient() {
 						marginBottom: isMobile ? "2rem" : 0,
 					}}>
 					<img
-						src="https://bhilosa.com/wp-content/uploads/2022/06/bhilosa-logo-01-1.png"
+						src={bhilosa}
 						alt="Bhilosa"
 						style={{
 							width: isMobile ? "100%" : "50%",
