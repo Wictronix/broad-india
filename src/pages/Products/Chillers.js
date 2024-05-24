@@ -126,7 +126,10 @@ export default function Chillers() {
                             </div>
                             <ul>
                               <li>Capacity: 30-3300 ton</li>
-                              <li>Gas Pressure: 0.16 - 0.51 kg/cm<sup>2</sup> (Standard)</li>
+                              <li>
+                                Gas Pressure: 0.16 - 0.51 kg/cm<sup>2</sup>{" "}
+                                (Standard)
+                              </li>
                               <li>
                                 Dual Fuel Burner (Gas and Oil, Low NOx,
                                 &lt;10ppm)
@@ -171,7 +174,9 @@ export default function Chillers() {
                             </div>
                             <ul>
                               <li>Capacity:30-3300 ton</li>
-                              <li>Steam Pressure: 4.2 - 10.5 kg/cm<sup>2</sup></li>
+                              <li>
+                                Steam Pressure: 4.2 - 10.5 kg/cm<sup>2</sup>
+                              </li>
                               <li>Chiller Come With Steam Valve</li>
                               <li>Cooling Only</li>
                             </ul>
@@ -214,7 +219,10 @@ export default function Chillers() {
                             <ul>
                               <li>Capacity:40-3300 ton</li>
                               <li>Exhaust Pressure Drop: 3 - 8 Inch W.C.</li>
-                              <li>Exhaust Temperature: 280-532 <span>&#8451;</span></li>
+                              <li>
+                                Exhaust Temperature: 280-532{" "}
+                                <span>&#8451;</span>
+                              </li>
                               <li>Cooling / Heating Only</li>
                             </ul>
                           </Card.Text>
@@ -255,7 +263,10 @@ export default function Chillers() {
                             </div>
                             <ul>
                               <li>Capacity:30-3300 ton</li>
-                              <li>Hot Water Temperature: 138 - 180 <span>&#8451;</span></li>
+                              <li>
+                                Hot Water Temperature: 138 - 180{" "}
+                                <span>&#8451;</span>
+                              </li>
                               <li>Provides Hot Water Valve</li>
                               <li>Cooling Only</li>
                             </ul>
@@ -304,7 +315,8 @@ export default function Chillers() {
                             <ul>
                               <li>Capacity: 30-1800 ton</li>
                               <li>
-                                Hot Water Temperature: 71-105 <span>&#8451;</span>(Standard)
+                                Hot Water Temperature: 71-105{" "}
+                                <span>&#8451;</span>(Standard)
                               </li>
                               <li>Hot water Valve</li>
                               <li>Cooling only</li>
@@ -349,8 +361,10 @@ export default function Chillers() {
                             </div>
                             <ul>
                               <li>Capacity:30-1163 ton</li>
-                              <li>Exhaust Temperature: 232 - 315 <span>&#8451;</span>
-</li>
+                              <li>
+                                Exhaust Temperature: 232 - 315{" "}
+                                <span>&#8451;</span>
+                              </li>
                               <li>Cooling only</li>
                             </ul>
                           </Card.Text>
@@ -393,7 +407,10 @@ export default function Chillers() {
                             </div>
                             <ul>
                               <li>Capacity: 30-2000 ton</li>
-                              <li>Steam Pressure: 0.42-4.2 kg/cm<sup>2</sup> (Standard)</li>
+                              <li>
+                                Steam Pressure: 0.42-4.2 kg/cm<sup>2</sup>{" "}
+                                (Standard)
+                              </li>
                               <li>Offer Steam Valve</li>
                               <li>Cooling only</li>
                             </ul>
@@ -441,13 +458,17 @@ export default function Chillers() {
                             </div>
                             <ul>
                               <li>Capacity: 30-300 ton</li>
-                              Gas Pressure: 0.16-0.51 kg/cm<sup>2</sup> (Standard)
+                              Gas Pressure: 0.16-0.51 kg/cm<sup>2</sup>{" "}
+                              (Standard)
                               <li>
                                 Dual Fuel Burner (Gas and Oil, Low NOx, &lt;
                                 10ppm)
                               </li>
                               <li>Exhaust Pressure Drop : 3 - 8 Inch W.C.</li>
-                              <li>Exhaust Temperature: 280-532 <span>&#8451;</span></li>
+                              <li>
+                                Exhaust Temperature: 280-532{" "}
+                                <span>&#8451;</span>
+                              </li>
                               <li>Cooling / Heating / Domestic Hot Water</li>
                             </ul>
                           </Card.Text>
@@ -494,7 +515,10 @@ export default function Chillers() {
                                 Hot Water Temperature: 71-105 C (Standard)
                               </li>
                               <li>Exhaust Pressure Drop: 3 - 8 Inch W.C.</li>
-                              <li>Exhaust Temperature: 305-649 <span>&#8451;</span></li>
+                              <li>
+                                Exhaust Temperature: 305-649{" "}
+                                <span>&#8451;</span>
+                              </li>
                             </ul>
                           </Card.Text>
                         </Card.Body>
@@ -537,15 +561,22 @@ export default function Chillers() {
                             </div>
                             <ul>
                               <li>Capacity: 30-3300 ton</li>
-                              <li>Gas Pressure: 0.16-0.51 kg/cm<sup>2</sup> (Standard)</li>
+                              <li>
+                                Gas Pressure: 0.16-0.51 kg/cm<sup>2</sup>{" "}
+                                (Standard)
+                              </li>
                               <li>
                                 Dual Fuel Burner (Gas and Oil, Low NOx, &lt;
                                 10ppm)
                               </li>
                               <li>Exhaust Pressure Drop : 3 - 8 Inch W.C.</li>
-                              <li>Exhaust Temperature: 305-649 <span>&#8451;</span></li>
                               <li>
-                                Hot Water Temperature: 88-105 <span>&#8451;</span>(Standard)
+                                Exhaust Temperature: 305-649{" "}
+                                <span>&#8451;</span>
+                              </li>
+                              <li>
+                                Hot Water Temperature: 88-105{" "}
+                                <span>&#8451;</span>(Standard)
                               </li>
                             </ul>
                           </Card.Text>
@@ -594,7 +625,10 @@ export default function Chillers() {
                             <ul>
                               <li>Direct Fire/Hot water/Steam/Exhaust</li>
                               <li>Capacity: 40-2200 ton</li>
-                              <li>Gas Pressure: 0.16-0.51 kg/cm<sup>2</sup> (Standard)</li>
+                              <li>
+                                Gas Pressure: 0.16-0.51 kg/cm<sup>2</sup>{" "}
+                                (Standard)
+                              </li>
                               <li>
                                 Dual Fuel Burner (Gas and Oil, Low NOx, &lt;
                                 10ppm)
@@ -645,8 +679,13 @@ export default function Chillers() {
                             </div>
                             <ul>
                               <li>Capacity: 40-1000 ton</li>
-                              <li>Hot Water: 71-176 <span>&#8451;</span></li>
-                              <li>Gas Pressure: 0.16-0.51 kg/cm<sup>2</sup> (Standard)</li>
+                              <li>
+                                Hot Water: 71-176 <span>&#8451;</span>
+                              </li>
+                              <li>
+                                Gas Pressure: 0.16-0.51 kg/cm<sup>2</sup>{" "}
+                                (Standard)
+                              </li>
                               <li>Dual Fuel Burner</li>
                               <li>Cooling Only</li>
                             </ul>

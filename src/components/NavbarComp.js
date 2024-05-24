@@ -5,11 +5,17 @@ import { Link } from "react-router-dom";
 import logo from "../assets/images/broad-logo.webp";
 
 export default function NavbarComp() {
-  const [isMobile, setIsMobile] = React.useState(true);
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth < 768);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   React.useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 875);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
@@ -22,7 +28,7 @@ export default function NavbarComp() {
       }}
     >
       <div
-        className="shadow "
+        className="shadow"
         style={{
           height: "4rem",
           backgroundColor: "rgba(255, 255, 255, 0.5)",
@@ -80,7 +86,6 @@ export default function NavbarComp() {
               alignItems: "center",
               color: "#333",
             }}
-            // data-aos="fade-left"
           >
             <Link
               to="/"
@@ -118,7 +123,7 @@ export default function NavbarComp() {
                       color: "black",
                     }}
                   >
-                    Vapour Absorption Chiller{" "}
+                    Vapour Absorption Chiller
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item>
@@ -128,19 +133,8 @@ export default function NavbarComp() {
                       textDecoration: "none",
                       color: "black",
                     }}
-                //   >
-                //     Heat Pump
-                //   </Link>
-                // </Dropdown.Item>
-                // <Dropdown.Item>
-                //   <Link
-                //     to="/cchpSystem"
-                //     style={{
-                //       textDecoration: "none",
-                //       color: "black",
-                //     }}
                   >
-                    BROAD CCHP System{" "}
+                    BROAD CCHP System
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item>
@@ -227,7 +221,6 @@ export default function NavbarComp() {
               color: "#333",
               flexDirection: "column",
             }}
-            // data-aos="fade-left"
           >
             <Link
               to="/"
@@ -256,38 +249,26 @@ export default function NavbarComp() {
                 color: "black",
                 marginBottom: "0.5rem",
               }}
-            // >
-            //   Heat Pump
-            // </Link>
-            // <Link
-            //   to="/peChillers"
-            //   style={{
-            //     textDecoration: "none",
-            //     color: "black",
-            //     marginBottom: "0.5rem",
-            //   }}
             >
-            Vapour Absorption Chiller
-          </Link>
-          <Link
+              Vapour Absorption Chiller
+            </Link>
+            <Link
               to="/vapAbsorptionChiller"
               style={{
                 textDecoration: "none",
                 color: "black",
                 marginBottom: "0.5rem",
               }}
-          
             >
               BROAD CCHP System{" "}
             </Link>
-          <Link
-            to="/cchpSystem"
-            style={{
-              textDecoration: "none",
-              color: "black",
-              marginBottom: "0.5rem",
-            }}
-            
+            <Link
+              to="/cchpSystem"
+              style={{
+                textDecoration: "none",
+                color: "black",
+                marginBottom: "0.5rem",
+              }}
             >
               Magnetic Bearing Oil Free Chiller
             </Link>
@@ -301,37 +282,6 @@ export default function NavbarComp() {
             >
               Pumpset
             </Link>
-          
-            {/* <Link
-              to="/peChillers"
-              style={{
-                textDecoration: "none",
-                color: "black",
-                marginBottom: "0.5rem",
-              }}
-            >
-              Air Quality{" "}
-            </Link>
-            <Link
-              to="/peChillers"
-              style={{
-                textDecoration: "none",
-                color: "black",
-                marginBottom: "0.5rem",
-              }}
-            >
-              AirPro mask
-            </Link>
-            <Link
-              to="/peChillers"
-              style={{
-                textDecoration: "none",
-                color: "black",
-                marginBottom: "0.5rem",
-              }}
-            >
-              BROAD NPI Facility
-            </Link> */}
             <br />
             <h3>
               <Link
@@ -376,7 +326,6 @@ export default function NavbarComp() {
             </Link>
             <br />
             <div style={{ display: isMobile ? "none" : "block" }}>
-              {/* <Button as="Link" >Contact Us</Button> */}
               <Link to="/contactUs" className="btn btn-primary">
                 Contact us
               </Link>
