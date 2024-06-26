@@ -12,6 +12,7 @@ import VapAbsorptionChiller from "./pages/Products/VapAbsorptionChiller";
 import CCHPSystem from "./pages/Products/CCHPSystem";
 import BroadGroup from "./pages/BroadGroup";
 import Pump from "./pages/Products/Pump";
+import BlogsArticles from "./pages/BlogsArticles";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -58,6 +59,10 @@ export default function App() {
     {
       path: "/broadGroup",
       element: <BroadGroup />,
+    },
+    {
+      path: "/blogs-and-articles",
+      element: <BlogsArticles />,
     },
   ]);
 
