@@ -77,7 +77,7 @@ export default function Blog() {
                             justifyContent: "center",
                             alignItems: "center",
                             fontSize: "3rem",
-                            color: "red"
+                            color: "blue"
                         }}>
                             Loading ...
                         </div>
@@ -102,13 +102,15 @@ export default function Blog() {
                                             style={{
                                                 width: "100%",
                                                 boxShadow: "0rem 0.5rem 1rem rgba(0, 0, 0, 0.15)",
-                                                marginBottom: "4rem"
+                                                marginBottom: "4rem",
+                                                borderRadius: "0.5rem"
                                             }}
                                         />
                                         <div
                                             id="blogContent"
                                             dangerouslySetInnerHTML={{ __html: content }}
                                             style={{
+                                                fontSize: "1.1rem",
                                                 marginBottom: "3rem"
                                             }}
                                         ></div>

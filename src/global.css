@@ -1,3 +1,17 @@
 .susCard:hover {
     transform: scale(1.1);
 }
+
+.article-link h2 {
+    color: #62626c;
+}
+
+.link-hover {
+    text-decoration: none;
+    color: #37373c;
+}
+
+.link-hover:hover h2 {
+    text-decoration: underline;
+    color: #229fff;
+}

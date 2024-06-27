@@ -9,10 +9,15 @@ import sustainabilityImage from '../assets/images/sustainability.jpeg';
 
 export default function BlogsArticles() {
 	const [isMobile, setIsMobile] = React.useState(true);
+	const [totalPosts, setTotalPosts] = useState(0);
 	const [blogsPerPage, setBlogsPerPage] = useState(4);
 	const [startBlogIndex, setStartBlogIndex] = useState(0);
 	const [blogs, setBlogs] = useState({ arr: [] });
 	const [articles, setArticles] = useState({ arr: [] });
+	const [articlesPerPage, setArticlesPerPage] = useState(4);
+	const [articlesPageNumber, setArticlesPageNumber] = useState(1);
+
+	// Dummy Data ...
 	const videos = [
 		{
 			title: 'How to Edit Videos Online in Wistia\'s Video Editor',
@@ -30,14 +35,7 @@ export default function BlogsArticles() {
 			link: '#',
 		},
 	];
-	const linkStyle = {
-		textAlign: "left",
-		color: 'white',
-		textDecoration: 'none',
-	};
-	const linkHoverStyle = {
-		textDecoration: 'underline',
-	};
+
 	const projects = [
 		{
 			title: 'Sustainability in Action',
@@ -53,13 +51,23 @@ export default function BlogsArticles() {
 		},
 	];
 
+
+	// inline css classes ...
+	const linkStyle = {
+		textAlign: "left",
+		color: 'white',
+		textDecoration: 'none',
+	};
+
+	const linkHoverStyle = {
+		textDecoration: 'underline',
+	};
+
 	const containerStyle = {
 		display: 'flex',
 		justifyContent: 'space-between',
 		padding: '20px 0',
 		backgroundColor: 'whites',
-		marginTop: '0.5rem',
-
 	};
 
 	const projectStyle = {
@@ -82,11 +90,18 @@ export default function BlogsArticles() {
 		right: '100px',
 		backgroundColor: '#007bff',
 		padding: '10px',
+		display: 'flex',
+		justifyContent: 'space-between',
+		alignItems: 'center',
+		paddingLeft: '3rem',
+		paddingRight: '3rem'
 	};
 
 	const titleStyle = {
 		margin: 0,
-		fontSize: '1.8rem',
+		maxWidth: '20rem',
+		fontSize: '2rem',
+		textAlign: 'left'
 	};
 
 	const arrowStyle = (direction) => ({
@@ -95,65 +110,71 @@ export default function BlogsArticles() {
 		transform: direction === 'left' ? 'rotate(180deg)' : 'none',
 	});
 
+	const getQuery = (page, pageSize) => {
+		return (
+			`query GetUserArticles {
+				user(username: "aayush7908") {
+					posts(pageSize: ${pageSize}, page: ${page}) {
+						edges {
+							node {
+								id
+								subtitle
+								title
+								brief
+								content {
+									text
+								}
+								coverImage {
+									url
+								}
+							}
+						}
+						totalDocuments
+					}
+				}
+			}`
+		);
+	};
+
+	const fetchData = async () => {
+		const pageSize = 20;
+		let totalPages = 1;
+
+		for (let page = 1; page <= totalPages; page++) {
+			console.log("fetch loop");
+			const query = getQuery(page, pageSize);
+
+			const promise = await fetch("https://gql.hashnode.com/", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify({ query })
+			});
+			let data = await promise.json();
+
+			totalPages = Math.ceil(data.data.user.posts.totalDocuments / pageSize);
+			data = data.data.user.posts.edges;
+			data.forEach((post) => {
+				post = post.node;
+				if (post.subtitle && post.subtitle.toLowerCase() === "blog") {
+					const newBlogs = { ...blogs };
+					newBlogs.arr.push(post);
+					setBlogs((blog) => { return newBlogs });
+				} else {
+					const newArticles = { ...articles };
+					newArticles.arr.push(post);
+					setArticles((article) => { return newArticles });
+				}
+			});
+		}
+	}
+
 
 	React.useEffect(() => {
 		setIsMobile(window.innerWidth < 768);
-		window.scrollTo(0, 0);
-
-		const query = `
-			query GetUserArticles {
-				user(username: "aayush7908") {
-					posts(pageSize: 6, page: 1) {
-					edges {
-						node {
-							id
-							subtitle
-							title
-							brief
-							content {
-								html,
-								text
-							}
-							coverImage {
-								url
-							}
-						}
-					}
-					totalDocuments
-				}
-			}
-		}`;
-
-		fetch("https://gql.hashnode.com/", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json"
-			},
-			body: JSON.stringify({ query })
-		})
-			.then((promise) => {
-				promise = promise.json()
-					.then((data) => {
-						data = data.data.user.posts.edges;
-						console.log(data);
-						data.forEach((post) => {
-							post = post.node;
-							if (post.subtitle && post.subtitle.toLowerCase() === "blog") {
-								const newBlogs = { ...blogs };
-								newBlogs.arr.push(post);
-								setBlogs((blog) => { return newBlogs });
-							} else {
-								const newArticles = { ...articles };
-								newArticles.arr.push(post);
-								setArticles((article) => { return newArticles });
-							}
-						});
-						console.log(blogs);
-					});
-			})
-			.catch((error) => {
-				console.log("Unable to fetch data");
-			});
+		// window.scrollTo(0, 0);
+		fetchData();
 	}, []);
 
 	return (
@@ -270,11 +291,7 @@ export default function BlogsArticles() {
 														}}
 													>
 														<Link
-															style={{
-																textAlign: "left",
-																textDecoration: "none",
-																color: "#37373c"
-															}}
+															className="link-hover"
 															to={`/blog/${blog.id}`}
 														>
 															<Image
@@ -282,19 +299,20 @@ export default function BlogsArticles() {
 																style={{
 																	borderRadius: "0.5rem",
 																	width: "100%",
-																	maxHeight: "10rem",
-																	overflow: "hidden"
+																	height: "12rem",
+																	overflow: "hidden",
+																	backgroundColor: "#d6ecfc"
 																}}
 															/>
-															<p style={{
+															<h2 style={{
 																marginTop: "1rem",
-																fontSize: "1.1rem",
+																fontSize: "1.3rem",
 																overflow: "hidden",
 																paddingLeft: "0.2rem",
 																paddingRight: "0.2rem"
 															}}>
 																{blog.title}
-															</p>
+															</h2>
 														</Link>
 													</div>
 												);
@@ -315,8 +333,8 @@ export default function BlogsArticles() {
 
 				{/* ARTICLES */}
 				<div style={{
-					marginLeft: "10rem",
-					marginRight: "10rem"
+					// marginLeft: "10rem",
+					// marginRight: "10rem"
 				}}>
 					<div style={{
 						borderBottom: "solid #d7d7da 0.1rem",
@@ -329,7 +347,7 @@ export default function BlogsArticles() {
 						}}>
 							Articles
 						</p>
-						<div style={{
+						{/* <div style={{
 							display: "flex",
 							gap: "1rem",
 							borderBottom: "solid #a3a3aa"
@@ -347,7 +365,7 @@ export default function BlogsArticles() {
 								placeholder="Search"
 								style={{ border: "none", width: "6rem" }}
 							/>
-						</div>
+						</div> */}
 					</div>
 					{
 						(articles.arr.length > 0) ? (
@@ -360,7 +378,7 @@ export default function BlogsArticles() {
 									gap: "3rem"
 								}}>
 									{
-										articles.arr.map((article, index) => {
+										articles.arr.slice((articlesPageNumber - 1) * articlesPerPage, articlesPageNumber * articlesPerPage).map((article, index) => {
 											return (
 												<Link
 													key={index}
@@ -372,43 +390,46 @@ export default function BlogsArticles() {
 														color: "#37373c",
 														width: "100%"
 													}}
+													className="link-hover article-link"
 												>
 													<div style={{
-														flex: "0 0 25%"
+														flex: "0 0 30%"
 													}}>
 														<Image
 															style={{
 																borderRadius: "0.5rem",
-																width: "100%"
+																width: "100%",
+																maxHeight: "13rem",
+																backgroundColor: "#d6ecfc"
 															}}
 															src={article.coverImage !== null ? article.coverImage.url : "./logo512.png"}
 														/>
 													</div>
 													<div style={{
-														flex: "0 0 75%",
+														flex: "0 0 70%",
 														display: "flex",
 														flexDirection: "column"
 													}}>
-														<h3 style={{
-															color: "#62626c"
-														}}>
+														<h2>
 															{article.title}
-														</h3>
+														</h2>
 														<p style={{
 															fontSize: "1.1rem"
 														}}>
-															{`${article.brief}...`}
+															{`${article.content.text.substring(0, 375)}...`}
 														</p>
-														{
-															article.author && (
-																<i style={{
-																	textTransform: "uppercase",
-																	fontWeight: "bold"
-																}}>
-																	BY {article.author}
-																</i>
-															)
-														}
+														<i style={{
+															textTransform: "uppercase",
+															fontWeight: "bold"
+														}}>
+															{
+																article.author ? (
+																	`BY ${article.author}`
+																) : (
+																	`BY BROAD GROUP`
+																)
+															}
+														</i>
 													</div>
 												</Link>
 											);
@@ -420,19 +441,25 @@ export default function BlogsArticles() {
 									display: "flex",
 									justifyContent: "center"
 								}}>
-									<Button style={{
-										backgroundColor: "transparent",
-										border: "none",
-										color: "#37373c",
-										fontSize: "1.3rem",
-										display: "flex",
-										justifyContent: "center",
-										alignItems: "center",
-										gap: "0.5rem",
-										padding: "0"
-									}}>
-										Next
-										<svg
+									<Button
+										onClick={() => {
+											setArticlesPageNumber((articlesPageNumber) => { return articlesPageNumber - 1 });
+										}}
+										disabled={articlesPageNumber === 1}
+										style={{
+											backgroundColor: "transparent",
+											border: "none",
+											color: "#37373c",
+											fontSize: "1.3rem",
+											display: "flex",
+											justifyContent: "center",
+											alignItems: "center",
+											gap: "0.5rem",
+											padding: "0"
+										}}
+									>
+										Prev
+										{/* <svg
 											xmlns="http://www.w3.org/2000/svg"
 											viewBox="0 0 512 512"
 											style={{
@@ -440,7 +467,35 @@ export default function BlogsArticles() {
 											}}
 										>
 											<path fill="#37373c" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
-										</svg>
+										</svg> */}
+									</Button>
+									<Button
+										onClick={() => {
+											setArticlesPageNumber((articlesPageNumber) => { return articlesPageNumber + 1 });
+										}}
+										disabled={articlesPageNumber === Math.ceil(articles.arr.length / articlesPerPage)}
+										style={{
+											backgroundColor: "transparent",
+											border: "none",
+											color: "#37373c",
+											fontSize: "1.3rem",
+											display: "flex",
+											justifyContent: "center",
+											alignItems: "center",
+											gap: "0.5rem",
+											padding: "0"
+										}}
+									>
+										Next
+										{/* <svg
+											xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 512 512"
+											style={{
+												width: "1.3rem"
+											}}
+										>
+											<path fill="#37373c" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+										</svg> */}
 									</Button>
 								</div>
 							</div>
@@ -454,18 +509,18 @@ export default function BlogsArticles() {
 			{/* RECENT VIDEOS */}
 			<div style={{
 				backgroundColor: '#007bff',
-				padding: '20px',
+				paddingTop: "2rem",
+				paddingBottom: "2rem",
+				paddingLeft: "7rem",
+				paddingRight: "7rem",
 				color: 'white',
 			}}>
 				<h2 style={{
 					display: "flex",
-					paddingLeft: '16rem',
 					marginBottom: '20px',
 				}}>Recent Videos</h2>
 				<div style={{
 					display: "flex",
-					marginleft: '55rem',
-					marginright: '55rem',
 					width: '100%',
 					height: '1px',
 					backgroundColor: 'white',
@@ -473,14 +528,13 @@ export default function BlogsArticles() {
 				}}></div>
 				<div style={{
 					display: 'flex',
-					justifyContent: 'space-around',
+					justifyContent: 'space-between',
 				}}>
 					{videos.map((video, index) => (
 						<div style={{
 							backgroundColor: '#007bff',
 							color: 'white',
 							borderRadius: '10px',
-							padding: '15px',
 							textAlign: 'left',
 							width: '30%',
 						}} key={index}>
@@ -490,7 +544,6 @@ export default function BlogsArticles() {
 								borderRadius: '10px',
 							}} />
 							<h3 style={{
-								width: '65%',
 								margin: '15px 0',
 								fontSize: '1.1em',
 							}}>{video.title}</h3>
@@ -513,7 +566,7 @@ export default function BlogsArticles() {
 					<div style={projectStyle} key={index}>
 						<img src={project.image} alt={project.title} style={imageStyle} />
 						<div style={overlayStyle}>
-							{index === 0 && <span style={arrowStyle('left')}>←</span>}
+							{index === 0 && <span style={arrowStyle('left')}>→</span>}
 							<p style={titleStyle}>{project.title}</p>
 							{index === 1 && <span style={arrowStyle('right')}>→</span>}
 						</div>
