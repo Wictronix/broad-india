@@ -59,7 +59,7 @@ export default function BlogsArticles() {
 		padding: '20px 0',
 		backgroundColor: 'whites',
 		marginTop: '0.5rem',
-		
+
 	};
 
 	const projectStyle = {
@@ -106,6 +106,7 @@ export default function BlogsArticles() {
 					posts(pageSize: 6, page: 1) {
 					edges {
 						node {
+							id
 							subtitle
 							title
 							brief
@@ -274,7 +275,7 @@ export default function BlogsArticles() {
 																textDecoration: "none",
 																color: "#37373c"
 															}}
-															to={`/blogs/${blog.id}`}
+															to={`/blog/${blog.id}`}
 														>
 															<Image
 																src={blog.coverImage !== null ? blog.coverImage.url : "./logo512.png"}
@@ -449,7 +450,8 @@ export default function BlogsArticles() {
 					}
 				</div>
 			</Container>
-			{/* recentvideis */}
+
+			{/* RECENT VIDEOS */}
 			<div style={{
 				backgroundColor: '#007bff',
 				padding: '20px',
@@ -484,7 +486,7 @@ export default function BlogsArticles() {
 						}} key={index}>
 							<img src={video.image} alt={video.title} style={{
 								maxWidth: '100%',
-								height:'300px',
+								height: '300px',
 								borderRadius: '10px',
 							}} />
 							<h3 style={{

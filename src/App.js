@@ -13,6 +13,7 @@ import CCHPSystem from "./pages/Products/CCHPSystem";
 import BroadGroup from "./pages/BroadGroup";
 import Pump from "./pages/Products/Pump";
 import BlogsArticles from "./pages/BlogsArticles";
+import Blog from "./pages/Blog";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -55,6 +56,10 @@ export default function App() {
     {
       path: "/article/:id",
       element: <Article />,
+    },
+    {
+      path: "/blog/:id",
+      element: <Blog />,
     },
     {
       path: "/broadGroup",

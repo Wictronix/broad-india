@@ -1,23 +1,135 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Image } from "react-bootstrap";
 import { useParams, Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import NavbarComp from "../components/NavbarComp";
 // import RecentNews from "../components/RecentNews";
 
 export default function Article() {
-  const [isMobile, setIsMobile] = React.useState(true);
-  const { id } = useParams();
+	const [isMobile, setIsMobile] = React.useState(true);
+	const [isLoading, setIsLoading] = React.useState(true);
+	const [title, setTitle] = React.useState("");
+	const [image, setImage] = React.useState("");
+	const [content, setContent] = React.useState("");
+	const { id } = useParams();
 
-  React.useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
-    window.scrollTo(0, 0);
-  }, []);
-  return (
+	React.useEffect(() => {
+		setIsMobile(window.innerWidth < 768);
+		window.scrollTo(0, 0);
+
+		const query = `
+			query GetArticle {
+                post(id: \"${id}\") {
+                    id
+                    subtitle
+                    title
+                    brief
+                    content {
+                        html
+                    }
+                    coverImage {
+                        url
+                    }
+                }
+            }`;
+
+		fetch("https://gql.hashnode.com/", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify({ query })
+		})
+			.then((promise) => {
+				promise = promise.json()
+					.then((data) => {
+						if (data.data.post) {
+							data = data.data.post;
+							setTitle(data.title);
+							setImage(data.coverImage ? data.coverImage.url : "");
+							setContent(data.content.html);
+						} else {
+							setTitle(null);
+							setImage(null);
+							setContent(null);
+						}
+						console.log(data);
+					});
+			})
+			.catch((error) => {
+				console.log("Unable to fetch data");
+				setTitle(null);
+				setImage(null);
+				setContent(null);
+			}).finally(() => {
+				setIsLoading(false);
+			});
+	}, []);
+	return (
 		<div>
 			<NavbarComp />
-			<Container style={{ marginTop: "10rem" }}>
-				{id === "1" && (
+			<Container style={{ marginTop: "10rem", minHeight: "25rem" }}>
+				{
+					isLoading ? (
+						<div style={{
+							display: "flex",
+							justifyContent: "center",
+							alignItems: "center",
+							fontSize: "3rem",
+							color: "red"
+						}}>
+							Loading ...
+						</div>
+					) : (
+						<div>
+							{
+								(title || image || content) ? (
+									<div>
+										<h1
+											id="articleTitle"
+											style={{
+												textAlign: "center",
+												fontWeight: "normal",
+												marginBottom: "2rem"
+											}}
+										>
+											{title}
+										</h1>
+										<Image
+											id="articleImage"
+											src={image}
+											style={{
+												width: "100%",
+												boxShadow: "0rem 0.5rem 1rem rgba(0, 0, 0, 0.15)",
+												marginBottom: "4rem"
+											}}
+										/>
+										<div
+											id="articleContent"
+											dangerouslySetInnerHTML={{ __html: content }}
+											style={{
+												marginBottom: "3rem"
+											}}
+										></div>
+									</div>
+								) : (
+									<div style={{
+										display: "flex",
+										justifyContent: "center",
+										alignItems: "center",
+										fontSize: "3rem",
+										color: "red"
+									}}>
+										Article Not Found !!!
+									</div>
+								)
+							}
+						</div>
+					)
+				}
+
+				{/* OLD CODE */}
+				{/* {id === "1" && (
 					<div>
 						<img
 							src="http://en.broad.com/Storage/uploads/201512/20151231095859_7753.jpg"
@@ -550,7 +662,7 @@ export default function Article() {
 							</div>
 						</div>
 					</div>
-				)}
+				)} */}
 			</Container>
 			<Footer />
 		</div>

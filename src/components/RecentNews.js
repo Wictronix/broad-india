@@ -2,15 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function RecentNews() {
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-  const [isMobile, setIsMobile] = React.useState(false);
+	React.useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+	const [isMobile, setIsMobile] = React.useState(false);
 
-  React.useEffect(() => {
-    if (window.innerHeight > window.innerWidth) setIsMobile(true);
-  }, []);
-  return (
+	React.useEffect(() => {
+		if (window.innerHeight > window.innerWidth) setIsMobile(true);
+	}, []);
+	return (
 		<div>
 			<div className="display-5 text-center mb-5">Articles</div>
 			<div className="row" style={{ marginInline: isMobile ? 0 : "5rem" }}>
@@ -70,7 +70,7 @@ export default function RecentNews() {
 								Traditional construction practices can be costly, inefficient, and detrimental on the environment, In
 								this article, Zhang Yue, CEO, BROAD group reflectes how industry can change.
 							</p>
-							<Link to="/article/1" className="btn btn-primary">
+							<Link to="/blogs-and-articles" className="btn btn-primary">
 								Know more
 							</Link>
 						</div>
@@ -100,7 +100,7 @@ export default function RecentNews() {
 								Fortune presents our inaugural list of the World's Top 25 Eco-Innovators. To identify them, we surveyed
 								dozens of experts in the sustainability world. Here's the report article.
 							</p>
-							<Link to="/article/4" className="btn btn-primary">
+							<Link to="/blogs-and-articles" className="btn btn-primary">
 								Know more
 							</Link>
 						</div>
@@ -113,7 +113,7 @@ export default function RecentNews() {
 					display: "flex",
 					justifyContent: "center",
 				}}>
-				<Link to="/article/more" className="btn btn-outline-primary px-5 my-5 mx-auto">
+				<Link to="/blogs-and-articles" className="btn btn-outline-primary px-5 my-5 mx-auto">
 					More articles
 				</Link>
 			</div>
