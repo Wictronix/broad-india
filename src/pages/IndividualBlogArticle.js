@@ -1,11 +1,10 @@
 import React from "react";
 import { Container, Image } from "react-bootstrap";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import NavbarComp from "../components/NavbarComp";
-// import RecentNews from "../components/RecentNews";
 
-export default function Blog() {
+export default function IndividualBlogArticle() {
     const [isMobile, setIsMobile] = React.useState(true);
     const [isLoading, setIsLoading] = React.useState(true);
     const [title, setTitle] = React.useState("");
@@ -18,12 +17,9 @@ export default function Blog() {
         window.scrollTo(0, 0);
 
         const query = `
-			query GetBlog {
+			query GetData {
                 post(id: \"${id}\") {
-                    id
-                    subtitle
                     title
-                    brief
                     content {
                         html
                     }
@@ -111,7 +107,8 @@ export default function Blog() {
                                             dangerouslySetInnerHTML={{ __html: content }}
                                             style={{
                                                 fontSize: "1.1rem",
-                                                marginBottom: "3rem"
+                                                marginBottom: "3rem",
+												textAlign: "justify"
                                             }}
                                         ></div>
                                     </div>
@@ -123,7 +120,7 @@ export default function Blog() {
                                         fontSize: "3rem",
                                         color: "red"
                                     }}>
-                                        Blog Not Found !!!
+                                        Content Not Found !!!
                                     </div>
                                 )
                             }

@@ -9,12 +9,12 @@ import sustainabilityImage from '../assets/images/sustainability.jpeg';
 
 export default function BlogsArticles() {
 	const [isMobile, setIsMobile] = React.useState(true);
-	const [totalPosts, setTotalPosts] = useState(0);
+	const [loading, setLoading] = useState(true);
 	const [blogsPerPage, setBlogsPerPage] = useState(4);
 	const [startBlogIndex, setStartBlogIndex] = useState(0);
 	const [blogs, setBlogs] = useState({ arr: [] });
 	const [articles, setArticles] = useState({ arr: [] });
-	const [articlesPerPage, setArticlesPerPage] = useState(4);
+	const [articlesPerPage, setArticlesPerPage] = useState(2);
 	const [articlesPageNumber, setArticlesPageNumber] = useState(1);
 
 	// Dummy Data ...
@@ -137,11 +137,10 @@ export default function BlogsArticles() {
 	};
 
 	const fetchData = async () => {
-		const pageSize = 20;
+		const pageSize = 10;
 		let totalPages = 1;
 
 		for (let page = 1; page <= totalPages; page++) {
-			console.log("fetch loop");
 			const query = getQuery(page, pageSize);
 
 			const promise = await fetch("https://gql.hashnode.com/", {
@@ -168,6 +167,7 @@ export default function BlogsArticles() {
 				}
 			});
 		}
+		setLoading(false);
 	}
 
 
@@ -196,7 +196,7 @@ export default function BlogsArticles() {
 				</div>
 
 
-				{/* BLOGS CAROUSEL */}
+				{/* BLOGS */}
 				<div>
 					<div style={{
 						borderBottom: "solid #d7d7da 0.1rem",
@@ -264,65 +264,91 @@ export default function BlogsArticles() {
 						</div>
 					</div>
 					{
-						(blogs.arr.length > 0) ? (
+						loading ? (
 							<div style={{
-								marginTop: "2rem",
-								marginBottom: "2rem"
+								minHeight: "10rem",
+								display: "flex",
+								justifyContent: "center",
+								alignItems: "center",
+								fontSize: "1.5rem"
 							}}>
-								<div style={{
-									position: "relative",
-									width: "100%",
-									overflow: "hidden"
-								}}>
-									<div style={{
-										display: "flex",
-										width: "100%",
-										transition: "transform 0.5s ease-in-out",
-										transform: `translateX(-${startBlogIndex * 25}%)`
-									}}>
-										{
-											blogs.arr.map((blog, index) => {
-												return (
-													<div
-														key={index}
-														style={{
-															flex: "0 0 25%",
-															padding: "0.7rem"
-														}}
-													>
-														<Link
-															className="link-hover"
-															to={`/blog/${blog.id}`}
-														>
-															<Image
-																src={blog.coverImage !== null ? blog.coverImage.url : "./logo512.png"}
-																style={{
-																	borderRadius: "0.5rem",
-																	width: "100%",
-																	height: "12rem",
-																	overflow: "hidden",
-																	backgroundColor: "#d6ecfc"
-																}}
-															/>
-															<h2 style={{
-																marginTop: "1rem",
-																fontSize: "1.3rem",
-																overflow: "hidden",
-																paddingLeft: "0.2rem",
-																paddingRight: "0.2rem"
-															}}>
-																{blog.title}
-															</h2>
-														</Link>
-													</div>
-												);
-											})
-										}
-									</div>
-								</div>
+								<p>Loading ...</p>
 							</div>
 						) : (
-							<p>No Blogs ...</p>
+							<>
+								{
+									(blogs.arr.length > 0) ? (
+										<div style={{
+											marginTop: "2rem",
+											marginBottom: "2rem"
+										}}>
+											<div style={{
+												position: "relative",
+												width: "100%",
+												overflow: "hidden"
+											}}>
+												<div style={{
+													display: "flex",
+													width: "100%",
+													transition: "transform 0.5s ease-in-out",
+													transform: `translateX(-${startBlogIndex * 25}%)`
+												}}>
+													{
+														blogs.arr.map((blog, index) => {
+															return (
+																<div
+																	key={index}
+																	style={{
+																		flex: "0 0 25%",
+																		padding: "0.7rem"
+																	}}
+																>
+																	<Link
+																		className="link-hover"
+																		to={`/blog/${blog.id}`}
+																	>
+																		<Image
+																			src={blog.coverImage !== null ? blog.coverImage.url : "./logo512.png"}
+																			style={{
+																				borderRadius: "0.5rem",
+																				width: "100%",
+																				height: "12rem",
+																				overflow: "hidden",
+																				backgroundColor: "#d6ecfc"
+																			}}
+																		/>
+																		<h2 style={{
+																			marginTop: "1rem",
+																			fontSize: "1.3rem",
+																			overflow: "hidden",
+																			paddingLeft: "0.2rem",
+																			paddingRight: "0.2rem"
+																		}}>
+																			{blog.title}
+																		</h2>
+																	</Link>
+																</div>
+															);
+														})
+													}
+												</div>
+											</div>
+										</div>
+									) : (
+										<div style={{
+											minHeight: "10rem",
+											display: "flex",
+											justifyContent: "center",
+											alignItems: "center",
+											fontSize: "2rem",
+											fontWeight: "bold",
+											color: "red"
+										}}>
+											<p>No Blogs To Show</p>
+										</div>
+									)
+								}
+							</>
 						)
 					}
 				</div>
@@ -368,139 +394,148 @@ export default function BlogsArticles() {
 						</div> */}
 					</div>
 					{
-						(articles.arr.length > 0) ? (
+						loading ? (
 							<div style={{
-								marginTop: "2rem",
-								marginBottom: "2rem"
+								minHeight: "10rem",
+								display: "flex",
+								justifyContent: "center",
+								alignItems: "center",
+								fontSize: "1.5rem"
 							}}>
-								<div style={{
-									display: "grid",
-									gap: "3rem"
-								}}>
-									{
-										articles.arr.slice((articlesPageNumber - 1) * articlesPerPage, articlesPageNumber * articlesPerPage).map((article, index) => {
-											return (
-												<Link
-													key={index}
-													to={`/article/${article.id}`}
-													style={{
-														display: "flex",
-														gap: "2rem",
-														textDecoration: "none",
-														color: "#37373c",
-														width: "100%"
-													}}
-													className="link-hover article-link"
-												>
-													<div style={{
-														flex: "0 0 30%"
-													}}>
-														<Image
-															style={{
-																borderRadius: "0.5rem",
-																width: "100%",
-																maxHeight: "13rem",
-																backgroundColor: "#d6ecfc"
-															}}
-															src={article.coverImage !== null ? article.coverImage.url : "./logo512.png"}
-														/>
-													</div>
-													<div style={{
-														flex: "0 0 70%",
-														display: "flex",
-														flexDirection: "column"
-													}}>
-														<h2>
-															{article.title}
-														</h2>
-														<p style={{
-															fontSize: "1.1rem"
-														}}>
-															{`${article.content.text.substring(0, 375)}...`}
-														</p>
-														<i style={{
-															textTransform: "uppercase",
-															fontWeight: "bold"
-														}}>
-															{
-																article.author ? (
-																	`BY ${article.author}`
-																) : (
-																	`BY BROAD GROUP`
-																)
-															}
-														</i>
-													</div>
-												</Link>
-											);
-										})
-									}
-								</div>
-								<div style={{
-									margin: "2rem",
-									display: "flex",
-									justifyContent: "center"
-								}}>
-									<Button
-										onClick={() => {
-											setArticlesPageNumber((articlesPageNumber) => { return articlesPageNumber - 1 });
-										}}
-										disabled={articlesPageNumber === 1}
-										style={{
-											backgroundColor: "transparent",
-											border: "none",
-											color: "#37373c",
-											fontSize: "1.3rem",
-											display: "flex",
-											justifyContent: "center",
-											alignItems: "center",
-											gap: "0.5rem",
-											padding: "0"
-										}}
-									>
-										Prev
-										{/* <svg
-											xmlns="http://www.w3.org/2000/svg"
-											viewBox="0 0 512 512"
-											style={{
-												width: "1.3rem"
-											}}
-										>
-											<path fill="#37373c" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
-										</svg> */}
-									</Button>
-									<Button
-										onClick={() => {
-											setArticlesPageNumber((articlesPageNumber) => { return articlesPageNumber + 1 });
-										}}
-										disabled={articlesPageNumber === Math.ceil(articles.arr.length / articlesPerPage)}
-										style={{
-											backgroundColor: "transparent",
-											border: "none",
-											color: "#37373c",
-											fontSize: "1.3rem",
-											display: "flex",
-											justifyContent: "center",
-											alignItems: "center",
-											gap: "0.5rem",
-											padding: "0"
-										}}
-									>
-										Next
-										{/* <svg
-											xmlns="http://www.w3.org/2000/svg"
-											viewBox="0 0 512 512"
-											style={{
-												width: "1.3rem"
-											}}
-										>
-											<path fill="#37373c" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
-										</svg> */}
-									</Button>
-								</div>
+								<p>Loading ...</p>
 							</div>
 						) : (
-							<p>No Articles ...</p>
+							<>
+								{
+									(articles.arr.length > 0) ? (
+										<div style={{
+											marginTop: "2rem",
+											marginBottom: "2rem"
+										}}>
+											<div style={{
+												display: "grid",
+												gap: "3rem"
+											}}>
+												{
+													articles.arr.slice((articlesPageNumber - 1) * articlesPerPage, articlesPageNumber * articlesPerPage).map((article, index) => {
+														return (
+															<Link
+																key={index}
+																to={`/article/${article.id}`}
+																style={{
+																	display: "flex",
+																	gap: "2rem",
+																	textDecoration: "none",
+																	color: "#37373c",
+																	width: "100%"
+																}}
+																className="link-hover article-link"
+															>
+																<div style={{
+																	flex: "0 0 30%"
+																}}>
+																	<Image
+																		style={{
+																			borderRadius: "0.5rem",
+																			width: "100%",
+																			maxHeight: "13rem",
+																			backgroundColor: "#d6ecfc"
+																		}}
+																		src={article.coverImage !== null ? article.coverImage.url : "./logo512.png"}
+																	/>
+																</div>
+																<div style={{
+																	flex: "0 0 70%",
+																	display: "flex",
+																	flexDirection: "column"
+																}}>
+																	<h2>
+																		{article.title}
+																	</h2>
+																	<p style={{
+																		fontSize: "1.1rem"
+																	}}>
+																		{`${article.content.text.substring(0, 375)}...`}
+																	</p>
+																	<i style={{
+																		textTransform: "uppercase",
+																		fontWeight: "bold"
+																	}}>
+																		{
+																			article.author ? (
+																				`BY ${article.author}`
+																			) : (
+																				`BY BROAD GROUP`
+																			)
+																		}
+																	</i>
+																</div>
+															</Link>
+														);
+													})
+												}
+											</div>
+											<div style={{
+												margin: "2rem",
+												display: "flex",
+												justifyContent: "space-between"
+											}}>
+												<Button
+													onClick={() => {
+														setArticlesPageNumber((articlesPageNumber) => { return articlesPageNumber - 1 });
+													}}
+													disabled={articlesPageNumber === 1}
+													style={{
+														backgroundColor: "transparent",
+														border: "none",
+														color: "#37373c",
+														fontSize: "1.3rem",
+														display: "flex",
+														justifyContent: "center",
+														alignItems: "center",
+														gap: "0.5rem",
+														padding: "0"
+													}}
+												>
+													&lt; Prev
+												</Button>
+												<p>Page <b>{articlesPageNumber}</b> of <b>{Math.ceil(articles.arr.length / articlesPerPage)}</b></p>
+												<Button
+													onClick={() => {
+														setArticlesPageNumber((articlesPageNumber) => { return articlesPageNumber + 1 });
+													}}
+													disabled={articlesPageNumber === Math.ceil(articles.arr.length / articlesPerPage)}
+													style={{
+														backgroundColor: "transparent",
+														border: "none",
+														color: "#37373c",
+														fontSize: "1.3rem",
+														display: "flex",
+														justifyContent: "center",
+														alignItems: "center",
+														gap: "0.5rem",
+														padding: "0"
+													}}
+												>
+													Next &gt;
+												</Button>
+											</div>
+										</div>
+									) : (
+										<div style={{
+											minHeight: "10rem",
+											display: "flex",
+											justifyContent: "center",
+											alignItems: "center",
+											fontSize: "2rem",
+											fontWeight: "bold",
+											color: "red"
+										}}>
+											<p>No Articles To Show</p>
+										</div>
+									)
+								}
+							</>
 						)
 					}
 				</div>
