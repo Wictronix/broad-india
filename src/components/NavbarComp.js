@@ -196,6 +196,18 @@ export default function NavbarComp() {
             >
               BROAD Group
             </Link>
+            <Link
+              style={{
+                marginLeft: "0.8rem",
+                marginRight: "1.2rem",
+                textDecoration: "none",
+                cursor: "pointer",
+                color: "#333",
+              }}
+              to="/blogs-and-articles"
+            >
+              Blogs & Articles
+            </Link>
             <br />
             <div style={{ display: isMobile ? "none" : "block" }}>
               <Link to="/contactUs" className="btn btn-primary">
@@ -320,6 +332,19 @@ export default function NavbarComp() {
               to="/broadGroup"
             >
               <h3>BROAD Group</h3>
+            </Link>
+            <Link
+              style={{
+                marginLeft: "0.8rem",
+                marginRight: "1.2rem",
+                marginBottom: "1rem",
+                textDecoration: "none",
+                cursor: "pointer",
+                color: "#333",
+              }}
+              to="/blogs-and-articles"
+            >
+              <h3>Blogs & Articles</h3>
             </Link>
             <Link to="/contactUs" className="btn btn-primary">
               Contact us
