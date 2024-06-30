@@ -12,12 +12,9 @@ export default function IndividualBlogArticle() {
     const [content, setContent] = React.useState("");
     const { id } = useParams();
 
-    React.useEffect(() => {
-        setIsMobile(window.innerWidth < 768);
-        window.scrollTo(0, 0);
-
-        const query = `
-			query GetData {
+    const getQuery = (id) => {
+        return (
+            `query GetData {
                 post(id: "${id}") {
                     title
                     content {
@@ -27,7 +24,15 @@ export default function IndividualBlogArticle() {
                         url
                     }
                 }
-            }`;
+            }`
+        );
+    }
+
+    React.useEffect(() => {
+        setIsMobile(window.innerWidth < 768);
+        window.scrollTo(0, 0);
+
+        const query = getQuery(id);
 
         fetch("https://gql.hashnode.com/", {
             method: "POST",
