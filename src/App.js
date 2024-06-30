@@ -3,6 +3,7 @@ import AOS from "aos";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import About from "./pages/About";
+import Careers from "./pages/Careers";
 import ContactUs from "./pages/ContactUs";
 import Chillers from "./pages/Products/Chillers";
 import Installations from "./pages/Services/Installations";
@@ -67,6 +68,10 @@ export default function App() {
     {
       path: "/blog/:id",
       element: <IndividualBlogArticle />,
+    },
+    {
+      path: "/careers",
+      element: <Careers />,
     },
   ]);
 
