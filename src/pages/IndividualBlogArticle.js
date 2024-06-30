@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Image } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import Footer from "../components/Footer";
@@ -28,7 +28,7 @@ export default function IndividualBlogArticle() {
         );
     }
 
-    React.useEffect(() => {
+    useEffect(() => {
         setIsMobile(window.innerWidth < 768);
         window.scrollTo(0, 0);
 
@@ -66,7 +66,7 @@ export default function IndividualBlogArticle() {
             .finally(() => {
                 setIsLoading(false);
             });
-    }, []);
+    }, [id]);
 
     return (
         <div>
