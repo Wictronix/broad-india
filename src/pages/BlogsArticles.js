@@ -1,10 +1,8 @@
-import React, { useRef, useState } from "react";
-import { Button, Carousel, Container, Image } from "react-bootstrap";
-import { useParams, Link, json } from "react-router-dom";
+import React, { useState } from "react";
+import { Button, Container, Image } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import NavbarComp from "../components/NavbarComp";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import sustainabilityImage from '../assets/images/sustainability.jpeg';
 // import RecentNews from "../components/RecentNews";
 
 export default function BlogsArticles() {

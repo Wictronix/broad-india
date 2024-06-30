@@ -18,7 +18,7 @@ export default function IndividualBlogArticle() {
 
         const query = `
 			query GetData {
-                post(id: \"${id}\") {
+                post(id: "${id}") {
                     title
                     content {
                         html
@@ -62,6 +62,7 @@ export default function IndividualBlogArticle() {
                 setIsLoading(false);
             });
     }, []);
+
     return (
         <div>
             <NavbarComp />
@@ -108,7 +109,7 @@ export default function IndividualBlogArticle() {
                                             style={{
                                                 fontSize: "1.1rem",
                                                 marginBottom: "3rem",
-												textAlign: "justify"
+                                                textAlign: "justify"
                                             }}
                                         ></div>
                                     </div>
