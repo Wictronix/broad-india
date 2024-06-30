@@ -104,6 +104,14 @@ export default function Footer() {
               </div>
               <div>
                 <Link
+                  to="/careers"
+                  style={{ color: "#ccc", textDecoration: "none" }}
+                >
+                  Careers
+                </Link>
+              </div>
+              <div>
+                <Link
                   to="/about"
                   style={{ color: "#ccc", textDecoration: "none" }}
                 >
