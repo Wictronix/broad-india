@@ -2,14 +2,13 @@ import React from "react";
 import { Card, CardBody } from "react-bootstrap";
 
 import avatar from "../assets/images/career-avatar.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function careerCard({ position, location }) {
     return (
         <Card className="col-12 col-md-6 col-xl-4 py-5">
             <CardBody className="d-grid gap-5">
                 <div className="d-flex justify-content-center">
-                    <img src={avatar} />
+                    <img src={avatar} alt="" />
                 </div>
                 <div>
                     <h3 className="d-flex justify-content-center align-items-center gap-3">
