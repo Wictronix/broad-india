@@ -6,14 +6,14 @@ import NavbarComp from "../components/NavbarComp";
 // import RecentNews from "../components/RecentNews";
 
 export default function Article() {
-  const [isMobile, setIsMobile] = React.useState(true);
-  const { id } = useParams();
+	const [isMobile, setIsMobile] = React.useState(true);
+	const { id } = useParams();
 
-  React.useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
-    window.scrollTo(0, 0);
-  }, []);
-  return (
+	React.useEffect(() => {
+		setIsMobile(window.innerWidth < 768);
+		window.scrollTo(0, 0);
+	}, []);
+	return (
 		<div>
 			<NavbarComp />
 			<Container style={{ marginTop: "10rem" }}>

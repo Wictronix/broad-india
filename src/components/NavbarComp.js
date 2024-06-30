@@ -196,6 +196,30 @@ export default function NavbarComp() {
             >
               BROAD Group
             </Link>
+            <Link
+              style={{
+                marginLeft: "0.8rem",
+                marginRight: "1.2rem",
+                textDecoration: "none",
+                cursor: "pointer",
+                color: "#333",
+              }}
+              to="/blogs-and-articles"
+            >
+              Blogs & Articles
+            </Link>
+            <Link
+              style={{
+                marginLeft: "0.8rem",
+                marginRight: "1.2rem",
+                textDecoration: "none",
+                cursor: "pointer",
+                color: "#333",
+              }}
+              to="/careers"
+            >
+              Careers
+            </Link>
             <br />
             <div style={{ display: isMobile ? "none" : "block" }}>
               <Link to="/contactUs" className="btn btn-primary">
@@ -231,7 +255,7 @@ export default function NavbarComp() {
                 marginBottom: "1rem",
               }}
             >
-              <h3>Home</h3>
+              <h4>Home</h4>
             </Link>
             <h5
               style={{
@@ -283,7 +307,7 @@ export default function NavbarComp() {
               Pumpset
             </Link>
             <br />
-            <h3>
+            <h4>
               <Link
                 to="/installations"
                 style={{
@@ -294,7 +318,7 @@ export default function NavbarComp() {
               >
                 Installations
               </Link>
-            </h3>
+            </h4>
             <br />
             <Link
               style={{
@@ -306,7 +330,7 @@ export default function NavbarComp() {
               }}
               to="/about"
             >
-              <h3>About</h3>
+              <h4>About</h4>
             </Link>
             <Link
               style={{
@@ -319,7 +343,33 @@ export default function NavbarComp() {
               }}
               to="/broadGroup"
             >
-              <h3>BROAD Group</h3>
+              <h4>BROAD Group</h4>
+            </Link>
+            <Link
+              style={{
+                marginLeft: "0.8rem",
+                marginRight: "1.2rem",
+                marginBottom: "1rem",
+                textDecoration: "none",
+                cursor: "pointer",
+                color: "#333",
+              }}
+              to="/blogs-and-articles"
+            >
+              <h4>Blogs & Articles</h4>
+            </Link>
+            <Link
+              style={{
+                marginLeft: "0.8rem",
+                marginRight: "1.2rem",
+                marginBottom: "1rem",
+                textDecoration: "none",
+                cursor: "pointer",
+                color: "#333",
+              }}
+              to="/careers"
+            >
+              <h4>Careers</h4>
             </Link>
             <Link to="/contactUs" className="btn btn-primary">
               Contact us
