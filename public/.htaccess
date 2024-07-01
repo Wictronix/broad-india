@@ -1,16 +1,4 @@
-Options -MultiViews
-RewriteEngine On
-
-# Allow direct access to existing files and directories
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^ - [L]
-
-# Rewrite all other requests to index.html
-RewriteRule ^ index.html [QSA,L]
-
-
-    # Options -MultiViews
-    # RewriteEngine On
-    # RewriteCond %{REQUEST_FILENAME} !-f
-    # RewriteRule ^ index.html [QSA,L]
+    Options -MultiViews
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.html [QSA,L]
