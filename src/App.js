@@ -14,6 +14,7 @@ import CCHPSystem from "./pages/Products/CCHPSystem";
 import BroadGroup from "./pages/BroadGroup";
 import Pump from "./pages/Products/Pump";
 import BlogsArticles from "./pages/BlogsArticles";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -73,6 +74,10 @@ export default function App() {
       path: "/careers",
       element: <Careers />,
     },
+    {
+      path: "*",
+      element: <NotFound />
+    }
   ]);
 
   React.useEffect(() => {
