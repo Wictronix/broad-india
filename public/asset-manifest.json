@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.42f2fe8f.css",
-    "main.js": "/static/js/main.e879a758.js",
+    "main.css": "/static/css/main.50fd09d3.css",
+    "main.js": "/static/js/main.f3b15adc.js",
     "static/media/bgbg.jpg": "/static/media/bgbg.fb274ea0d50a9fb6862f.jpg",
     "static/media/contactBG.jpg": "/static/media/contactBG.a58fb13b4683335f2553.jpg",
     "static/media/broad_town_intro3.jpg": "/static/media/broad_town_intro3.3d96f0bce46b1082b05e.jpg",
@@ -21,16 +21,18 @@
     "static/media/cchp.jpg": "/static/media/cchp.845978bf9fd8d822093c.jpg",
     "static/media/nonElec.jpg": "/static/media/nonElec.f26315e514144fd0ab24.jpg",
     "static/media/ntpc.webp": "/static/media/ntpc.86c6061aaf47403c113e.webp",
+    "static/media/careers.jpg": "/static/media/careers.061e688ce97c8da21863.jpg",
+    "static/media/bhilosa.png": "/static/media/bhilosa.0c25080493c13541a11e.png",
     "static/media/youtube.png": "/static/media/youtube.c87142fc4c066477d04a.png",
     "static/media/broadPump.webp": "/static/media/broadPump.148d9bc05e2e6f4f2d06.webp",
     "static/media/instagram.webp": "/static/media/instagram.7a8a2d01b4217942eda1.webp",
     "static/media/broad-logo.webp": "/static/media/broad-logo.04949f8d30e14c4880eb.webp",
     "index.html": "/index.html",
-    "main.42f2fe8f.css.map": "/static/css/main.42f2fe8f.css.map",
-    "main.e879a758.js.map": "/static/js/main.e879a758.js.map"
+    "main.50fd09d3.css.map": "/static/css/main.50fd09d3.css.map",
+    "main.f3b15adc.js.map": "/static/js/main.f3b15adc.js.map"
   },
   "entrypoints": [
-    "static/css/main.42f2fe8f.css",
-    "static/js/main.e879a758.js"
+    "static/css/main.50fd09d3.css",
+    "static/js/main.f3b15adc.js"
   ]
 }
