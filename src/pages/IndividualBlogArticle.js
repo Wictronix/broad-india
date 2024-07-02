@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Container, Image } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import NavbarComp from "../components/NavbarComp";
 
@@ -10,6 +10,7 @@ export default function IndividualBlogArticle() {
     const [title, setTitle] = React.useState("");
     const [image, setImage] = React.useState("");
     const [content, setContent] = React.useState("");
+    const [tags, setTags] = React.useState([]);
     const { id } = useParams();
 
     const getQuery = (id) => {
@@ -23,6 +24,10 @@ export default function IndividualBlogArticle() {
                     coverImage {
                         url
                     }
+                    tags {
+                        id
+                        name
+                    }
                 }
             }`
         );
@@ -30,7 +35,7 @@ export default function IndividualBlogArticle() {
 
     useEffect(() => {
         setIsMobile(window.innerWidth < 768);
-        window.scrollTo(0, 0);
+        // window.scrollTo(0, 0);
 
         const query = getQuery(id);
 
@@ -49,6 +54,7 @@ export default function IndividualBlogArticle() {
                             setTitle(data.title);
                             setImage(data.coverImage ? data.coverImage.url : "");
                             setContent(data.content.html);
+                            setTags(data.tags);
                         } else {
                             setTitle(null);
                             setImage(null);
@@ -71,17 +77,17 @@ export default function IndividualBlogArticle() {
     return (
         <div>
             <NavbarComp />
-            <Container style={{ marginTop: "10rem", minHeight: "25rem" }}>
+            <Container style={{ marginTop: "10rem", marginBottom: "5rem", minHeight: "25rem" }}>
                 {
                     isLoading ? (
                         <div style={{
+                            minHeight: "10rem",
                             display: "flex",
                             justifyContent: "center",
                             alignItems: "center",
-                            fontSize: "3rem",
-                            color: "blue"
+                            fontSize: "1.5rem"
                         }}>
-                            Loading ...
+                            <p>Loading ...</p>
                         </div>
                     ) : (
                         <div>
@@ -117,6 +123,33 @@ export default function IndividualBlogArticle() {
                                                 textAlign: "justify"
                                             }}
                                         ></div>
+                                        <div>
+                                            {
+                                                tags.length > 0 && (
+                                                    <div
+                                                        className="d-flex align-items-center gap-3"
+                                                        style={{
+                                                            fontWeight: "500",
+                                                        }}
+                                                    >
+                                                        <p className="my-auto">Posted In: </p>
+                                                        {
+                                                            tags.map((tag, index) => {
+                                                                return (
+                                                                    <Link
+                                                                        to={`/blogs-and-articles/tag/${tag.id}`}
+                                                                        className="bg-primary text-white rounded-pill d-inline-block py-2 px-4 hover-card"
+                                                                        key={index}
+                                                                    >
+                                                                        <p className="p-0 m-0">{tag.name}</p>
+                                                                    </Link>
+                                                                );
+                                                            })
+                                                        }
+                                                    </div>
+                                                )
+                                            }
+                                        </div>
                                     </div>
                                 ) : (
                                     <div style={{
