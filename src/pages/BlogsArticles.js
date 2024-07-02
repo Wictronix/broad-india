@@ -1,15 +1,19 @@
 import React, { useState } from "react";
-import { Button, Container, Image } from "react-bootstrap";
+import { Button, Card, Container, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import NavbarComp from "../components/NavbarComp";
-// import RecentNews from "../components/RecentNews";
+import blogsHeader from "../assets/images/blogs-header.webp";
 
 export default function BlogsArticles() {
 	const [isMobile, setIsMobile] = React.useState(true);
 	const [loading, setLoading] = useState(true);
 	const [blogsPerPage, setBlogsPerPage] = useState(4);
+	const [blogCarouselMove, setBlogCarouselMove] = useState("25");
 	const [startBlogIndex, setStartBlogIndex] = useState(0);
+	const [tags, setTags] = useState([]);
+	const [mostImpBlog, setMostImpBlog] = useState(null);
+	const [impBlogs, setImpBlogs] = useState({ arr: [] });
 	const [blogs, setBlogs] = useState({ arr: [] });
 	const [articles, setArticles] = useState({ arr: [] });
 	const [articlesPerPage, setArticlesPerPage] = useState(2);
@@ -18,16 +22,19 @@ export default function BlogsArticles() {
 	// Dummy Data ...
 	const videos = [
 		{
+			category: 'Environment',
 			title: 'How to Edit Videos Online in Wistia\'s Video Editor',
 			image: 'https://st.depositphotos.com/1005669/2996/i/450/depositphotos_29966311-stock-photo-renewable-energy.jpg',
 			link: '#',
 		},
 		{
+			category: 'HVAC',
 			title: 'The Best iPhone Camera Settings for Video in 2024',
 			image: 'https://t3.ftcdn.net/jpg/05/54/51/40/360_F_554514065_A5Y17mmaZgxkbcKri1g52RrLDtLzOU54.jpg',
 			link: '#',
 		},
 		{
+			category: 'VAM',
 			title: 'How to Download Wistia Videos',
 			image: 'https://cdn.pixabay.com/photo/2021/08/10/10/06/pinwheels-6535595_640.jpg',
 			link: '#',
@@ -51,22 +58,10 @@ export default function BlogsArticles() {
 
 
 	// inline css classes ...
-	const linkStyle = {
-		textAlign: "left",
-		color: 'white',
-		textDecoration: 'none',
-	};
-
 	const linkHoverStyle = {
 		textDecoration: 'underline',
 	};
 
-	const containerStyle = {
-		display: 'flex',
-		justifyContent: 'space-between',
-		padding: '20px 0',
-		backgroundColor: 'whites',
-	};
 
 	const projectStyle = {
 		position: 'relative',
@@ -112,6 +107,10 @@ export default function BlogsArticles() {
 		return (
 			`query GetUserArticles {
 				user(username: "aayush7908") {
+					tagsFollowing {
+						id
+						name
+					}
 					posts(pageSize: ${pageSize}, page: ${page}) {
 						edges {
 							node {
@@ -119,6 +118,9 @@ export default function BlogsArticles() {
 								subtitle
 								title
 								brief
+								tags {
+									name
+								}
 								content {
 									text
 								}
@@ -135,7 +137,7 @@ export default function BlogsArticles() {
 	};
 
 	const fetchData = async () => {
-		const pageSize = 10;
+		const pageSize = 20;
 		let totalPages = 1;
 
 		for (let page = 1; page <= totalPages; page++) {
@@ -148,13 +150,34 @@ export default function BlogsArticles() {
 				},
 				body: JSON.stringify({ query })
 			});
-			let data = await promise.json();
+			let res = await promise.json();
+			console.log(res);
 
-			totalPages = Math.ceil(data.data.user.posts.totalDocuments / pageSize);
-			data = data.data.user.posts.edges;
+			totalPages = Math.ceil(res.data.user.posts.totalDocuments / pageSize);
+			const data = res.data.user.posts.edges;
+			const newTags = res.data.user.tagsFollowing;
+			setTags((tags) => { return newTags });
 			data.forEach((post) => {
 				post = post.node;
-				if (post.subtitle && post.subtitle.toLowerCase() === "blog") {
+				if (post.subtitle && post.subtitle.toLowerCase() === "most-imp") {
+					if (mostImpBlog === null) {
+						setMostImpBlog((mostImpBlog) => { return post });
+					} else {
+						const newBlogs = { ...blogs };
+						newBlogs.arr.push(post);
+						setBlogs((blog) => { return newBlogs });
+					}
+				} else if (post.subtitle && post.subtitle.toLowerCase() === "imp") {
+					if (impBlogs.arr.length < 2) {
+						const newImpBlogs = { ...impBlogs };
+						newImpBlogs.arr.push(post);
+						setImpBlogs((impBlog) => { return newImpBlogs });
+					} else {
+						const newBlogs = { ...blogs };
+						newBlogs.arr.push(post);
+						setBlogs((blog) => { return newBlogs });
+					}
+				} else if (post.subtitle && post.subtitle.toLowerCase() === "blog") {
 					const newBlogs = { ...blogs };
 					newBlogs.arr.push(post);
 					setBlogs((blog) => { return newBlogs });
@@ -170,31 +193,151 @@ export default function BlogsArticles() {
 
 
 	React.useEffect(() => {
-		setIsMobile(window.innerWidth < 768);
-		// window.scrollTo(0, 0);
+		const screenWidth = window.innerWidth;
+		setIsMobile(screenWidth < 768);
+		if (screenWidth < 578) {
+			setBlogCarouselMove((blogCarouselMove) => { return "100" });
+		} else if (screenWidth < 991) {
+			setBlogCarouselMove((blogCarouselMove) => { return "50" });
+		} else if (screenWidth < 1280) {
+			setBlogCarouselMove((blogCarouselMove) => { return "33.33" });
+		}
+		window.scrollTo(0, 0);
 		fetchData();
 	}, []);
 
 	return (
 		<div>
 			<NavbarComp />
-			<Container style={{ marginTop: "10rem", color: "#37373c" }}>
+			<Container style={{
+				marginTop: "8rem",
+				marginBottom: "5rem",
+				color: "#37373c",
+				display: "flex",
+				flexDirection: "column",
+				gap: "5rem"
+			}}>
 
-				{/* HEADING */}
-				<div style={{
-					textAlign: "center"
-				}}>
-					<h2>Welcome to our Blogs and Articles section!</h2>
-					<p style={{
-						fontSize: "2rem",
-						fontWeight: "lighter"
-					}}>
-						Explore our latest insights and stories on various topics.
-					</p>
+				{/* HEADER */}
+				<div className="row">
+					<div className="col-lg-8 pe-lg-3 pb-3">
+						<div className="overflow-hidden" style={{ borderRadius: "1rem" }}>
+							<img src={blogsHeader} alt="" />
+						</div>
+						<div style={{ display: "flex", flexDirection: "column" }}>
+							{
+								mostImpBlog !== null && (
+									<Card
+										className="hover-card"
+										style={{
+											boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.3)',
+											border: 'none',
+											borderRadius: '10px',
+											textAlign: 'left',
+											padding: '0px',
+											marginTop: '20px'
+										}}
+									>
+										<Link
+											to={`/blog/${mostImpBlog.id}`}
+											style={{
+												width: "100%",
+												borderRadius: '10px',
+												overflow: "hidden",
+												textDecoration: "none",
+												color: "black",
+												padding: "20px 40px"
+											}}
+										>
+											<div className="py-3">
+												<h3 style={{
+													fontSize: '1.1rem',
+													color: "#007BFF"
+												}}>
+													{mostImpBlog.tags.length > 0 && mostImpBlog.tags[0].name}
+												</h3>
+												<h2 style={{
+													fontSize: '1.5rem'
+												}}>
+													{mostImpBlog.title.substring(0, (isMobile ? 30 : 70))}{mostImpBlog.title.length > (isMobile ? 30 : 70) && "..."}
+												</h2>
+												<p>{mostImpBlog.content.text.substring(0, 150)}...</p>
+												<p>
+													<svg style={{ height: "1.3rem", position: "relative" }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+														<path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+													</svg>
+												</p>
+											</div>
+										</Link>
+									</Card>
+								)
+							}
+						</div>
+					</div>
+					<div className="col-lg-4 d-grid gap-3">
+						{
+							impBlogs.arr.map((blog, index) => {
+								return (
+									<Card
+										className="hover-card"
+										style={{
+											boxShadow: 'none',
+											border: 'none',
+											borderRadius: '10px',
+											textAlign: 'left',
+											padding: '0px'
+										}}
+										key={index}
+									>
+										<Link
+											to={`/blog/${blog.id}`}
+											style={{
+												width: "100%",
+												borderRadius: '10px',
+												overflow: "hidden",
+												textDecoration: "none",
+												color: "black"
+											}}
+										>
+											<div style={{
+												width: '100%',
+												height: '250px',
+												borderRadius: '10px',
+												overflow: "hidden"
+											}}>
+												<Image
+													src={blog.coverImage !== null ? blog.coverImage.url : "./logo512.png"}
+													alt=""
+													style={{
+														width: '100%',
+														height: '100%',
+														borderTopLeftRadius: '10px',
+														borderTopRightRadius: '10px'
+													}}
+												/>
+											</div>
+											<div className="py-3">
+												<h3 style={{
+													fontSize: '1.1rem',
+													color: "#007BFF"
+												}}>
+													{blog.tags.length > 0 && blog.tags[0].name}
+												</h3>
+												<h2 style={{
+													fontSize: '1.5rem'
+												}}>
+													{blog.title.substring(0, (isMobile ? 40 : 70))}{blog.title.length > (isMobile ? 40 : 70) && "..."}
+												</h2>
+											</div>
+										</Link>
+									</Card>
+								)
+							})
+						}
+					</div>
 				</div>
 
-
-				{/* BLOGS */}
+				{/* BLOGS CAROUSEL */}
 				<div>
 					<div style={{
 						borderBottom: "solid #d7d7da 0.1rem",
@@ -278,52 +421,53 @@ export default function BlogsArticles() {
 									(blogs.arr.length > 0) ? (
 										<div style={{
 											marginTop: "2rem",
-											marginBottom: "2rem"
 										}}>
 											<div style={{
 												position: "relative",
 												width: "100%",
-												overflow: "hidden"
+												overflow: `${isMobile ? "scroll" : "hidden"}`
 											}}>
 												<div style={{
 													display: "flex",
 													width: "100%",
 													transition: "transform 0.5s ease-in-out",
-													transform: `translateX(-${startBlogIndex * 25}%)`
+													transform: `translateX(-${startBlogIndex * blogCarouselMove}%)`
 												}}>
 													{
 														blogs.arr.map((blog, index) => {
 															return (
 																<div
-																	key={index}
 																	style={{
-																		flex: "0 0 25%",
+																		flex: `0 0 ${blogCarouselMove}%`,
 																		padding: "0.7rem"
 																	}}
+																	key={index}
 																>
 																	<Link
-																		className="link-hover"
+																		className="hover-card"
 																		to={`/blog/${blog.id}`}
 																	>
-																		<Image
-																			src={blog.coverImage !== null ? blog.coverImage.url : "./logo512.png"}
-																			style={{
-																				borderRadius: "0.5rem",
-																				width: "100%",
-																				height: "12rem",
-																				overflow: "hidden",
-																				backgroundColor: "#d6ecfc"
-																			}}
-																		/>
-																		<h2 style={{
+																		<div style={{ borderRadius: "0.5rem", overflow: "hidden" }}>
+																			<Image
+																				src={blog.coverImage !== null ? blog.coverImage.url : "./logo512.png"}
+																				style={{
+																					borderRadius: "0.5rem",
+																					width: "100%",
+																					height: "12rem",
+																					overflow: "hidden",
+																					backgroundColor: "#d6ecfc"
+																				}}
+																			/>
+																		</div>
+																		<h1 style={{
 																			marginTop: "1rem",
 																			fontSize: "1.3rem",
 																			overflow: "hidden",
 																			paddingLeft: "0.2rem",
 																			paddingRight: "0.2rem"
 																		}}>
-																			{blog.title}
-																		</h2>
+																			{blog.title.substring(0, 40)}{blog.title.length > 40 && "..."}
+																		</h1>
 																	</Link>
 																</div>
 															);
@@ -351,15 +495,79 @@ export default function BlogsArticles() {
 					}
 				</div>
 
-
 				{/* CATEGORIES */}
-
+				<div>
+					<div style={{
+						borderBottom: "solid #d7d7da 0.1rem",
+						display: "flex",
+						justifyContent: "space-between"
+					}}>
+						<p style={{
+							fontSize: "1.5rem",
+							marginBottom: "0.5rem"
+						}}>
+							More Categories
+						</p>
+					</div>
+					<div className="mt-3 row">
+						{
+							loading ? (
+								<div style={{
+									minHeight: "10rem",
+									display: "flex",
+									justifyContent: "center",
+									alignItems: "center",
+									fontSize: "1.5rem"
+								}}>
+									<p>Loading ...</p>
+								</div>
+							) : (
+								<>
+									{
+										tags.length > 0 ? (
+											<>
+												{
+													tags.map((tag, index) => {
+														return (
+															<div className="col-md-6 col-lg-4 p-2">
+																<Card className="p-0 hover-card">
+																	<Link
+																		className="p-3 w-100 h-100 d-flex align-items-center justify-content-between"
+																		to={`/blogs-and-articles/tag/${tag.id}`}
+																	>
+																		{tag.name}
+																		<svg style={{ height: "1rem" }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+																			<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" />
+																		</svg>
+																	</Link>
+																</Card>
+															</div>
+														)
+													})
+												}
+											</>
+										) : (
+											<div style={{
+												minHeight: "10rem",
+												display: "flex",
+												justifyContent: "center",
+												alignItems: "center",
+												fontSize: "2rem",
+												fontWeight: "bold",
+												color: "red"
+											}}>
+												<p>No Categories To Show</p>
+											</div>
+										)
+									}
+								</>
+							)
+						}
+					</div>
+				</div>
 
 				{/* ARTICLES */}
-				<div style={{
-					// marginLeft: "10rem",
-					// marginRight: "10rem"
-				}}>
+				<div>
 					<div style={{
 						borderBottom: "solid #d7d7da 0.1rem",
 						display: "flex",
@@ -371,25 +579,6 @@ export default function BlogsArticles() {
 						}}>
 							Articles
 						</p>
-						{/* <div style={{
-							display: "flex",
-							gap: "1rem",
-							borderBottom: "solid #a3a3aa"
-						}}>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 512 512"
-								style={{
-									width: "1rem"
-								}}
-							>
-								<path fill="#a3a3aa" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
-							</svg>
-							<input
-								placeholder="Search"
-								style={{ border: "none", width: "6rem" }}
-							/>
-						</div> */}
 					</div>
 					{
 						loading ? (
@@ -420,23 +609,28 @@ export default function BlogsArticles() {
 															<Link
 																key={index}
 																to={`/article/${article.id}`}
+																className="hover-card d-md-flex"
 																style={{
-																	display: "flex",
 																	gap: "2rem",
 																	textDecoration: "none",
 																	color: "#37373c",
-																	width: "100%"
+																	width: "100%",
+																	boxShadow: "none"
 																}}
-																className="link-hover article-link"
 															>
-																<div style={{
-																	flex: "0 0 30%"
-																}}>
+																<div
+																	className="mb-3 mb-md-0"
+																	style={{
+																		flex: "0 0 30%",
+																		overflow: "hidden",
+																		borderRadius: "0.5rem"
+																	}}
+																>
 																	<Image
 																		style={{
 																			borderRadius: "0.5rem",
 																			width: "100%",
-																			maxHeight: "13rem",
+																			height: "13rem",
 																			backgroundColor: "#d6ecfc"
 																		}}
 																		src={article.coverImage !== null ? article.coverImage.url : "./logo512.png"}
@@ -447,13 +641,13 @@ export default function BlogsArticles() {
 																	display: "flex",
 																	flexDirection: "column"
 																}}>
-																	<h2>
-																		{article.title}
-																	</h2>
+																	<h1 style={{ fontSize: "1.8rem" }}>
+																		{article.title.substring(0, (isMobile ? 25 : 55))}{article.title.length > (isMobile ? 25 : 55) && "..."}
+																	</h1>
 																	<p style={{
 																		fontSize: "1.1rem"
 																	}}>
-																		{`${article.content.text.substring(0, 375)}...`}
+																		{`${article.content.text.substring(0, (isMobile ? 200 : 375))}...`}
 																	</p>
 																	<i style={{
 																		textTransform: "uppercase",
@@ -476,6 +670,7 @@ export default function BlogsArticles() {
 											<div style={{
 												margin: "2rem",
 												display: "flex",
+												alignItems: "center",
 												justifyContent: "space-between"
 											}}>
 												<Button
@@ -484,7 +679,7 @@ export default function BlogsArticles() {
 													}}
 													disabled={articlesPageNumber === 1}
 													style={{
-														backgroundColor: "transparent",
+														backgroundColor: `${isMobile ? "#229fff" : "transparent"}`,
 														border: "none",
 														color: "#37373c",
 														fontSize: "1.3rem",
@@ -492,10 +687,10 @@ export default function BlogsArticles() {
 														justifyContent: "center",
 														alignItems: "center",
 														gap: "0.5rem",
-														padding: "0"
+														padding: `${isMobile ? "0.5rem" : "0"}`
 													}}
 												>
-													&lt; Prev
+													&lt; {!isMobile && "Prev"}
 												</Button>
 												<p>Page <b>{articlesPageNumber}</b> of <b>{Math.ceil(articles.arr.length / articlesPerPage)}</b></p>
 												<Button
@@ -504,7 +699,7 @@ export default function BlogsArticles() {
 													}}
 													disabled={articlesPageNumber === Math.ceil(articles.arr.length / articlesPerPage)}
 													style={{
-														backgroundColor: "transparent",
+														backgroundColor: `${isMobile ? "#229fff" : "transparent"}`,
 														border: "none",
 														color: "#37373c",
 														fontSize: "1.3rem",
@@ -512,10 +707,10 @@ export default function BlogsArticles() {
 														justifyContent: "center",
 														alignItems: "center",
 														gap: "0.5rem",
-														padding: "0"
+														padding: `${isMobile ? "0.5rem" : "0"}`
 													}}
 												>
-													Next &gt;
+													{!isMobile && "Next"} &gt;
 												</Button>
 											</div>
 										</div>
@@ -537,77 +732,121 @@ export default function BlogsArticles() {
 						)
 					}
 				</div>
-			</Container>
+			</Container >
 
 			{/* RECENT VIDEOS */}
-			<div style={{
-				backgroundColor: '#007bff',
-				paddingTop: "2rem",
-				paddingBottom: "2rem",
-				paddingLeft: "7rem",
-				paddingRight: "7rem",
-				color: 'white',
-			}}>
-				<h2 style={{
-					display: "flex",
-					marginBottom: '20px',
-				}}>Recent Videos</h2>
-				<div style={{
-					display: "flex",
-					width: '100%',
-					height: '1px',
-					backgroundColor: 'white',
-					marginBottom: '20px',
-				}}></div>
-				<div style={{
-					display: 'flex',
-					justifyContent: 'space-between',
-				}}>
-					{videos.map((video, index) => (
-						<div style={{
-							backgroundColor: '#007bff',
-							color: 'white',
-							borderRadius: '10px',
-							textAlign: 'left',
-							width: '30%',
-						}} key={index}>
-							<img src={video.image} alt={video.title} style={{
-								maxWidth: '100%',
-								height: '300px',
-								borderRadius: '10px',
-							}} />
-							<h3 style={{
-								margin: '15px 0',
-								fontSize: '1.1em',
-							}}>{video.title}</h3>
-							<a
-								href={video.link}
-								style={linkStyle}
-								onMouseEnter={(e) => (e.target.style.textDecoration = linkHoverStyle.textDecoration)}
-								onMouseLeave={(e) => (e.target.style.textDecoration = linkStyle.textDecoration)}
-							>
-								See the full article →
-							</a>
-						</div>
-					))}
-				</div>
-			</div>
-			{/* recent videos closes */}
-			{/* new section */}
-			<div style={containerStyle}>
-				{projects.map((project, index) => (
-					<div style={projectStyle} key={index}>
-						<img src={project.image} alt={project.title} style={imageStyle} />
-						<div style={overlayStyle}>
-							{index === 0 && <span style={arrowStyle('left')}>→</span>}
-							<p style={titleStyle}>{project.title}</p>
-							{index === 1 && <span style={arrowStyle('right')}>→</span>}
-						</div>
+			< div
+				className="p-3 p-md-5"
+				style={{
+					backgroundColor: '#007bff',
+					paddingTop: "2rem",
+					paddingBottom: "2rem",
+					color: 'white',
+				}
+				}
+			>
+				<div className="row">
+					<div className="col-lg-3 py-5 d-grid gap-2">
+						<h4>
+							<svg style={{ height: "1.3rem", marginRight: "10px" }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+								<path fill="white" d="M256 0H576c35.3 0 64 28.7 64 64V288c0 35.3-28.7 64-64 64H256c-35.3 0-64-28.7-64-64V64c0-35.3 28.7-64 64-64zM476 106.7C471.5 100 464 96 456 96s-15.5 4-20 10.7l-56 84L362.7 169c-4.6-5.7-11.5-9-18.7-9s-14.2 3.3-18.7 9l-64 80c-5.8 7.2-6.9 17.1-2.9 25.4s12.4 13.6 21.6 13.6h80 48H552c8.9 0 17-4.9 21.2-12.7s3.7-17.3-1.2-24.6l-96-144zM336 96a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM64 128h96V384v32c0 17.7 14.3 32 32 32H320c17.7 0 32-14.3 32-32V384H512v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V192c0-35.3 28.7-64 64-64zm8 64c-8.8 0-16 7.2-16 16v16c0 8.8 7.2 16 16 16H88c8.8 0 16-7.2 16-16V208c0-8.8-7.2-16-16-16H72zm0 104c-8.8 0-16 7.2-16 16v16c0 8.8 7.2 16 16 16H88c8.8 0 16-7.2 16-16V312c0-8.8-7.2-16-16-16H72zm0 104c-8.8 0-16 7.2-16 16v16c0 8.8 7.2 16 16 16H88c8.8 0 16-7.2 16-16V416c0-8.8-7.2-16-16-16H72zm336 16v16c0 8.8 7.2 16 16 16h16c8.8 0 16-7.2 16-16V416c0-8.8-7.2-16-16-16H424c-8.8 0-16 7.2-16 16z" />
+							</svg>
+							Recent Videos
+						</h4>
+						<h2>BROAD Group</h2>
+						<p style={{ fontSize: "1.1rem" }}>Here's a look at recent activities of BROAD Group</p>
 					</div>
-				))}
+					<div className="col-lg-9 d-md-flex justify-content-between">
+						{
+							videos.map((video, index) => {
+								return (
+									<Card
+										className="col-md-4 p-3"
+										style={{
+											border: 'none',
+											backgroundColor: '#007bff',
+											// borderRadius: '10px',
+											textAlign: 'left',
+										}}
+										key={index}
+									>
+										<Link
+											className="hover-card"
+											to={"/blogs-and-articles"}
+											style={{
+												height: '100%',
+												backgroundColor: 'white',
+												borderRadius: '10px',
+												overflow: "hidden",
+												textDecoration: "none",
+												color: "black"
+											}}
+										>
+											<div style={{
+												width: '100%',
+												height: '200px',
+												borderTopLeftRadius: '10px',
+												borderTopRightRadius: '10px',
+												overflow: "hidden"
+											}}>
+												<img src={video.image} alt={video.title} style={{
+													width: '100%',
+													height: '200px',
+													borderTopLeftRadius: '10px',
+													borderTopRightRadius: '10px'
+												}} />
+											</div>
+											<div className="p-3">
+												<h3 style={{
+													margin: '15px 0',
+													fontSize: '1.1em',
+													color: "#007BFF"
+												}}>
+													{video.category}
+												</h3>
+												<h2 style={{
+													margin: '15px 0',
+													fontSize: '1.3rem',
+													fontWeight: 'normal'
+												}}>
+													{video.title}
+												</h2>
+												<p
+													style={{
+														textAlign: "left",
+														textDecoration: 'none',
+													}}
+												>
+													<span>See the full video</span>
+													<svg style={{ height: "1.3rem", position: "relative", marginLeft: "10px" }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+														<path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+													</svg>
+												</p>
+											</div>
+										</Link>
+									</Card>
+								)
+							})
+						}
+					</div>
+				</div>
+			</div >
+			{/* recent videos closes */}
+
+			{/* SUBSCRIBE EMAIL */}
+			<div className="text-center m-5 p-5 row gap-4" style={{ borderRadius: "1rem", backgroundColor: "#edf6ff" }}>
+				<h3 style={{ fontWeight: "normal" }}>
+					<span>Get Latest articles from</span>
+					<span style={{ color: "#007BFF" }}> BROAD India </span>
+					<span>in your inbox.</span>
+				</h3>
+				<form className="px-5 d-md-flex gap-2 col-lg-8 offset-lg-2">
+					<input type="email" className="form-control mb-3 mb-md-0" placeholder="Email" />
+					<button type="submit" className="btn btn-primary">Subscribe</button>
+				</form>
 			</div>
-			{/* new section closed */}
+			{/* SUBSCRIBE EMAIL CLOSE */}
 			<Footer />
-		</div>
+		</div >
 	);
 }

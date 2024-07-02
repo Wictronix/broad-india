@@ -10,7 +10,7 @@ export default function Careers() {
   const [loading, setLoading] = useState(false);
 
   React.useEffect(() => {
-    // window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
   }, []);
 
   return (
@@ -56,7 +56,7 @@ export default function Careers() {
       </div>
       <Container
         style={{
-          marginBlock: "5rem",
+          marginBlock: "10rem",
         }}
       >
         <div className="d-grid gap-5">

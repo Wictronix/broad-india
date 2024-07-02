@@ -15,6 +15,7 @@ import BroadGroup from "./pages/BroadGroup";
 import Pump from "./pages/Products/Pump";
 import BlogsArticles from "./pages/BlogsArticles";
 import NotFound from "./pages/NotFound";
+import BlogsByCategory from "./pages/BlogsByCategory";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -61,6 +62,10 @@ export default function App() {
     {
       path: "/blogs-and-articles",
       element: <BlogsArticles />,
+    },
+    {
+      path: "/blogs-and-articles/tag/:id",
+      element: <BlogsByCategory />,
     },
     {
       path: "/article/:id",
