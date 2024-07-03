@@ -8,7 +8,7 @@ import ContactUs from "./pages/ContactUs";
 import Chillers from "./pages/Products/Chillers";
 import Installations from "./pages/Services/Installations";
 import PEChillers from "./pages/Products/PEChillers";
-import IndividualBlogArticle from "./pages/IndividualBlogArticle";
+import IndividualBlog from "./pages/IndividualBlog";
 import VapAbsorptionChiller from "./pages/Products/VapAbsorptionChiller";
 import CCHPSystem from "./pages/Products/CCHPSystem";
 import BroadGroup from "./pages/BroadGroup";
@@ -16,6 +16,8 @@ import Pump from "./pages/Products/Pump";
 import BlogsArticles from "./pages/BlogsArticles";
 import NotFound from "./pages/NotFound";
 import BlogsByCategory from "./pages/BlogsByCategory";
+import AllBlogs from "./pages/AllBlogs";
+import RecentVideos from "./pages/RecentVideos";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -68,12 +70,28 @@ export default function App() {
       element: <BlogsByCategory />,
     },
     {
+      path: "/article/all",
+      element: <AllBlogs type={"article"} />,
+    },
+    {
+      path: "/blog/all",
+      element: <AllBlogs type={"blog"} />,
+    },
+    {
       path: "/article/:id",
-      element: <IndividualBlogArticle />,
+      element: <IndividualBlog isVideo={false} />,
     },
     {
       path: "/blog/:id",
-      element: <IndividualBlogArticle />,
+      element: <IndividualBlog isVideo={false} />,
+    },
+    {
+      path: "/recent-videos",
+      element: <RecentVideos />,
+    },
+    {
+      path: "/recent-video/:id",
+      element: <IndividualBlog isVideo={true} />,
     },
     {
       path: "/careers",

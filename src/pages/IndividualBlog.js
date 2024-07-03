@@ -1,13 +1,21 @@
+// NOTE: This Page is same for both blog and article.
+// This Page is visible after user clicks on any blog or article.
+// It shows full content of Selected blog or article.
+
+
+
 import React, { useEffect } from "react";
 import { Container, Image } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import NavbarComp from "../components/NavbarComp";
 
-export default function IndividualBlogArticle() {
+export default function IndividualBlog({ isVideo }) {
     const [isMobile, setIsMobile] = React.useState(true);
     const [isLoading, setIsLoading] = React.useState(true);
+    const [videoHeight, setVideoHeight] = React.useState("600");
     const [title, setTitle] = React.useState("");
+    const [subtitle, setSubtitle] = React.useState("");
     const [image, setImage] = React.useState("");
     const [content, setContent] = React.useState("");
     const [tags, setTags] = React.useState([]);
@@ -18,6 +26,7 @@ export default function IndividualBlogArticle() {
             `query GetData {
                 post(id: "${id}") {
                     title
+                    subtitle
                     content {
                         html
                     }
@@ -33,45 +42,46 @@ export default function IndividualBlogArticle() {
         );
     }
 
-    useEffect(() => {
-        setIsMobile(window.innerWidth < 768);
-        // window.scrollTo(0, 0);
-
+    const fetchData = async () => {
         const query = getQuery(id);
 
-        fetch("https://gql.hashnode.com/", {
+        const promise = await fetch("https://gql.hashnode.com/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({ query })
         })
-            .then((promise) => {
-                promise = promise.json()
-                    .then((data) => {
-                        if (data.data.post) {
-                            data = data.data.post;
-                            setTitle(data.title);
-                            setImage(data.coverImage ? data.coverImage.url : "");
-                            setContent(data.content.html);
-                            setTags(data.tags);
-                        } else {
-                            setTitle(null);
-                            setImage(null);
-                            setContent(null);
-                        }
-                        console.log(data);
-                    });
-            })
-            .catch((error) => {
-                console.log("Unable to fetch data");
-                setTitle(null);
-                setImage(null);
-                setContent(null);
-            })
-            .finally(() => {
-                setIsLoading(false);
-            });
+        const res = await promise.json();
+        let data = null;
+        if (res.data.post) {
+            data = res.data.post;
+            setTitle(data.title);
+            setSubtitle(data.subtitle);
+            setImage(data.coverImage ? data.coverImage.url : "");
+            setContent(data.content.html);
+            setTags(data.tags);
+        } else {
+            setTitle(null);
+            setImage(null);
+            setContent(null);
+        }
+        console.log(data);
+        setIsLoading(false);
+    }
+
+    useEffect(() => {
+        const screenWidth = window.innerWidth;
+        setIsMobile(screenWidth < 768);
+        if (screenWidth < 578) {
+            setVideoHeight((videoHeight) => { return "250" });
+        } else if (screenWidth < 991) {
+            setVideoHeight((videoHeight) => { return "400" });
+        } else if (screenWidth < 1280) {
+            setVideoHeight((videoHeight) => { return "600" });
+        }
+        window.scrollTo(0, 0);
+        fetchData();
     }, [id]);
 
     return (
@@ -104,16 +114,36 @@ export default function IndividualBlogArticle() {
                                         >
                                             {title}
                                         </h1>
-                                        <Image
-                                            id="blogImage"
-                                            src={image}
-                                            style={{
-                                                width: "100%",
-                                                boxShadow: "0rem 0.5rem 1rem rgba(0, 0, 0, 0.15)",
-                                                marginBottom: "4rem",
-                                                borderRadius: "0.5rem"
-                                            }}
-                                        />
+                                        {
+                                            isVideo ? (
+                                                <iframe
+                                                    style={{
+                                                        width: "100%",
+                                                        height: `${videoHeight}px`,
+                                                        boxShadow: "0rem 0.5rem 1rem rgba(0, 0, 0, 0.15)",
+                                                        borderRadius: "0.5rem",
+                                                        marginBottom: "4rem"
+                                                    }}
+                                                    src={`https://www.youtube.com/embed/${subtitle.substring(6)}`}
+                                                    title={`${title}`}
+                                                    frameborder="0"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                    referrerpolicy="strict-origin-when-cross-origin"
+                                                    allowFullScreen
+                                                />
+                                            ) : (
+                                                <Image
+                                                    id="blogImage"
+                                                    src={image}
+                                                    style={{
+                                                        width: "100%",
+                                                        boxShadow: "0rem 0.5rem 1rem rgba(0, 0, 0, 0.15)",
+                                                        marginBottom: "4rem",
+                                                        borderRadius: "0.5rem"
+                                                    }}
+                                                />
+                                            )
+                                        }
                                         <div
                                             id="blogContent"
                                             dangerouslySetInnerHTML={{ __html: content }}
