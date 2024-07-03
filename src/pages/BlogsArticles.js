@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import NavbarComp from "../components/NavbarComp";
 import blogsHeader from "../assets/images/blogs-header.webp";
+import MoreCategorySection from "../components/MoreCategorySection";
 
 export default function BlogsArticles() {
 	const [isMobile, setIsMobile] = React.useState(true);
 	const [loading, setLoading] = useState(true);
-	const [blogsPerPage, setBlogsPerPage] = useState(4);
 	const [blogCarouselMove, setBlogCarouselMove] = useState("25");
 	const [startBlogIndex, setStartBlogIndex] = useState(0);
 	const [tags, setTags] = useState([]);
@@ -16,92 +16,31 @@ export default function BlogsArticles() {
 	const [impBlogs, setImpBlogs] = useState({ arr: [] });
 	const [blogs, setBlogs] = useState({ arr: [] });
 	const [articles, setArticles] = useState({ arr: [] });
+	const [videos, setVideos] = useState({ arr: [] });
 	const [articlesPerPage, setArticlesPerPage] = useState(2);
 	const [articlesPageNumber, setArticlesPageNumber] = useState(1);
 
 	// Dummy Data ...
-	const videos = [
-		{
-			category: 'Environment',
-			title: 'How to Edit Videos Online in Wistia\'s Video Editor',
-			image: 'https://st.depositphotos.com/1005669/2996/i/450/depositphotos_29966311-stock-photo-renewable-energy.jpg',
-			link: '#',
-		},
-		{
-			category: 'HVAC',
-			title: 'The Best iPhone Camera Settings for Video in 2024',
-			image: 'https://t3.ftcdn.net/jpg/05/54/51/40/360_F_554514065_A5Y17mmaZgxkbcKri1g52RrLDtLzOU54.jpg',
-			link: '#',
-		},
-		{
-			category: 'VAM',
-			title: 'How to Download Wistia Videos',
-			image: 'https://cdn.pixabay.com/photo/2021/08/10/10/06/pinwheels-6535595_640.jpg',
-			link: '#',
-		},
-	];
-
-	const projects = [
-		{
-			title: 'Sustainability in Action',
-			image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtBJrozASVWA5lVbGzJXHovWYCPv4P6GDCcQ&s',
-			link: '#',
-			direction: 'left',
-		},
-		{
-			title: 'Rethink Conventional Construction',
-			image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpT5oK1kePCta_uJFqTaTIf_sAC7nRcBPGeQ&s',
-			link: '#',
-			direction: 'right',
-		},
-	];
-
-
-	// inline css classes ...
-	const linkHoverStyle = {
-		textDecoration: 'underline',
-	};
-
-
-	const projectStyle = {
-		position: 'relative',
-		color: 'white',
-		textAlign: 'center',
-		flex: 1,
-	};
-
-	const imageStyle = {
-		width: '100%',
-		height: '400px',
-
-	};
-
-	const overlayStyle = {
-		position: 'absolute',
-		bottom: '1px',
-		left: '100px',
-		right: '100px',
-		backgroundColor: '#007bff',
-		padding: '10px',
-		display: 'flex',
-		justifyContent: 'space-between',
-		alignItems: 'center',
-		paddingLeft: '3rem',
-		paddingRight: '3rem'
-	};
-
-	const titleStyle = {
-		margin: 0,
-		maxWidth: '20rem',
-		fontSize: '2rem',
-		textAlign: 'left'
-	};
-
-	const arrowStyle = (direction) => ({
-		fontSize: '1.5em',
-		display: 'inline-block',
-		transform: direction === 'left' ? 'rotate(180deg)' : 'none',
-	});
+	// const videos = [
+	// 	{
+	// 		category: 'Environment',
+	// 		title: 'How to Edit Videos Online in Wistia\'s Video Editor',
+	// 		image: 'https://st.depositphotos.com/1005669/2996/i/450/depositphotos_29966311-stock-photo-renewable-energy.jpg',
+	// 		link: '#',
+	// 	},
+	// 	{
+	// 		category: 'HVAC',
+	// 		title: 'The Best iPhone Camera Settings for Video in 2024',
+	// 		image: 'https://t3.ftcdn.net/jpg/05/54/51/40/360_F_554514065_A5Y17mmaZgxkbcKri1g52RrLDtLzOU54.jpg',
+	// 		link: '#',
+	// 	},
+	// 	{
+	// 		category: 'VAM',
+	// 		title: 'How to Download Wistia Videos',
+	// 		image: 'https://cdn.pixabay.com/photo/2021/08/10/10/06/pinwheels-6535595_640.jpg',
+	// 		link: '#',
+	// 	},
+	// ];
 
 	const getQuery = (page, pageSize) => {
 		return (
@@ -121,9 +60,6 @@ export default function BlogsArticles() {
 								tags {
 									name
 								}
-								content {
-									text
-								}
 								coverImage {
 									url
 								}
@@ -137,12 +73,26 @@ export default function BlogsArticles() {
 	};
 
 	const fetchData = async () => {
-		const pageSize = 20;
+		const pageSize = 5;
 		let totalPages = 1;
+		let newMostImpBlog = null;
+		let newImpBlogs = { arr: [] };
+		let newBlogs = { arr: [] };
+		let newArticles = { arr: [] };
+		let newVideos = { arr: [] };
+		let newTags = [];
 
 		for (let page = 1; page <= totalPages; page++) {
+			if (
+				newMostImpBlog !== null &&
+				newImpBlogs.arr.length >= 2 &&
+				newBlogs.arr.length >= 4 &&
+				newArticles.arr.length >= 4 &&
+				newVideos.arr.length >= 3
+			) {
+				break;
+			}
 			const query = getQuery(page, pageSize);
-
 			const promise = await fetch("https://gql.hashnode.com/", {
 				method: "POST",
 				headers: {
@@ -155,39 +105,47 @@ export default function BlogsArticles() {
 
 			totalPages = Math.ceil(res.data.user.posts.totalDocuments / pageSize);
 			const data = res.data.user.posts.edges;
-			const newTags = res.data.user.tagsFollowing;
-			setTags((tags) => { return newTags });
+			newTags = res.data.user.tagsFollowing;
+
 			data.forEach((post) => {
 				post = post.node;
-				if (post.subtitle && post.subtitle.toLowerCase() === "most-imp") {
-					if (mostImpBlog === null) {
-						setMostImpBlog((mostImpBlog) => { return post });
-					} else {
-						const newBlogs = { ...blogs };
-						newBlogs.arr.push(post);
-						setBlogs((blog) => { return newBlogs });
+				if (post.subtitle) {
+					switch (post.subtitle.toLowerCase()) {
+						case "most-imp":
+							if (mostImpBlog === null) {
+								newMostImpBlog = post;
+							} else {
+								newBlogs.arr.push(post);
+							}
+							break;
+						case "imp":
+							if (impBlogs.arr.length < 2) {
+								newImpBlogs.arr.push(post);
+							} else {
+								newBlogs.arr.push(post);
+							}
+							break;
+						case "blog":
+							newBlogs.arr.push(post);
+							break;
+						case "article":
+							newArticles.arr.push(post);
+							break;
+						default:
+							if (post.subtitle.toLowerCase().startsWith("video")) {
+								newVideos.arr.push(post);
+							}
 					}
-				} else if (post.subtitle && post.subtitle.toLowerCase() === "imp") {
-					if (impBlogs.arr.length < 2) {
-						const newImpBlogs = { ...impBlogs };
-						newImpBlogs.arr.push(post);
-						setImpBlogs((impBlog) => { return newImpBlogs });
-					} else {
-						const newBlogs = { ...blogs };
-						newBlogs.arr.push(post);
-						setBlogs((blog) => { return newBlogs });
-					}
-				} else if (post.subtitle && post.subtitle.toLowerCase() === "blog") {
-					const newBlogs = { ...blogs };
-					newBlogs.arr.push(post);
-					setBlogs((blog) => { return newBlogs });
-				} else {
-					const newArticles = { ...articles };
-					newArticles.arr.push(post);
-					setArticles((article) => { return newArticles });
 				}
 			});
 		}
+
+		setTags((tags) => { return newTags });
+		setMostImpBlog((mostImpBlog) => { return newMostImpBlog });
+		setImpBlogs((impBlog) => { return newImpBlogs });
+		setBlogs((blog) => { return newBlogs });
+		setArticles((article) => { return newArticles });
+		setVideos((video) => { return newVideos });
 		setLoading(false);
 	}
 
@@ -202,7 +160,7 @@ export default function BlogsArticles() {
 		} else if (screenWidth < 1280) {
 			setBlogCarouselMove((blogCarouselMove) => { return "33.33" });
 		}
-		window.scrollTo(0, 0);
+		// window.scrollTo(0, 0);
 		fetchData();
 	}, []);
 
@@ -222,7 +180,7 @@ export default function BlogsArticles() {
 				<div className="row">
 					<div className="col-lg-8 pe-lg-3 pb-3">
 						<div className="overflow-hidden" style={{ borderRadius: "1rem" }}>
-							<img src={blogsHeader} alt="" />
+							<Image src={blogsHeader} alt="" />
 						</div>
 						<div style={{ display: "flex", flexDirection: "column" }}>
 							{
@@ -261,7 +219,7 @@ export default function BlogsArticles() {
 												}}>
 													{mostImpBlog.title.substring(0, (isMobile ? 30 : 70))}{mostImpBlog.title.length > (isMobile ? 30 : 70) && "..."}
 												</h2>
-												<p>{mostImpBlog.content.text.substring(0, 150)}...</p>
+												<p>{mostImpBlog.brief.substring(0, 150)}...</p>
 												<p>
 													<svg style={{ height: "1.3rem", position: "relative" }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
 														<path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
@@ -312,7 +270,8 @@ export default function BlogsArticles() {
 														width: '100%',
 														height: '100%',
 														borderTopLeftRadius: '10px',
-														borderTopRightRadius: '10px'
+														borderTopRightRadius: '10px',
+														backgroundColor: "#d6ecfc"
 													}}
 												/>
 											</div>
@@ -342,6 +301,7 @@ export default function BlogsArticles() {
 					<div style={{
 						borderBottom: "solid #d7d7da 0.1rem",
 						display: "flex",
+						alignItems: "center",
 						justifyContent: "space-between"
 					}}>
 						<p style={{
@@ -350,7 +310,17 @@ export default function BlogsArticles() {
 						}}>
 							Blogs
 						</p>
-						<div style={{
+						<Link
+							className="btn btn-primary"
+							to={"/blog/all"}
+							style={{
+								color: "",
+								textDecoration: "none",
+							}}
+						>
+							View More
+						</Link>
+						{/* <div style={{
 							display: "flex",
 							gap: "1rem"
 						}}>
@@ -402,7 +372,7 @@ export default function BlogsArticles() {
 									<path fill="#7f7f7f" d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z" />
 								</svg>
 							</Button>
-						</div>
+						</div> */}
 					</div>
 					{
 						loading ? (
@@ -416,7 +386,7 @@ export default function BlogsArticles() {
 								<p>Loading ...</p>
 							</div>
 						) : (
-							<>
+							<div>
 								{
 									(blogs.arr.length > 0) ? (
 										<div style={{
@@ -425,7 +395,8 @@ export default function BlogsArticles() {
 											<div style={{
 												position: "relative",
 												width: "100%",
-												overflow: `${isMobile ? "scroll" : "hidden"}`
+												overflowX: `${isMobile ? "scroll" : "scroll"}`,
+												scrollbarWidth: "none"
 											}}>
 												<div style={{
 													display: "flex",
@@ -490,80 +461,14 @@ export default function BlogsArticles() {
 										</div>
 									)
 								}
-							</>
+							</div>
 						)
 					}
 				</div>
 
 				{/* CATEGORIES */}
 				<div>
-					<div style={{
-						borderBottom: "solid #d7d7da 0.1rem",
-						display: "flex",
-						justifyContent: "space-between"
-					}}>
-						<p style={{
-							fontSize: "1.5rem",
-							marginBottom: "0.5rem"
-						}}>
-							More Categories
-						</p>
-					</div>
-					<div className="mt-3 row">
-						{
-							loading ? (
-								<div style={{
-									minHeight: "10rem",
-									display: "flex",
-									justifyContent: "center",
-									alignItems: "center",
-									fontSize: "1.5rem"
-								}}>
-									<p>Loading ...</p>
-								</div>
-							) : (
-								<>
-									{
-										tags.length > 0 ? (
-											<>
-												{
-													tags.map((tag, index) => {
-														return (
-															<div className="col-md-6 col-lg-4 p-2">
-																<Card className="p-0 hover-card">
-																	<Link
-																		className="p-3 w-100 h-100 d-flex align-items-center justify-content-between"
-																		to={`/blogs-and-articles/tag/${tag.id}`}
-																	>
-																		{tag.name}
-																		<svg style={{ height: "1rem" }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-																			<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" />
-																		</svg>
-																	</Link>
-																</Card>
-															</div>
-														)
-													})
-												}
-											</>
-										) : (
-											<div style={{
-												minHeight: "10rem",
-												display: "flex",
-												justifyContent: "center",
-												alignItems: "center",
-												fontSize: "2rem",
-												fontWeight: "bold",
-												color: "red"
-											}}>
-												<p>No Categories To Show</p>
-											</div>
-										)
-									}
-								</>
-							)
-						}
-					</div>
+					<MoreCategorySection tags={tags} loading={loading} />
 				</div>
 
 				{/* ARTICLES */}
@@ -571,6 +476,7 @@ export default function BlogsArticles() {
 					<div style={{
 						borderBottom: "solid #d7d7da 0.1rem",
 						display: "flex",
+						alignItems: "center",
 						justifyContent: "space-between"
 					}}>
 						<p style={{
@@ -579,6 +485,16 @@ export default function BlogsArticles() {
 						}}>
 							Articles
 						</p>
+						<Link
+							className="btn btn-primary"
+							to={"/article/all"}
+							style={{
+								color: "",
+								textDecoration: "none",
+							}}
+						>
+							View More
+						</Link>
 					</div>
 					{
 						loading ? (
@@ -639,7 +555,8 @@ export default function BlogsArticles() {
 																<div style={{
 																	flex: "0 0 70%",
 																	display: "flex",
-																	flexDirection: "column"
+																	flexDirection: "column",
+																	paddingBottom: "0.5rem"
 																}}>
 																	<h1 style={{ fontSize: "1.8rem" }}>
 																		{article.title.substring(0, (isMobile ? 25 : 55))}{article.title.length > (isMobile ? 25 : 55) && "..."}
@@ -647,11 +564,12 @@ export default function BlogsArticles() {
 																	<p style={{
 																		fontSize: "1.1rem"
 																	}}>
-																		{`${article.content.text.substring(0, (isMobile ? 200 : 375))}...`}
+																		{`${article.brief}...`}
 																	</p>
 																	<i style={{
 																		textTransform: "uppercase",
-																		fontWeight: "bold"
+																		fontWeight: "bold",
+																		marginTop: "auto"
 																	}}>
 																		{
 																			article.author ? (
@@ -732,18 +650,17 @@ export default function BlogsArticles() {
 						)
 					}
 				</div>
-			</Container >
+			</Container>
 
 			{/* RECENT VIDEOS */}
-			< div
+			<div
 				className="p-3 p-md-5"
 				style={{
 					backgroundColor: '#007bff',
 					paddingTop: "2rem",
 					paddingBottom: "2rem",
 					color: 'white',
-				}
-				}
+				}}
 			>
 				<div className="row">
 					<div className="col-lg-3 py-5 d-grid gap-2">
@@ -755,24 +672,40 @@ export default function BlogsArticles() {
 						</h4>
 						<h2>BROAD Group</h2>
 						<p style={{ fontSize: "1.1rem" }}>Here's a look at recent activities of BROAD Group</p>
+						<div>
+							<Link
+								className="hover-card"
+								to={"/recent-videos"}
+								style={{
+									boxShadow: "none",
+									color: "white",
+									textDecoration: "none",
+									fontWeight: "500"
+								}}
+							>
+								<span>View All Videos</span>
+								<svg style={{ height: "1.1rem", position: "relative", marginLeft: "10px" }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+									<path fill="white" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+								</svg>
+							</Link>
+						</div>
 					</div>
 					<div className="col-lg-9 d-md-flex justify-content-between">
 						{
-							videos.map((video, index) => {
+							videos.arr.map((video, index) => {
 								return (
 									<Card
 										className="col-md-4 p-3"
 										style={{
 											border: 'none',
 											backgroundColor: '#007bff',
-											// borderRadius: '10px',
 											textAlign: 'left',
 										}}
 										key={index}
 									>
 										<Link
 											className="hover-card"
-											to={"/blogs-and-articles"}
+											to={`/recent-video/${video.id}`}
 											style={{
 												height: '100%',
 												backgroundColor: 'white',
@@ -789,32 +722,52 @@ export default function BlogsArticles() {
 												borderTopRightRadius: '10px',
 												overflow: "hidden"
 											}}>
-												<img src={video.image} alt={video.title} style={{
+												{/* <Image src={video.image} alt={video.title} style={{
 													width: '100%',
 													height: '200px',
 													borderTopLeftRadius: '10px',
 													borderTopRightRadius: '10px'
-												}} />
+												}} /> */}
+												<iframe
+													style={{
+														width: "100%",
+														height: "100%",
+														boxShadow: "0rem 0.5rem 1rem rgba(0, 0, 0, 0.15)",
+														borderTopLeftRadius: "0.5rem",
+														borderTopRightRadius: "0.5rem",
+														marginBottom: "4rem"
+													}}
+													src={`https://www.youtube.com/embed/${video.subtitle.substring(6)}`}
+													title={`${video.title}`}
+													frameborder="0"
+													allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+													referrerpolicy="strict-origin-when-cross-origin"
+													allowFullScreen
+												/>
 											</div>
-											<div className="p-3">
-												<h3 style={{
-													margin: '15px 0',
-													fontSize: '1.1em',
-													color: "#007BFF"
-												}}>
-													{video.category}
-												</h3>
-												<h2 style={{
-													margin: '15px 0',
-													fontSize: '1.3rem',
-													fontWeight: 'normal'
-												}}>
-													{video.title}
-												</h2>
+											<div className="p-3" style={{ height: "100%" }}>
+												<div>
+													<h3 style={{
+														margin: '15px 0',
+														fontSize: '1.1em',
+														color: "#007BFF",
+														textTransform: "capitalize"
+													}}>
+														{video.tags.length > 0 && video.tags[0].name}
+													</h3>
+													<h2 style={{
+														margin: '15px 0',
+														fontSize: '1.3rem',
+														fontWeight: 'normal',
+													}}>
+														{video.title.substring(0, 40)}{video.title.length > 40 && "..."}
+													</h2>
+												</div>
 												<p
 													style={{
 														textAlign: "left",
 														textDecoration: 'none',
+														marginBottom: "0"
 													}}
 												>
 													<span>See the full video</span>
@@ -830,13 +783,13 @@ export default function BlogsArticles() {
 						}
 					</div>
 				</div>
-			</div >
+			</div>
 			{/* recent videos closes */}
 
 			{/* SUBSCRIBE EMAIL */}
-			<div className="text-center m-5 p-5 row gap-4" style={{ borderRadius: "1rem", backgroundColor: "#edf6ff" }}>
+			{/* <div className="text-center m-5 p-5 row gap-4" style={{ borderRadius: "1rem", backgroundColor: "#edf6ff" }}>
 				<h3 style={{ fontWeight: "normal" }}>
-					<span>Get Latest articles from</span>
+					<span>Get latest news from</span>
 					<span style={{ color: "#007BFF" }}> BROAD India </span>
 					<span>in your inbox.</span>
 				</h3>
@@ -844,9 +797,9 @@ export default function BlogsArticles() {
 					<input type="email" className="form-control mb-3 mb-md-0" placeholder="Email" />
 					<button type="submit" className="btn btn-primary">Subscribe</button>
 				</form>
-			</div>
+			</div> */}
 			{/* SUBSCRIBE EMAIL CLOSE */}
 			<Footer />
-		</div >
+		</div>
 	);
 }
