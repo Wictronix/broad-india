@@ -155,13 +155,13 @@ export default function About() {
                   </h2>
                   <h5>Leading the Absorption Marketplace Since 2001</h5>
                   <br />
-                  <h4>
+                  <p>
                     BROAD Air Conditioning India Pvt. Ltd. (BROAD India) has
                     been at the forefront of the absorption chiller market since
                     its inception in 2001. Our primary focus is on delivering
                     innovative and thermally driven absorption technology to
                     meet the modern demands of various industries.
-                  </h4>
+                  </p>
                   <br />
                   <h5>Dedicated customer support</h5>
                   <p>
