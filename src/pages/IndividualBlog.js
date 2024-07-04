@@ -43,31 +43,34 @@ export default function IndividualBlog({ isVideo }) {
     }
 
     const fetchData = async () => {
-        const query = getQuery(id);
+        try {
+            const query = getQuery(id);
 
-        const promise = await fetch("https://gql.hashnode.com/", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ query })
-        })
-        const res = await promise.json();
-        let data = null;
-        if (res.data.post) {
-            data = res.data.post;
-            setTitle(data.title);
-            setSubtitle(data.subtitle);
-            setImage(data.coverImage ? data.coverImage.url : "");
-            setContent(data.content.html);
-            setTags(data.tags);
-        } else {
-            setTitle(null);
-            setImage(null);
-            setContent(null);
+            const promise = await fetch("https://gql.hashnode.com/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ query })
+            })
+            const res = await promise.json();
+            let data = null;
+            if (res.data.post) {
+                data = res.data.post;
+                setTitle(data.title);
+                setSubtitle(data.subtitle);
+                setImage(data.coverImage ? data.coverImage.url : "");
+                setContent(data.content.html);
+                setTags(data.tags);
+            } else {
+                setTitle(null);
+                setImage(null);
+                setContent(null);
+            }
+            setIsLoading(false);
+        } catch (err) {
+            alert("Some Error Occurred !!!");
         }
-        console.log(data);
-        setIsLoading(false);
     }
 
     useEffect(() => {
