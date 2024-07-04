@@ -12,11 +12,11 @@ export default function CoreValues() {
     <div style={{ overflowX: "hidden" }}>
       <div className="display-5 text-center">Core Values</div>
       <div className="text-center mt-2">
-        Every day, BROAD Air Conditioning India Pvt. Ltd. (BROAD India) aims to
-        demonstrate our loyalty to our customers, fairness to our vendors, and
-        dedication to our employees.
+        Core Values at BROAD Air Conditioning India Pvt. Ltd. (BROAD India), we
+        strive daily to uphold our commitment to our customers, maintain
+        fairness with our vendors, and show dedication to our employees.
         <br />
-        Long-term relationships are more important than gains or losses.
+        We prioritize long-term relationships over short-term gains.
       </div>
       <div
         className="row"
@@ -77,8 +77,9 @@ export default function CoreValues() {
                   marginBlock: "2rem",
                 }}
               >
-                For the environment, everything we do is from the perspective of
-                sustainability
+                Environmental sustainability is at the heart of everything we
+                do. Our focus on sustainable HVAC solutions ensures we minimize
+                our environmental impact.
               </p>
               <div
                 className="btn btn-success"
@@ -141,8 +142,9 @@ export default function CoreValues() {
                   marginBlock: "2rem",
                 }}
               >
-                For humanity, sustainability is wired into the DNA of the full
-                spectrum of BROAD's diverse .
+                BROAD's diverse range of products and services embeds humanity
+                and sustainability, highlighting our commitment to
+                energy-efficient technologies.
               </p>
               <div
                 className="btn text-white"
@@ -202,8 +204,9 @@ export default function CoreValues() {
                   marginBlock: "2rem",
                 }}
               >
-                For our customers, we aim to be an enterprise one is proud to do
-                business with
+                We aim to be a company that our customers are proud to partner
+                with, delivering innovative and sustainable solutions that meet
+                their needs.
               </p>
               <div
                 className="btn btn-warning"

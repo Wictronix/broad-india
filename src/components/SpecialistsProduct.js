@@ -12,11 +12,12 @@ export default function SpecialistsProduct() {
     <div>
       <Container>
         <div className="display-5 mb-5 text-center">
-          our Best Quality Products
+          Our Best Quality Products
         </div>
         <p className="text-center">
-          A cost-effective cooling and heating solution that can better utilize
-          existing thermal energy sources
+          Discover cost-effective cooling and heating solutions with BROAD
+          India's energy-efficient HVAC systems and power-efficient absorption
+          chillers.
         </p>
         <div className="mt-5">
           <div>
@@ -209,7 +210,9 @@ export default function SpecialistsProduct() {
                     />
                     <h3>Pump Set</h3>
                     <p>
-                    Zero water resistance design enables 60%+ electricity saving compared with conventional water distribution systems.
+                      Zero water resistance design enables 60%+ electricity
+                      saving compared with conventional water distribution
+                      systems.
                     </p>
                   </div>
                 </div>
