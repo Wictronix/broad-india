@@ -70,17 +70,28 @@ export default function About() {
           <div className="col-md-8">
             <h2>BROAD Air Conditioning India Pvt. Ltd.</h2>
             <br />
+            <p>
+              A subsidiary of BROAD Group, China BROAD has been serving the
+              Indian market since 2001, offering innovative and sustainable HVAC
+              solutions. With over 200 VAM installations, we provide
+              comprehensive service, operations, and maintenance (O&M) across
+              India
+            </p>
+            <h5>Key Achievements </h5>
             <ul>
-              <li>Subsidised Company of BROAD group, China.</li>
-              <li>BROAD has been serving India market since 2001.</li>
               <li>
-                BROAD Air Conditioning India Pvt. Ltd. (BROAD India) has more
-                than 200 VAM installations, Service and O&M in India.
+                Asia's Largest CHP Project: Managing the largest combined heat
+                and power (CHP) project in DLF, Gurugram.
               </li>
-              <li>Operating Asia's biggest CHP project in DLF, Gurugram</li>
               <li>
-                BROAD chillers installed in industries: Petrochemical, Food,
-                Textile, Hospital and office
+                Industry Applications: BROAD chillers are utilized in the
+                petrochemical, food processing, textile, healthcare, and office
+                sectors.
+              </li>
+              <li>
+                Commitment to Sustainability Our dedication to delivering
+                energy-efficient air conditioning systems that reduce
+                environmental impact supports our vision for a greener planet.
               </li>
             </ul>
           </div>
@@ -142,21 +153,44 @@ export default function About() {
                   <h2>
                     About BROAD Air Conditioning India Pvt. Ltd. (BROAD India)
                   </h2>
-                  <br />
-                  <h4>
-                    BROAD Air Conditioning India Pvt. Ltd. (BROAD India) is
-                    committed to the Absorption Marketplace - It is our primary
-                    business since we started in 2001
-                  </h4>
+                  <h5>Leading the Absorption Marketplace Since 2001</h5>
                   <br />
                   <p>
-                    BROAD is dedicated and focused on ensuring our owners can
-                    always find proper training, service and after sales support
-                    with replacement parts and or units. BROAD is committed to
-                    the inherent value and flexible solutions that thermally
-                    driven absorption plays in our modern world.
+                    BROAD Air Conditioning India Pvt. Ltd. (BROAD India) has
+                    been at the forefront of the absorption chiller market since
+                    its inception in 2001. Our primary focus is on delivering
+                    innovative and thermally driven absorption technology to
+                    meet the modern demands of various industries.
                   </p>
                   <br />
+                  <h5>Dedicated customer support</h5>
+                  <p>
+                    We are committed to offering our clients thorough training,
+                    dependable service, and outstanding after-sales support. Our
+                    commitment guarantees that our clients receive:
+                  </p>
+                  <ul>
+                    <li>
+                      For optimal system operation, proper training is required.
+                    </li>
+                    <li>Consistent service and maintenance.</li>
+                    <li>
+                      There is easy access to replacement parts and units.
+                    </li>
+                    <li>Sustainable and flexible solutions.</li>
+                  </ul>
+                  <br />
+                  <p>
+                    At BROAD India, we recognize the inherent value and
+                    flexibility of thermally driven absorption systems. We
+                    design our energy-efficient HVAC solutions to provide
+                    sustainable benefits, fostering a greener and more efficient
+                    world.
+                    <br />
+                    Choose BROAD India for cutting-edge absorption chiller
+                    technology and unparalleled customer support, driving
+                    sustainability and efficiency in every project.
+                  </p>
                   <br />
                 </Tab.Pane>
                 <Tab.Pane eventKey="bthq">

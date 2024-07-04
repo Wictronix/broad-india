@@ -33,8 +33,8 @@ export default function Sustainable() {
         }}
       >
         <div className="display-6 text-center">
-          We are pioneering the <span style={{ color: "green" }}>Green</span>{" "}
-          revolution
+          Leading the <span style={{ color: "green" }}>Green revolution</span>{" "}
+          with sustainable HVAC solutions
         </div>
         <p
           style={{
@@ -43,15 +43,15 @@ export default function Sustainable() {
             fontSize: "1rem",
           }}
         >
-          Sustainable industrial development ensures that resources are used
-          conservatively and efficiently. To achieve resource productivity,
-          manufacturers must optimize the supply circle, analyzing how raw
-          materials are extracted, how components are produced, how products are
-          designed and how return markets are organized. BROAD is focused to
-          bring the next generation of sustainable products to contribute to the
-          well being of planet earth. BROAD builds power efficient absorption
-          chillers that have reduced carbon emission. BROAD India realises, and
-          keeps this vision in mind, and delivers clean and green solutions.
+          Sustainable industrial development guarantees the conservative and
+          efficient use of resources. Manufacturers must optimize the supply
+          chain, analyzing the extraction of raw materials, production of
+          components, design of products, and organization of return markets, to
+          achieve resource productivity. BROAD India focuses on introducing the
+          next generation of sustainable HVAC solutions to enhance the planet's
+          well-being. BROAD builds energy-efficient absorption chillers that
+          reduce carbon emissions. BROAD India realizes this vision and delivers
+          clean, green solutions.
         </p>
         <div className="row m-md-5">
           <div
