@@ -24,7 +24,7 @@ export default function AllBlogs({ type }) {
     const getQuery = (page, pageSize) => {
         return (
             `query GetUserPosts {
-				user(username: "aayush7908") {
+				user(username: "broadindia") {
 					tagsFollowing {
 						name
 						id
@@ -51,40 +51,44 @@ export default function AllBlogs({ type }) {
     };
 
     const fetchData = async () => {
-        const pageSize = 10;
-        let totalPages = 1;
-        let newArticles = { arr: [] };
-        let newTags = [];
+        try {
+            const pageSize = 5;
+            let totalPages = 1;
+            let newArticles = { arr: [] };
+            let newTags = [];
 
-        for (let page = 1; page <= totalPages; page++) {
-            const query = getQuery(page, pageSize);
+            for (let page = 1; page <= totalPages; page++) {
+                const query = getQuery(page, pageSize);
 
-            const promise = await fetch("https://gql.hashnode.com/", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ query })
-            });
-            const res = await promise.json();
+                const promise = await fetch("https://gql.hashnode.com/", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ query })
+                });
+                const res = await promise.json();
 
-            totalPages = Math.ceil(res.data.user.posts.totalDocuments / pageSize);
-            const data = res.data.user.posts.edges;
-            newTags = res.data.user.tagsFollowing;
+                totalPages = Math.ceil(res.data.user.posts.totalDocuments / pageSize);
+                const data = res.data.user.posts.edges;
+                newTags = res.data.user.tagsFollowing;
 
-            data.forEach((post) => {
-                post = post.node;
-                if (type === "blog" && post.subtitle === "blog") {
-                    newArticles.arr.push(post);
-                } else if (type === "article" && post.subtitle !== "blog") {
-                    newArticles.arr.push(post);
-                }
-            });
+                data.forEach((post) => {
+                    post = post.node;
+                    if (type === "blog" && post.subtitle === "blog") {
+                        newArticles.arr.push(post);
+                    } else if (type === "article" && post.subtitle !== "blog") {
+                        newArticles.arr.push(post);
+                    }
+                });
+            }
+
+            setTags((tags) => { return newTags });
+            setArticles((article) => { return newArticles });
+            setLoading(false);
+        } catch (err) {
+            alert("Some Error Occurred !!!");
         }
-
-        setTags((tags) => { return newTags });
-        setArticles((article) => { return newArticles });
-        setLoading(false);
     }
 
 

@@ -25,7 +25,7 @@ export default function BlogsByCategory() {
 	const getQuery = (page, pageSize, tag) => {
 		return (
 			`query GetUserArticlesByTag {
-				user(username: "aayush7908") {
+				user(username: "broadindia") {
 					tagsFollowing {
 						name
 						id
@@ -52,42 +52,45 @@ export default function BlogsByCategory() {
 	};
 
 	const fetchData = async () => {
-		const pageSize = 10;
-		let totalPages = 1;
-		let newTags = [];
-		let newArticles = { arr: [] };
+		try {
+			const pageSize = 5;
+			let totalPages = 1;
+			let newTags = [];
+			let newArticles = { arr: [] };
 
-		for (let page = 1; page <= totalPages; page++) {
-			const query = getQuery(page, pageSize, id);
+			for (let page = 1; page <= totalPages; page++) {
+				const query = getQuery(page, pageSize, id);
 
-			const promise = await fetch("https://gql.hashnode.com/", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json"
-				},
-				body: JSON.stringify({ query })
-			});
-			let res = await promise.json();
-			console.log(res);
+				const promise = await fetch("https://gql.hashnode.com/", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({ query })
+				});
+				let res = await promise.json();
 
-			totalPages = Math.ceil(res.data.user.posts.totalDocuments / pageSize);
-			const data = res.data.user.posts.edges;
-			newTags = res.data.user.tagsFollowing;
-			data.forEach((post) => {
-				post = post.node;
-				newArticles.arr.push(post);
-			});
-		}
-
-		for (let i = 0; i < newTags.length; i++) {
-			if (newTags[i].id === id) {
-				setCurrentTag((currentTag) => { return newTags[i].name });
-				break;
+				totalPages = Math.ceil(res.data.user.posts.totalDocuments / pageSize);
+				const data = res.data.user.posts.edges;
+				newTags = res.data.user.tagsFollowing;
+				data.forEach((post) => {
+					post = post.node;
+					newArticles.arr.push(post);
+				});
 			}
+
+			for (let i = 0; i < newTags.length; i++) {
+				if (newTags[i].id === id) {
+					setCurrentTag((currentTag) => { return newTags[i].name });
+					break;
+				}
+			}
+			setTags((tags) => { return newTags });
+			setArticles((article) => { return newArticles });
+			setLoading(false);
+		} catch (err) {
+			alert("Some Error Occurred !!!");
 		}
-		setTags((tags) => { return newTags });
-		setArticles((article) => { return newArticles });
-		setLoading(false);
 	}
 
 

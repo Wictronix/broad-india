@@ -45,7 +45,7 @@ export default function BlogsArticles() {
 	const getQuery = (page, pageSize) => {
 		return (
 			`query GetUserArticles {
-				user(username: "aayush7908") {
+				user(username: "broadindia") {
 					tagsFollowing {
 						id
 						name
@@ -73,80 +73,83 @@ export default function BlogsArticles() {
 	};
 
 	const fetchData = async () => {
-		const pageSize = 5;
-		let totalPages = 1;
-		let newMostImpBlog = null;
-		let newImpBlogs = { arr: [] };
-		let newBlogs = { arr: [] };
-		let newArticles = { arr: [] };
-		let newVideos = { arr: [] };
-		let newTags = [];
+		try {
+			const pageSize = 5;
+			let totalPages = 1;
+			let newMostImpBlog = null;
+			let newImpBlogs = { arr: [] };
+			let newBlogs = { arr: [] };
+			let newArticles = { arr: [] };
+			let newVideos = { arr: [] };
+			let newTags = [];
 
-		for (let page = 1; page <= totalPages; page++) {
-			if (
-				newMostImpBlog !== null &&
-				newImpBlogs.arr.length >= 2 &&
-				newBlogs.arr.length >= 4 &&
-				newArticles.arr.length >= 4 &&
-				newVideos.arr.length >= 3
-			) {
-				break;
-			}
-			const query = getQuery(page, pageSize);
-			const promise = await fetch("https://gql.hashnode.com/", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json"
-				},
-				body: JSON.stringify({ query })
-			});
-			let res = await promise.json();
-			console.log(res);
-
-			totalPages = Math.ceil(res.data.user.posts.totalDocuments / pageSize);
-			const data = res.data.user.posts.edges;
-			newTags = res.data.user.tagsFollowing;
-
-			data.forEach((post) => {
-				post = post.node;
-				if (post.subtitle) {
-					switch (post.subtitle.toLowerCase()) {
-						case "most-imp":
-							if (mostImpBlog === null) {
-								newMostImpBlog = post;
-							} else {
-								newBlogs.arr.push(post);
-							}
-							break;
-						case "imp":
-							if (impBlogs.arr.length < 2) {
-								newImpBlogs.arr.push(post);
-							} else {
-								newBlogs.arr.push(post);
-							}
-							break;
-						case "blog":
-							newBlogs.arr.push(post);
-							break;
-						case "article":
-							newArticles.arr.push(post);
-							break;
-						default:
-							if (post.subtitle.toLowerCase().startsWith("video")) {
-								newVideos.arr.push(post);
-							}
-					}
+			for (let page = 1; page <= totalPages; page++) {
+				if (
+					newMostImpBlog !== null &&
+					newImpBlogs.arr.length >= 2 &&
+					newBlogs.arr.length >= 4 &&
+					newArticles.arr.length >= 4 &&
+					newVideos.arr.length >= 3
+				) {
+					break;
 				}
-			});
-		}
+				const query = getQuery(page, pageSize);
+				const promise = await fetch("https://gql.hashnode.com/", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({ query })
+				});
+				let res = await promise.json();
 
-		setTags((tags) => { return newTags });
-		setMostImpBlog((mostImpBlog) => { return newMostImpBlog });
-		setImpBlogs((impBlog) => { return newImpBlogs });
-		setBlogs((blog) => { return newBlogs });
-		setArticles((article) => { return newArticles });
-		setVideos((video) => { return newVideos });
-		setLoading(false);
+				totalPages = Math.ceil(res.data.user.posts.totalDocuments / pageSize);
+				const data = res.data.user.posts.edges;
+				newTags = res.data.user.tagsFollowing;
+
+				data.forEach((post) => {
+					post = post.node;
+					if (post.subtitle) {
+						switch (post.subtitle.toLowerCase()) {
+							case "most-imp":
+								if (mostImpBlog === null) {
+									newMostImpBlog = post;
+								} else {
+									newBlogs.arr.push(post);
+								}
+								break;
+							case "imp":
+								if (impBlogs.arr.length < 2) {
+									newImpBlogs.arr.push(post);
+								} else {
+									newBlogs.arr.push(post);
+								}
+								break;
+							case "blog":
+								newBlogs.arr.push(post);
+								break;
+							case "article":
+								newArticles.arr.push(post);
+								break;
+							default:
+								if (post.subtitle.toLowerCase().startsWith("video")) {
+									newVideos.arr.push(post);
+								}
+						}
+					}
+				});
+			}
+
+			setTags((tags) => { return newTags });
+			setMostImpBlog((mostImpBlog) => { return newMostImpBlog });
+			setImpBlogs((impBlog) => { return newImpBlogs });
+			setBlogs((blog) => { return newBlogs });
+			setArticles((article) => { return newArticles });
+			setVideos((video) => { return newVideos });
+			setLoading(false);
+		} catch (err) {
+			alert("Some Error Occurred !!!");
+		}
 	}
 
 
@@ -160,7 +163,7 @@ export default function BlogsArticles() {
 		} else if (screenWidth < 1280) {
 			setBlogCarouselMove((blogCarouselMove) => { return "33.33" });
 		}
-		// window.scrollTo(0, 0);
+		window.scrollTo(0, 0);
 		fetchData();
 	}, []);
 
@@ -278,7 +281,8 @@ export default function BlogsArticles() {
 											<div className="py-3">
 												<h3 style={{
 													fontSize: '1.1rem',
-													color: "#007BFF"
+													color: "#007BFF",
+													textTransform: "capitalize"
 												}}>
 													{blog.tags.length > 0 && blog.tags[0].name}
 												</h3>
