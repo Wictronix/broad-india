@@ -13,6 +13,7 @@ import Footer from "../components/Footer";
 import NavbarComp from "../components/NavbarComp";
 import MoreCategorySection from "../components/MoreCategorySection";
 import ArticleCard from "../components/ArticleCard";
+import { initialQuery, postsByCategoryQuery } from "../utils/hashnodeQuery";
 
 export default function BlogsByCategory() {
 	const [isMobile, setIsMobile] = React.useState(true);
@@ -22,44 +23,24 @@ export default function BlogsByCategory() {
 	const [articles, setArticles] = useState({ arr: [] });
 	const { id } = useParams();
 
-	const getQuery = (page, pageSize, tag) => {
-		return (
-			`query GetUserArticlesByTag {
-				user(username: "broadindia") {
-					tagsFollowing {
-						name
-						id
-					}
-					posts(pageSize: ${pageSize}, page: ${page}, filter: {tags: ["${tag}"]}) {
-						edges {
-							node {
-								id
-								subtitle
-								title
-								tags {
-									name
-								}
-								coverImage {
-									url
-								}
-							}
-						}
-						totalDocuments
-					}
-				}
-			}`
-		);
-	};
-
 	const fetchData = async () => {
 		try {
-			const pageSize = 5;
-			let totalPages = 1;
-			let newTags = [];
+			let query = initialQuery();
+			const promise = await fetch("https://gql.hashnode.com/", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify({ query })
+			});
+			const res = await promise.json();
+			const newTags = res.data.user.tagsFollowing;
+			const totalPages = res.data.user.posts.totalDocuments;
+
 			let newArticles = { arr: [] };
 
 			for (let page = 1; page <= totalPages; page++) {
-				const query = getQuery(page, pageSize, id);
+				query = postsByCategoryQuery(page, id);
 
 				const promise = await fetch("https://gql.hashnode.com/", {
 					method: "POST",
@@ -68,11 +49,8 @@ export default function BlogsByCategory() {
 					},
 					body: JSON.stringify({ query })
 				});
-				let res = await promise.json();
-
-				totalPages = Math.ceil(res.data.user.posts.totalDocuments / pageSize);
+				const res = await promise.json();
 				const data = res.data.user.posts.edges;
-				newTags = res.data.user.tagsFollowing;
 				data.forEach((post) => {
 					post = post.node;
 					newArticles.arr.push(post);

@@ -13,6 +13,7 @@ import Footer from "../components/Footer";
 import NavbarComp from "../components/NavbarComp";
 import MoreCategorySection from "../components/MoreCategorySection";
 import ArticleCard from "../components/ArticleCard";
+import { allPostsQuery, initialQuery } from "../utils/hashnodeQuery";
 
 export default function AllBlogs({ type }) {
     const [isMobile, setIsMobile] = React.useState(true);
@@ -21,44 +22,23 @@ export default function AllBlogs({ type }) {
     const [articles, setArticles] = useState({ arr: [] });
     const { id } = useParams();
 
-    const getQuery = (page, pageSize) => {
-        return (
-            `query GetUserPosts {
-				user(username: "broadindia") {
-					tagsFollowing {
-						name
-						id
-					}
-					posts(pageSize: ${pageSize}, page: ${page}) {
-						edges {
-							node {
-								id
-								subtitle
-								title
-								tags {
-									name
-								}
-								coverImage {
-									url
-								}
-							}
-						}
-						totalDocuments
-					}
-				}
-			}`
-        );
-    };
-
     const fetchData = async () => {
         try {
-            const pageSize = 5;
-            let totalPages = 1;
+            let query = initialQuery();
+            const promise = await fetch("https://gql.hashnode.com/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ query })
+            });
+            const res = await promise.json();
+            const newTags = res.data.user.tagsFollowing;
+			const totalPages = res.data.user.posts.totalDocuments;
             let newArticles = { arr: [] };
-            let newTags = [];
 
             for (let page = 1; page <= totalPages; page++) {
-                const query = getQuery(page, pageSize);
+                const query = allPostsQuery(page);
 
                 const promise = await fetch("https://gql.hashnode.com/", {
                     method: "POST",
@@ -68,16 +48,12 @@ export default function AllBlogs({ type }) {
                     body: JSON.stringify({ query })
                 });
                 const res = await promise.json();
-
-                totalPages = Math.ceil(res.data.user.posts.totalDocuments / pageSize);
                 const data = res.data.user.posts.edges;
-                newTags = res.data.user.tagsFollowing;
-
                 data.forEach((post) => {
                     post = post.node;
                     if (type === "blog" && post.subtitle === "blog") {
                         newArticles.arr.push(post);
-                    } else if (type === "article" && post.subtitle !== "blog") {
+                    } else if (type === "article" && post.subtitle === "article") {
                         newArticles.arr.push(post);
                     }
                 });

@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import NavbarComp from "../components/NavbarComp";
 import blogsHeader from "../assets/images/blogs-header.webp";
 import MoreCategorySection from "../components/MoreCategorySection";
+import { initialQuery, mainPageQuery } from "../utils/hashnodeQuery";
 
 export default function BlogsArticles() {
 	const [isMobile, setIsMobile] = React.useState(true);
@@ -20,68 +21,25 @@ export default function BlogsArticles() {
 	const [articlesPerPage, setArticlesPerPage] = useState(2);
 	const [articlesPageNumber, setArticlesPageNumber] = useState(1);
 
-	// Dummy Data ...
-	// const videos = [
-	// 	{
-	// 		category: 'Environment',
-	// 		title: 'How to Edit Videos Online in Wistia\'s Video Editor',
-	// 		image: 'https://st.depositphotos.com/1005669/2996/i/450/depositphotos_29966311-stock-photo-renewable-energy.jpg',
-	// 		link: '#',
-	// 	},
-	// 	{
-	// 		category: 'HVAC',
-	// 		title: 'The Best iPhone Camera Settings for Video in 2024',
-	// 		image: 'https://t3.ftcdn.net/jpg/05/54/51/40/360_F_554514065_A5Y17mmaZgxkbcKri1g52RrLDtLzOU54.jpg',
-	// 		link: '#',
-	// 	},
-	// 	{
-	// 		category: 'VAM',
-	// 		title: 'How to Download Wistia Videos',
-	// 		image: 'https://cdn.pixabay.com/photo/2021/08/10/10/06/pinwheels-6535595_640.jpg',
-	// 		link: '#',
-	// 	},
-	// ];
-
-	const getQuery = (page, pageSize) => {
-		return (
-			`query GetUserArticles {
-				user(username: "broadindia") {
-					tagsFollowing {
-						id
-						name
-					}
-					posts(pageSize: ${pageSize}, page: ${page}) {
-						edges {
-							node {
-								id
-								subtitle
-								title
-								brief
-								tags {
-									name
-								}
-								coverImage {
-									url
-								}
-							}
-						}
-						totalDocuments
-					}
-				}
-			}`
-		);
-	};
-
 	const fetchData = async () => {
 		try {
-			const pageSize = 5;
-			let totalPages = 1;
+			let query = initialQuery();
+			const promise = await fetch("https://gql.hashnode.com/", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify({ query })
+			});
+			const res = await promise.json();
+			const newTags = res.data.user.tagsFollowing;
+			const totalPages = res.data.user.posts.totalDocuments;
+
 			let newMostImpBlog = null;
 			let newImpBlogs = { arr: [] };
 			let newBlogs = { arr: [] };
 			let newArticles = { arr: [] };
 			let newVideos = { arr: [] };
-			let newTags = [];
 
 			for (let page = 1; page <= totalPages; page++) {
 				if (
@@ -93,7 +51,7 @@ export default function BlogsArticles() {
 				) {
 					break;
 				}
-				const query = getQuery(page, pageSize);
+				query = mainPageQuery(page);
 				const promise = await fetch("https://gql.hashnode.com/", {
 					method: "POST",
 					headers: {
@@ -101,12 +59,8 @@ export default function BlogsArticles() {
 					},
 					body: JSON.stringify({ query })
 				});
-				let res = await promise.json();
-
-				totalPages = Math.ceil(res.data.user.posts.totalDocuments / pageSize);
+				const res = await promise.json();
 				const data = res.data.user.posts.edges;
-				newTags = res.data.user.tagsFollowing;
-
 				data.forEach((post) => {
 					post = post.node;
 					if (post.subtitle) {
@@ -213,7 +167,8 @@ export default function BlogsArticles() {
 											<div className="py-3">
 												<h3 style={{
 													fontSize: '1.1rem',
-													color: "#007BFF"
+													color: "#007BFF",
+													textTransform: "capitalize"
 												}}>
 													{mostImpBlog.tags.length > 0 && mostImpBlog.tags[0].name}
 												</h3>
