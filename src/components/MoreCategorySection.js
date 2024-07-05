@@ -35,7 +35,7 @@ export default function MoreCategorySection({ tags, loading }) {
                                 {
                                     tags.map((tag, index) => {
                                         return (
-                                            <div className="col-md-6 col-lg-4 p-2">
+                                            <div className="col-md-6 col-lg-4 p-2" key={index}>
                                                 <Card className="p-0 hover-card">
                                                     <Link
                                                         className="p-3 w-100 h-100 d-flex align-items-center justify-content-between"

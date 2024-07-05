@@ -9,6 +9,7 @@ import { Container, Image } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import NavbarComp from "../components/NavbarComp";
+import { individualPostQuery } from "../utils/hashnodeQuery";
 
 export default function IndividualBlog({ isVideo }) {
     const [isMobile, setIsMobile] = React.useState(true);
@@ -21,30 +22,9 @@ export default function IndividualBlog({ isVideo }) {
     const [tags, setTags] = React.useState([]);
     const { id } = useParams();
 
-    const getQuery = (id) => {
-        return (
-            `query GetData {
-                post(id: "${id}") {
-                    title
-                    subtitle
-                    content {
-                        html
-                    }
-                    coverImage {
-                        url
-                    }
-                    tags {
-                        id
-                        name
-                    }
-                }
-            }`
-        );
-    }
-
     const fetchData = async () => {
         try {
-            const query = getQuery(id);
+            const query = individualPostQuery(id);
 
             const promise = await fetch("https://gql.hashnode.com/", {
                 method: "POST",
@@ -171,7 +151,7 @@ export default function IndividualBlog({ isVideo }) {
                                                                 return (
                                                                     <Link
                                                                         to={`/blogs-and-articles/tag/${tag.id}`}
-                                                                        className="bg-primary text-white rounded-pill d-inline-block py-2 px-4 hover-card"
+                                                                        className="bg-primary text-white rounded-pill d-inline-block py-2 px-4 hover-card text-capitalize"
                                                                         key={index}
                                                                     >
                                                                         <p className="p-0 m-0">{tag.name}</p>

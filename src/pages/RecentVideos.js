@@ -3,46 +3,29 @@ import { Container } from "react-bootstrap";
 import Footer from "../components/Footer";
 import NavbarComp from "../components/NavbarComp";
 import ArticleCard from "../components/ArticleCard";
+import { allPostsQuery, initialQuery } from "../utils/hashnodeQuery";
 
 export default function RecentVideos() {
     const [isMobile, setIsMobile] = React.useState(true);
     const [loading, setLoading] = useState(true);
     const [articles, setArticles] = useState({ arr: [] });
 
-    const getQuery = (page, pageSize) => {
-        return (
-            `query GetUserArticles {
-				user(username: "broadindia") {
-					tagsFollowing {
-						id
-						name
-					}
-					posts(pageSize: ${pageSize}, page: ${page}) {
-						edges {
-							node {
-								id
-								subtitle
-								title
-								tags {
-									name
-								}
-							}
-						}
-						totalDocuments
-					}
-				}
-			}`
-        );
-    };
-
     const fetchData = async () => {
         try {
-            const pageSize = 5;
-            let totalPages = 1;
+            let query = initialQuery();
+			const promise = await fetch("https://gql.hashnode.com/", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify({ query })
+			});
+			const res = await promise.json();
+			const totalPages = res.data.user.posts.totalDocuments;
             let newArticles = { arr: [] };
 
             for (let page = 1; page <= totalPages; page++) {
-                const query = getQuery(page, pageSize);
+                const query = allPostsQuery(page);
                 const promise = await fetch("https://gql.hashnode.com/", {
                     method: "POST",
                     headers: {
@@ -51,10 +34,7 @@ export default function RecentVideos() {
                     body: JSON.stringify({ query })
                 });
                 const res = await promise.json();
-
-                totalPages = Math.ceil(res.data.user.posts.totalDocuments / pageSize);
                 const data = res.data.user.posts.edges;
-
                 data.forEach((post) => {
                     post = post.node;
                     if (post.subtitle && post.subtitle.toLowerCase().startsWith("video")) {
