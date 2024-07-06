@@ -82,7 +82,7 @@ export const allPostsQuery = (page) => {
 			}`;
 }
 
-export const individualPostQuery = (id) => {
+export const individualPostDataQuery = (id) => {
 	return `query GetData {
                 post(id: "${id}") {
                     title
@@ -90,12 +90,19 @@ export const individualPostQuery = (id) => {
                     content {
                         html
                     }
-                    coverImage {
-                        url
-                    }
                     tags {
                         id
                         name
+                    }
+                }
+            }`;
+}
+
+export const individualPostImageQuery = (id) => {
+	return `query GetData {
+                post(id: "${id}") {
+                    coverImage {
+                        url
                     }
                 }
             }`;

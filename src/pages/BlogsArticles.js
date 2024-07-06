@@ -6,6 +6,7 @@ import NavbarComp from "../components/NavbarComp";
 import blogsHeader from "../assets/images/blogs-header.webp";
 import MoreCategorySection from "../components/MoreCategorySection";
 import { initialQuery, mainPageQuery } from "../utils/hashnodeQuery";
+import { fetchApi } from "../utils/fetchApi";
 
 export default function BlogsArticles() {
 	const [isMobile, setIsMobile] = React.useState(true);
@@ -24,14 +25,7 @@ export default function BlogsArticles() {
 	const fetchData = async () => {
 		try {
 			let query = initialQuery();
-			const promise = await fetch("https://gql.hashnode.com/", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json"
-				},
-				body: JSON.stringify({ query })
-			});
-			const res = await promise.json();
+			const res = await fetchApi(query);
 			const newTags = res.data.user.tagsFollowing;
 			const totalPages = res.data.user.posts.totalDocuments;
 
@@ -52,14 +46,7 @@ export default function BlogsArticles() {
 					break;
 				}
 				query = mainPageQuery(page);
-				const promise = await fetch("https://gql.hashnode.com/", {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json"
-					},
-					body: JSON.stringify({ query })
-				});
-				const res = await promise.json();
+				const res = await fetchApi(query);
 				const data = res.data.user.posts.edges;
 				data.forEach((post) => {
 					post = post.node;
