@@ -4,6 +4,8 @@ import Footer from "../components/Footer";
 import NavbarComp from "../components/NavbarComp";
 import ArticleCard from "../components/ArticleCard";
 import { allPostsQuery, initialQuery } from "../utils/hashnodeQuery";
+import { fetchApi } from "../utils/fetchApi";
+
 
 export default function RecentVideos() {
     const [isMobile, setIsMobile] = React.useState(true);
@@ -13,27 +15,13 @@ export default function RecentVideos() {
     const fetchData = async () => {
         try {
             let query = initialQuery();
-			const promise = await fetch("https://gql.hashnode.com/", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json"
-				},
-				body: JSON.stringify({ query })
-			});
-			const res = await promise.json();
+			const res = await fetchApi(query);
 			const totalPages = res.data.user.posts.totalDocuments;
             let newArticles = { arr: [] };
 
             for (let page = 1; page <= totalPages; page++) {
                 const query = allPostsQuery(page);
-                const promise = await fetch("https://gql.hashnode.com/", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({ query })
-                });
-                const res = await promise.json();
+                const res = await fetchApi(query);
                 const data = res.data.user.posts.edges;
                 data.forEach((post) => {
                     post = post.node;

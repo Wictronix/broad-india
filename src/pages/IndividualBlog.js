@@ -9,7 +9,8 @@ import { Container, Image } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import NavbarComp from "../components/NavbarComp";
-import { individualPostQuery } from "../utils/hashnodeQuery";
+import { individualPostDataQuery, individualPostImageQuery, individualPostQuery } from "../utils/hashnodeQuery";
+import { fetchApi } from "../utils/fetchApi";
 
 export default function IndividualBlog({ isVideo }) {
     const [isMobile, setIsMobile] = React.useState(true);
@@ -24,22 +25,18 @@ export default function IndividualBlog({ isVideo }) {
 
     const fetchData = async () => {
         try {
-            const query = individualPostQuery(id);
+            const query1 = individualPostImageQuery(id);
+            const res1 = await fetchApi(query1);
 
-            const promise = await fetch("https://gql.hashnode.com/", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ query })
-            })
-            const res = await promise.json();
-            let data = null;
-            if (res.data.post) {
-                data = res.data.post;
+            const query2 = individualPostDataQuery(id);
+            const res2 = await fetchApi(query2);
+
+            if (res2.data.post) {
+                const image = res1.data.post;
+                const data = res2.data.post;
                 setTitle(data.title);
                 setSubtitle(data.subtitle);
-                setImage(data.coverImage ? data.coverImage.url : "");
+                setImage(image.coverImage ? image.coverImage.url : "");
                 setContent(data.content.html);
                 setTags(data.tags);
             } else {
