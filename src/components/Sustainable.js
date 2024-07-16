@@ -9,7 +9,7 @@ export default function Sustainable() {
   return (
     <div
       style={{
-        height: isMobile ? "180vh" : "120vh",
+        height: isMobile ? "220vh" : "120vh",
         width: "100%",
         marginBlock: "5rem",
         backgroundImage: "url('http://picsum.photos/id/10/1920/1440')",
@@ -22,7 +22,7 @@ export default function Sustainable() {
     >
       <div
         style={{
-          marginTop: "5rem",
+          marginTop: isMobile ? "1rem" : "5rem",
           height: isMobile ? "min-content" : "60%",
           width: isMobile ? "90%" : "80%",
           backgroundColor: "rgba(255, 255, 255, 0.6)",
