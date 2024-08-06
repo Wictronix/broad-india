@@ -17,7 +17,7 @@ export default function Footer() {
                 filter: "brightness(0) invert(1)",
               }}
             >
-                <img
+              <img
                 src={require("../assets/images/BROAD INDIA.webp")}
                 alt="bi"
                 style={{ height: "120px" }}
@@ -67,7 +67,7 @@ export default function Footer() {
                   />
                 </a>
                 <a
-                  href="http://www.linkedin.com/in/broad-india"
+                  href="https://www.linkedin.com/company/broad-india/"
                   target="_blank"
                   rel="noreferrer"
                   className="me-4"
@@ -135,7 +135,7 @@ export default function Footer() {
                 <a
                   href="mailto:info@broadindia.com"
                   className="text-decoration-none text-light"
-                  target="_blank" 
+                  target="_blank"
                   rel="noreferrer"
                 >
                   <svg
@@ -157,7 +157,12 @@ export default function Footer() {
                 </a>
               </div>
               <div className="d-flex">
-                <a href="tel:9427851584"target="_blank"  rel="noreferrer" className=" text-decoration-none text-light">
+                <a
+                  href="tel:9427851584"
+                  target="_blank"
+                  rel="noreferrer"
+                  className=" text-decoration-none text-light"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="#fff"
@@ -177,7 +182,12 @@ export default function Footer() {
                 </a>
               </div>
               <div className="d-flex">
-                <a href="tel:01244012824" target="_blank"  rel="noreferrer" className="text-light text-decoration-none">
+                <a
+                  href="tel:01244012824"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-light text-decoration-none"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="#fff"
@@ -200,8 +210,8 @@ export default function Footer() {
           </div>
           <div className="col-md-3" style={{ textAlign: "center" }}>
             <h5>
-              BROAD Air Conditioning India Pvt. Ltd. (BROAD India) is a subsidiary of
-              BROAD Group.
+              BROAD Air Conditioning India Pvt. Ltd. (BROAD India) is a
+              subsidiary of BROAD Group.
             </h5>
             <br />
             powered by
