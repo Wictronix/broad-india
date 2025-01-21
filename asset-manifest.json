@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.00a3c68d.css",
-    "main.js": "/static/js/main.f2fac463.js",
+    "main.js": "/static/js/main.78abec2e.js",
     "static/media/bgbg.jpg": "/static/media/bgbg.fb274ea0d50a9fb6862f.jpg",
     "static/media/contactBG.jpg": "/static/media/contactBG.a58fb13b4683335f2553.jpg",
     "static/media/broad_town_intro3.jpg": "/static/media/broad_town_intro3.3d96f0bce46b1082b05e.jpg",
@@ -30,10 +30,10 @@
     "static/media/broad-logo.webp": "/static/media/broad-logo.04949f8d30e14c4880eb.webp",
     "index.html": "/index.html",
     "main.00a3c68d.css.map": "/static/css/main.00a3c68d.css.map",
-    "main.f2fac463.js.map": "/static/js/main.f2fac463.js.map"
+    "main.78abec2e.js.map": "/static/js/main.78abec2e.js.map"
   },
   "entrypoints": [
     "static/css/main.00a3c68d.css",
-    "static/js/main.f2fac463.js"
+    "static/js/main.78abec2e.js"
   ]
 }
