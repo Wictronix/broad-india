@@ -78,7 +78,7 @@ export default function Sustainable() {
               />
             </svg>
             <br />
-            <div>Reducing Carbon Footpring</div>
+            <div>Reducing Carbon Footprint</div>
           </div>
           <div
             className="col-md-4"
